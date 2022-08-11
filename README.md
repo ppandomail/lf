@@ -11,15 +11,15 @@
   * uso de modelos para solucionar problemas
 * que subyacen los procesos de computación.
 
-# Distintos nombres
+## Distintos nombres
 
-* Lenguajes Formales.
-* Autómatas y Lenguajes Formales.
+* Lenguajes Formales
+* Autómatas y Lenguajes Formales
 * Teoría de la Computación
-* Sintaxis y Semántica de los lenguajes 
+* Sintaxis y Semántica de los lenguajes
 * Informática Teórica
 
-# Ramas de la Informática
+## Ramas de la Informática
 
 * Ing de SW
 * BD
@@ -32,7 +32,7 @@
   * Teoría de la Complejidad Computacional
   * Teoría de los Lenguajes de Programación
 
-# Campos de aplicación en distintas áreas
+## Campos de aplicación en distintas áreas
 
 * Teoría de la comunicación
 * Teoría de control
@@ -54,6 +54,8 @@
 ## Bibliografía
 
 * [Teoria de autómatas, lenguajes y computación (Hopcroft, Motwani y Ullman)](biblio/)
+* [Teoría de la computación, lenguajes formales, autómatas y complejidad (Glenn Brookshear)](biblio/)
+* [Teoría de autómatas y lenguajes formales (Kelley)](biblio/)
 * [Apuntes (Pablo Pandolfo)](doc/)
 
 ## Condiciones para aprobar
