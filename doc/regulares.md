@@ -136,6 +136,29 @@
 * L(G) = {w ∈ ΣT* : S -> w}
 * Ejemplo: L(G) = {ab, aab, aaab, aaaab, ...}
 
+## Definición de Lenguajes Regulares
+
+* Es un tipo de lenguaje formal.
+* Son los más simples.
+* Técnicas de reconocimiento de patrones (manejada por el analizador léxico del compilador).
+* Importancia en el diseño de los LENGUAJES DE PROGRAMACIÓN: los identificadores, las palabras reservadas, las constantes numéricas, los operadores y los caracteres de puntuación.
+* Un LENGUAJE es REGULAR si:
+  * Si el lenguaje formal es FINITO.
+  * Si existe una GRAMÁTICA REGULAR que lo genere.
+  * Si se puede representar mediante una EXPRESIÓN REGULAR.
+  * Si puede ser reconocido por un AUTÓMATA FINITO.  
+* Ejemplos:
+
+| Lenguaje | ¿Es regular? |
+| -- | -- |
+| {a^b^n / 1 ≤ n ≤ 4} | SI |
+| {a^n / n ≥ 1} | SI |
+| {a^nb^n / n ≥ 1} | NO |
+| {a^n / 1 ≤ n ≤ 1000} | SI |
+| {a^nb^t / n ≥ 1, t ≥ 1} | SI |
+| {(ab)^n (cde)^t a^z / n ≥ 1, t ≥ 1, z ≥ 1} | SI |
+| {1^(2n+1) 0 / n ≥ 0} | SI |
+
 ## Expresiones Regulares
 
 * TODO
