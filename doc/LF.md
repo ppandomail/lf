@@ -89,7 +89,7 @@
 ### Reflexión o reversa de una palabra
 
 * Si w es una palabra (w = a1a2…an), entonces w^-1 o w^R representa la palabra que resulta de invertir el orden de los símbolos en la palabra.
-* w^-1 = an…a2a1
+* w^-1 = an ... a2 a1
 * Ejemplos:
   * Sea w = ab; entonces, w^-1 = ba
   * (abc)^R = cba
@@ -234,13 +234,13 @@
 
 ### Equivalencias
 
-* L* = {λ} U L+
-* L+ = L*  <=> λ ∈ L <=> λ ∈ L+
-* L*L = LL* = L+L* = L*L+  = L+
-* L*L* = L* pero L+L+ = L^2L*
-* (L*)* = (L+)* = (L*)+ = L*
+* L\* = {λ} U L+
+* L+ = L\*  <=> λ ∈ L <=> λ ∈ L+
+* L\*L = LL\* = L+L\* = L\*L+  = L+
+* L\*L\* = L\* pero L+L+ = L^2L\*
+* (L\*)\* = (L+)\* = (L\*)+ = L\*
 * (L+)+ = L+
-* Ø* = {λ}
+* Ø\* = {λ}
 * Ø+ = Ø
 
 ## Jerarquía de Chomsky
