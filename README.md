@@ -54,11 +54,11 @@
     1. [GIC](doc/GIC.md)
     1. [AP](doc/AP.md)
     1. [LL/LR (solo UADE y UNO)](doc/LL_LR.md)
-1. [Máquina de Turing](doc/turing.md)
+1. [Máquina de Turing](doc/MT.md)
 1. Computabilidad y Complejidad computacional (solo UADE):
     1. [Computabilidad](doc/computabilidad.md)
     1. [Complejidad](doc/complejidad.md)
-1. [Redes de Petri (solo UADE)](doc/petri.md)
+1. [Redes de Petri (solo UADE)](doc/RP.md)
 
 ## Bibliografía
 

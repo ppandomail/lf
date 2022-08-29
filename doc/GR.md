@@ -76,6 +76,15 @@
   * 0C0 -> 1
   * A -> λ
 
+### Regla recursiva
+
+* Si el mismo símbolo no terminal aparece en los dos lados de la producción.
+* Es decir, existe un A ∈ ΣN tal que (A -> xAy) ∈ P, (x, y ∈ Σ*)
+* Ejemplos:
+  * A -> 0A0
+  * B -> B10
+  * C -> 111C
+
 ### Tipos de gramáticas
 
 * G3: Gramática tipo 3 o Regular -> Lenguaje Regular (LR)
@@ -135,6 +144,89 @@
 * Es el conjunto de todas las sentencias de la gramática; es decir, todas las palabras que se pueden obtener a partir del axioma de la gramática por la aplicación de derivaciones:
 * L(G) = {w ∈ ΣT* : S => w}
 * Ejemplo: L(G) = {ab, aab, aaab, aaaab, ...}
+
+## Gramáticas equivalentes
+
+* Dos gramáticas G y G’ son equivalentes si generan el mismo lenguaje, es decir, si L(G) = L(G’)
+* Ejemplo
+
+      ```plain
+      S  -> c A d
+      A -> ab | a
+      ```
+
+      ```plain
+      S -> cabd | cad
+      ```
+
+## Gramáticas ambiguas
+
+* Una gramática es ambigua si tiene al menos una sentencia ambigua.
+* Una sentencia es ambigua si tiene más de una derivación o árbol de derivación.
+* Un lenguaje es ambiguo si existe una gramática ambigua que lo genera.
+* En algunos casos, dada una gramática ambigua, se puede encontrar otra gramática que produzca el mismo lenguaje pero que no sea ambigua.
+* Ejemplo 1:
+
+      ```plain
+      S -> 1B | 11
+      B -> 1
+      ```
+  * Dos derivaciones para 11:
+    * S => 1B => 11
+    * S => 11
+
+* Ejemplo 2:
+
+      ```plain
+      E -> E+E | E-E | num | id | (E)
+      ```
+  * Dos derivaciones para id+id-id (una por la izquierda y otra por la derecha)
+    * E => E-E => E+E-E => id+E-E => id+id-E => id+id-id
+    * E => E-E => E-id => E+E-id => E+id-id => id+id-id
+
+* Si una gramática tiene alguna de estas características, se podrá afirmar que es ambigua:
+  * Con ciclos: S -> A | a     A -> S
+  * Con alguna regla de la forma: E -> E...E
+  * Con reglas que ofrecen caminos alternativos entre dos puntos: S -> B | C   B -> C
+  * Producciones recursivas en las que las variables no recursivas de la producción puedan derivar a la palabra vacía. Ejemplo:
+
+        ```plain
+        S -> A B S | s
+        A -> a | λ
+        B -> b | λ
+        ```
+  * Símbolos no terminales que puedan derivar a la palabra vacía y a la misma palabra de terminales, y que aparezcan juntas en la parte derecha de una regla o en alguna forma sentencial. Ejemplo:
+
+        ```plain
+        A -> A B | a | λ
+        B -> b | a | λ
+        ```
+
+## Factorización a izquierda
+
+* Proceso que elimina el problema de que aparezcan producciones de un mismo símbolo no terminal en cuya parte derecha, la primera parte sea común.
+* Ejemplo:
+
+      ```plain
+      S -> if C then S else S | if C then S | repeat S until C | repeat S forever
+      ```
+* Algoritmo:
+
+      ```plain
+      Por cada A ∈ ΣN
+        Si A -> βα1 | βα2
+          cambiar esas reglas por:
+          A -> βA’
+          A’-> α1 | α2
+      ```
+
+* Salida del algoritmo:
+
+      ```plain
+      S  -> if C then S A’| repeat S S’
+      A’ -> else S | λ 
+      S’ -> until C | forever
+      ```
 
 ## Ejercicios
 
