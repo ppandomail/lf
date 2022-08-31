@@ -1,4 +1,4 @@
-# Lenguajes Formales (UNO) / Lenguajes Formales y Autómatas (UNAHUR) / Teoria de la Computación (UADE)
+# Lenguajes Formales (UNO) / Lenguajes Formales y Autómatas (UNAHUR) / Teoría de la Computación (UADE)
 
 ## Docente
 

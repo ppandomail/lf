@@ -27,7 +27,7 @@
 
 * Es la forma más precisa y útil de representar o describir a los LR.
 * Es un mecanismo alternativo al igual que las GR para definir los LR.
-* Es una cadena de texto que describe un patròn de búsqueda.
+* Es una cadena de texto que describe un patrón de búsqueda.
 * Forman un metalenguaje. Componentes:
   * Símbolos del alfabeto.
   * Símbolo λ.
@@ -63,8 +63,9 @@
 | a*b | L = {a^n b / n ≥ 0} |
 | 01* | L = {01^n / n ≥ 0} |
 | (0 \| 1)* | L = {w / w ∈ {0, 1}*} |
-| (0 \| 1)* 00 (0 \| 1)* | L = {w00w / w ∈ {0, 1}*} |
+| (0 \| 1)* 00 (0 \| 1)* | L = {v00w / v, w ∈ {0, 1}*} |
 | (1 \| 10)* | L = {w / w ∈ {1, 10}*} |
+| abbb\*c+ \| ab+c(cc)\* | L = {abbb^nc^m / n ≥ 0 ^ m ≥ 1} U {ab^nc(cc)^m / n ≥ 1 ^ m ≥ 0} |
 
 ### Lenguaje representado por una ER
 
@@ -148,19 +149,21 @@
 ## Ejercicios
 
 1. Describa dos casos en los que la concatenación de dos ER si puede ser conmutativa.
-1. Escriba una ER que represente al LR L = {a^nb^n / 1 ≤ n ≤ 3}.
+1. Escriba una ER que represente al LR L = {a^nb^n / 1 ≤ n ≤ 3}
 1. Describa, mediante una frase sin ambigüedades, el LR representado por la ER a(b|a)b.
 1. Sea la ER abbaacc | abbbac | abbacccacc. Reescriba esta ER, factorizando con la mayor cantidad de símbolos comunes a los tres términos tanto a la izquierda como a la derecha.
 1. Verifique que la siguiente afirmación es correcta: "Todas las palabras con dos símbolos sobre el alfabeto {a, b} puede ser representado por las siguientes ERs equivalentes: aa|ab|ba|bb = a(a|b)|b(a|b) = (a|b)(a|b)
 1. Determine si las siguientes ERs son equivalentes: aa|ab|ba , a(a|b)|ba  y  ab|ba|aa. Justifique su respuesta.
 1. Escriba una ER que represente al LR: "Todas las palabras sobre el alfabeto {a, b} que tienen longitud 100 y terminan con 28 bes".
-1. Sea el LR: "Todas las palabras sobre el alfabeto {a,b,c} que: a) comienzan con 16 aes, terminan con 16 aes y tienen una longitud total de 1200 caracteres, b) comienzan con 342 bes y terminan con 100 repeticiones de cualquiera de los caracteres del alfabeto (pero siempre uno solo de ellos).
+1. Sea el LR: "Todas las palabras sobre el alfabeto {a, b, c} que:
+    1. comienzan con 16 aes, terminan con 16 aes y tienen una longitud total de 1200 caracteres,
+    1. comienzan con 342 bes y terminan con 100 repeticiones de cualquiera de los caracteres del alfabeto (pero siempre uno solo de ellos).
 1. Escriba una ER que represente al LR: "La palabra vacía y todas las palabras sobre {a, b, c} de longitud 45, que comienzan con aa o con bb, y que terminan con aa o con bb".
 1. Compare las ER a^1000 y a*. Informe sus conclusiones.
 1. Escriba las tres palabras de menor longitud del LR representado por la ER (aba)\*. Utilizando el operador "potencia", escriba la palabra de longitud 300 del LR representado por la ER (aba)*. ¿La cadena ababa pertenece a este LR? Justifique su respuesta.
 1. ¿La cadena a^24b^24a^24 es una palabra de LR representado por la ER (aba)*? Justifique su respuesta.
 1. Dados los LR infinitos representados por las ERs a\* y aa\* respectivamente. ¿Cuál tiene mayor cantidad de palabras? Justifique su respuesta.
-1. Describa, mediante una frase, el LR representado por la ER (a | b)+.
+1. Describa, mediante una frase, el LR representado por la ER (a | b)+
 1. Justifique la siguiente afirmación: "Si la ER a “clausurar positivamente” fuera λ | a, entonces: (λ | a)+ = (λ | a)\* = a\*, porque la palabra vacía pertenece al lenguaje original”.
 1. Justifique las afirmaciones:
     1. a\*a\* = a\*  
