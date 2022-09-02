@@ -111,6 +111,14 @@
   * P = {(S -> λ}, (S -> aA), (A -> aB), (A -> a), (B -> aA)}
   * P = {(S -> λ), (S -> Ca), (C -> Da), (C -> a), (D -> Ca)}
 
+## Gramáticas Quasi Regulares (GQR)
+
+* Vinculadas a la sintaxis de los lenguajes de programación.
+* Abrevia la escritura de una GR
+* Ejemplo: L = {w1 w2 / w1 ∈ {a, b, c} ^ w2 ∈ {a, b, c}* }
+* GR:   S -> aS | bS | cS | a | b | c
+* GQR:  S -> A | AS    A -> a | b | c
+
 ## Derivación
 
 * Es el proceso que permite obtener cada una de las palabras de un LF a partir del axioma de una GF que lo genera y aplicando sucesivamente las producciones convenientes de esa GF.

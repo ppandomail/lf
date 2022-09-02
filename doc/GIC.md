@@ -70,7 +70,7 @@
     Hasta que todas las reglas sean generativas
     ```
 
-  * **Regla de redenominación**:
+  * **Reglas de redenominación**:
     * Una regla es de redenominación cuando A -> B con  A, B ∈ ΣN
     * Para eliminarlas, se borra esa regla y se genera una nueva producción A -> x por cada B -> x, con x ∈ Σ*.
 
