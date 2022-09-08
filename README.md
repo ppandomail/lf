@@ -50,6 +50,7 @@
     1. [GR](doc/GR.md)
     1. [ER](doc/ER.md)
     1. [AF](doc/AF.md)
+    1. [Alg AF](doc/AF2.md)
 1. Lenguajes Incontextuales
     1. [GIC](doc/GIC.md)
     1. [AP](doc/AP.md)
