@@ -59,7 +59,7 @@
 1. Computabilidad y Complejidad computacional (solo UADE):
     1. [Computabilidad](doc/computabilidad.md)
     1. [Complejidad](doc/complejidad.md)
-1. [Redes de Petri (solo UADE)](doc/RP.md)
+1. [Otros autómatas (sólo UADE)](doc/otros.md)
 
 ## Bibliografía
 
