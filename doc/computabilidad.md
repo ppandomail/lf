@@ -1,4 +1,4 @@
-# Computabilidad
+# Teoria de la Computabilidad
 
 * Parte de la computación que analiza y determina los problemas que pueden resolverse por medio de un algoritmo o bien por una MT.
 
