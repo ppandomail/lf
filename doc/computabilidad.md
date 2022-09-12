@@ -193,3 +193,18 @@
 1. Dadas dos cadenas de palotes, separadas por el símbolo \* defina y construya una MT que decida si la primera cadena es submúltiplo de la segunda, y cuántas veces. Pruebe la solución hallada con las siguientes cadenas:
     * |||*|||||| (es submúltiplo, dos veces)
     * ||*||||| (no es submúltiplo)
+1. f(x, y)
+    * 0    si x <= y
+    * x-y  si x > y
+    * x e y codificados en unario
+    * x e y se encuentran en C1 separados por un símbolo cero
+    * resultado de f(x, y) se dejará en C4
+    * C2 se colocará c y en C3 y
+
+    * Ejemplo x = 5  y = 3
+    * C1: ...□111110111□...
+    * C2: ...□11111□□□□□...
+    * C3: ...□111□□□□□□□...
+    * C4: ...□11□□□□□□□□...
+
+    ![MT x-y](img/MT-multi-xmenosy.png)
