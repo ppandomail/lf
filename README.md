@@ -54,7 +54,9 @@
 1. Lenguajes Incontextuales
     1. [GIC](doc/GIC.md)
     1. [AP](doc/AP.md)
-    1. [LL/LR (solo UADE y UNO)](doc/LL_LR.md)
+    1. [LL/LR (solo UADE y UNO)](doc/parsers.md)
+        1. [LL](doc/ASD.md)
+        1. [LR](doc/ASA.md)
 1. [Máquina de Turing](doc/MT.md)
 1. Computabilidad y Complejidad computacional (solo UADE):
     1. [Computabilidad](doc/computabilidad.md)
