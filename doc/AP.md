@@ -1,11 +1,5 @@
 # Autómata de Pila (AP)
 
-## Definición LIC
-
-* Es un tipo de LF.
-* Generado por una GIC o Gramática de tipo 2.
-* Ejemplos: expresiones aritméticas, sentencias de un lenguaje de programación, etc.
-
 ## Definición AP
 
 * Conocidos como autómatas “push-down”
@@ -25,7 +19,7 @@
   * q0: estado inicial. q0 ∈ Q.
   * p0: símbolo inicial de pila, que aparece en el tope de la pila. p0 ∈ Ґ. Ejemplo: $, #, Z0
   * F:  conjunto de estados finales o estados de aceptación. F ⊆ Q.
-  * δ:  función de transición entre estados. Se define: δ: Q x Σ U {λ} x Ґ -> Q x Ґ*
+  * δ:  función de transición entre estados. Se define: δ: Q x Σ U {λ} x Ґ\* -> Q x Ґ\*  (para algunos autores siempre hay que sacar un solo símbolo de la pila)
 
 * Por cada estado, símbolo de entrada o palabra vacía (λ), y símbolo en el tope de la pila, determina la transición a otro estado y decide que se debe escribir en la pila.
 * La pila puede encontrarse o no inicializada con el símbolo inicial de pila (también llamado distinguido), es decir, cuando la pila está vacía se puede leer en su tope el valor de p0.
@@ -59,16 +53,14 @@
 
 * Entrada: 111000
 
-| Pila | Entrada |
-| -- | -- |
-| $ | 111000 |
-| $1 | 11000 |
-| $11 | 1000 |
-| $111 | 000 |
-| $11 | 00 |
-| $1 | 0 |
-| $ | |
-| | |
+| Falta leer | Leo | Pila |
+| -- | -- | -- |
+| 0011 |  | $ |
+| 011 | 0 | 0$ |
+| 11 | 0 | 00$ |
+| 1 | 1 | 0$ |
+| λ | 1 | $ |
+| λ | λ | $ |
 
 ## Tipos de transiciones
 
@@ -79,6 +71,15 @@
   * **Cuando no se lee ningún símbolo de la entrada**, si está en el estado q ∈ Q, hay un símbolo en el tope de la pila Z ∈ Ґ, y la función de transición para la terna, es:
     * δ(q, λ, Z) = {(q1, z1), (q2, z2), ... ,(qn, zn)}, (qi ∈ Q, zi ∈ Ґ*)
     * Entonces transita a uno de los estado qi, se saca de la pila el símbolo Z, se pone en el tope de la pila los símbolos que formen parte del zi correspondiente, y no se mueve la cabeza de lectura de la entrada.
+
+### Transiciones Especiales
+
+| Transición | Deescripción |
+| -- | -- |
+| δ(p,x,λ)=(q,z) | Transita sin extraer nada de la pila |
+| δ(p,λ,s)=(q,λ) | Transita sin avanzar en la cinta de entrada |
+| δ(p,λ,λ)=(q,λ) | Transita sin avanzar en la cinta de entrada y sin extraer nada de la pila |
+| δ(p,x,λ)=(q,λ) | AF |
 
 ## Descripción instantánea
 
@@ -132,11 +133,14 @@
 
 * Todo LIC no puede ser reconocido por un APD, por lo tanto, habrá lenguajes que son sólo reconocidos por APN.
 
-## Lenguaje aceptado por un AP
+## Lenguaje aceptado por un AP: L(M)
 
-* Hay dos formas equivalentes de caracterizar el lenguaje aceptado por un AP:
-  * Por vaciado de pila.
-  * Por estado final.
+* Es el lenguaje L aceptado por el AP M.
+* Es la colección de todas las palabras que acepta M.
+* Los lenguajes aceptados por los AP incluyen los LR.
+* Hay dos formas equivalentes de caracterizar el lenguaje aceptado por un AP (reconocimiento):
+  * Por vaciado de pila
+  * Por estado final, como en los AF
 
 ### Por vaciado de pila
 
@@ -188,7 +192,17 @@
     * δ(q1, λ, p0) = {q2, p0}
 * Ejemplo: S -> (S) | ()
 
-![VAP](img/fap.png)
+![FAP](img/fap.png)
+
+* Ejemplo:
+
+  ```grammar
+  S -> zMNz
+  M -> aMa | z
+  N -> bNb | z
+  ````
+
+![FAP](img/fap2.png)
 
 ## Lema del bombeo para LIC
 
@@ -253,6 +267,11 @@
 1. {wa^rb^rw^(-1) / w ∈ {a, b}*, r ≥ 1}.
 1. {(ab)^(2s+1) c^j (d)^n e^(t+2n) / s, t, n ≥ 0 y j > t} U {(ab)^(h+1) d^(2k) e^(k+i) /
 h, i ≥ 0; k ≥ 1}
+1. {a^(2k)b^(2n)c^kd^j / k, n, j ≥ 0}
+1. {x^ry^sz^t / t = r+s y r, s ≥ 1}
+1. {x^ry^sz^t / s = r+t y r, s ≥ 1}
+1. {x / x = a Y e donde Y = b^(3n)cd^(3n) , n ≥ 1}
+1. {1^n0^k / n ≥ 0 y k = 3n}
 
 ## Ejercicios diseño de AP que reconoce el LIC definido coloquialmente
 
@@ -266,6 +285,13 @@ h, i ≥ 0; k ≥ 1}
     * Por ejemplo, la siguiente palabra es válida: begin if () do () begin end od fi do () begin end od end
 
 ## Ejercicios diseño de AP (estado final y vaciado de pila) que reconoce el LIC generado por la GIC
+
+1. GIC = <ΣT = {a, b}, ΣN = {S, A}, S, P>
+
+    ```grammar
+    S -> λ | A
+    A -> aAb | bAa | ab | ba
+    ```
 
 1. GIC = <ΣT = {x, y}, ΣN = {S, A, B}, S, P>
 

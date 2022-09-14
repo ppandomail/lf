@@ -1,8 +1,8 @@
 # Gramática Independiente de Contexto (GIC)
 
 * También llamadas Gramáticas Libres de Contexto o Incontextuales.
-* Generan las palabras de los LIC.
-* Son de gran utilidad en la representación de la sintaxis de los Lenguajes de Programación.
+* Generan las palabras de los LIC (tipo de LF)
+* Son de gran utilidad en la representación de la sintaxis de los Lenguajes de Programación (expresiones aritméticas, sentencias de un lenguaje de programación, etc.)
 
   ```plain
   <sent_asig> ::= <var> := <expresion>
