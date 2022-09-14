@@ -17,7 +17,7 @@
 
 ## Máquina de Turing
 
-* Es un dispositivo abstracto, sin existencia real, que representa la configuración más sencilla de una computadora.
+* Es un dispositivo (máquina) abstracto, sin existencia real, que representa la configuración más sencilla de una computadora.
 * Turing empezó tratando de modelar a una computadora humana, es decir, a un humano tratando de resolver algorítmicamente un problema utilizando papel y lápiz:
   * Examinar un símbolo individual en el papel.
   * Borrar un símbolo o reemplazarlo por otro.
@@ -39,6 +39,20 @@
     C -> c
     ```
 
+* Ejemplo: L = {a^nb^nc^n / n ≥ 0}
+
+    ```grammar
+    S → aBTc | abc | λ
+    T → ABTc |ABc
+    BA → BX
+    BX → YX
+    YX → AX
+    AX → AB
+    aA → aa
+    aB → ab
+    bB → bb
+    ```
+
 ### Arquitectura
 
 * El modelo básico de una MT tiene:
@@ -57,7 +71,7 @@
   * Q: es el conjunto finito de estados.
   * q0 ∈ Q: es el estado inicial.
   * F incluido o igual Q: es el conjunto de los estados finales.
-  * δ: Q x Г -> Q x Г x {L, R, S}: es la función de transición, donde L es izquierda, R es derecha y S es parada (o no hay movimiento).
+  * δ: Q x Г -> Q x Г x {L, R, S}: es la función de transición, donde L (left) es izquierda, R (right) es derecha y S (stay) es parada (o no hay movimiento).
     * Sin embargo, δ puede estar indefinida para algunos argumentos, por ejemplo, no se permiten movimientos a izquierda de la celda de inicio de la cinta.
     * Ejemplo: δ(q0, X) = (q1, Y, R) se puede representar gráficamente de la siguiente manera:
 
@@ -183,6 +197,8 @@
 * Algunos de esos modelos alternativos son mucho más complicados aunque todos tienen la misma potencia computacional (o de cálculo).
 * Muchas de ellas dotan de mayor flexibilidad al diseño de una MT que resuelva un problema particular.
 * Variaciones:
+  * MT multipistas (cada celda de la cinta se divide en subceldas)
+  * MT multidimensionales (permite que la cinta tenga muchas dimensiones, δ: Q x Γ -> Q x Γ x {L, R, U (up), D (down), S})
   * MT multicinta
   * MTND
 
@@ -254,6 +270,7 @@
 1. Palabras del LR representado por la ER aba*
 1. Palabras de parejas de paréntesis.
 1. Palabras que contengan 1’s y/o 0’s pero no contengan 3 ceros seguidos.
+1. Palabras con un número par de x. Ejemplo xx, xxxx, ...
 1. Palabras de 1’s cuya longitud es una potencia de 2.
 1. Palabras con cantidad de aes igual a cantidad de bes.
 1. Palabras con cantidad de aes igual a cantidad de bes e igual a cantidad de ces.
