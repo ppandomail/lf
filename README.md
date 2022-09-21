@@ -1,8 +1,15 @@
 # Lenguajes Formales (UNO) / Lenguajes Formales y Autómatas (UNAHUR) / Teoría de la Computación (UADE)
 
-## Docente
+## Docentes
 
 * Titular: Mg. Ing. Pablo Pandolfo
+
+* UNO:
+  * Adjunta: Lic. Silvia Cuagliarelli
+  * Ayudante: Sr. Pablo Rechimon
+
+* UADE:
+  * Ayudante: Ing. Fernando Basteiro
 
 ## Objetivos
 
