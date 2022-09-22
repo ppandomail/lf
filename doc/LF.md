@@ -250,6 +250,12 @@
 
 ![Jerarquía de Chomsky](img/jerarquia.png)
 
+![Jerarquía de Chomsky](img/chomsky.jpg)
+
+## En resumen
+
+![Resumen LF](img/lf.jpg)
+
 ## Ejercicios Σ
 
 1. Escriba el Σ que se requiere para construir el conjunto de los números enteros con signo en base 10.

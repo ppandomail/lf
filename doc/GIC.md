@@ -25,6 +25,10 @@
   * P = {(S -> A), (A -> aAa), (A -> bAb), (A -> c)}
   * P = {(S -> ABC), (S -> AC), (S -> BC), (S -> C), (A -> 0A1), (A -> 01), (B -> 1B2), (B -> 12), (C -> 3C), (C -> 3)}
 
+## Ejemplo GIC
+
+![GIC colchita](img/gic.jpg)
+
 ## Eficiencia en el diseño de gramáticas
 
 * **Gramática limpia**: si no tiene reglas innecesarias y símbolos inaccesibles.

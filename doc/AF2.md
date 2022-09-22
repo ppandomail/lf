@@ -480,6 +480,8 @@
 * Este lema define una condición necesaria, pero no suficiente para que un lenguaje sea regular.
 * Existen versiones del lema de bombeo que proporcionan condiciones necesarias y suficientes para que un lenguaje sea regular. Uno de ellos es el primer teorema de Myhill-Nerode.
 
+![Lema del Bombeo](img/bombeo.jpg)
+
 * L = {ab^na / n > 0}
 
 ![Lema del Bombeo](img/lb1.png)

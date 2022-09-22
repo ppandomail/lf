@@ -146,6 +146,10 @@
   * Constantes reales: D+.D*
   * Palabras reservadas: if | else | while
 
+## Ejercicio Universidad de Princeton
+
+![Ejercicio ER](img/er.png)
+
 ## Ejercicios conceptuales
 
 1. Describa dos casos en los que la concatenación de dos ER si puede ser conmutativa.

@@ -6,6 +6,10 @@
 * Es un modelo formal matemático de un sistema que recibe una cadena constituida por símbolos de cierto alfabeto Σ y tiene capacidad de determinar si esa cadena pertenece al LR que el AF reconoce.
 * Es una máquina de estados finitos. Una máquina es una abstracción matemática que capturan solamente el aspecto referente a las secuencias de eventos (transiciones) que ocurren.
 
+![AF grande](img/afgrande1.png)
+
+![AF grande](img/afgrande2.png)
+
 ## Reconocimiento
 
 * RECONOCER un LR: aceptar cada cadena que es una palabra del LR y rechazar cada cadena que no pertenece al lenguaje.
@@ -246,6 +250,10 @@
 * δ(q, a) = δ1(q, a) si q ∈ Q1 y a ∈ Σ
 * δ(q, a) = δ2(q, a) si q ∈ Q2 y a ∈ Σ
 * δ(q, λ) = q2  ∀q ∈ F1
+
+## En resumen
+
+![resumen](img/af.jpeg)
 
 ## Ejercicios conceptuales
 

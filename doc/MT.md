@@ -15,6 +15,8 @@
 * Sin embargo, pese a la genialidad de las ideas que Turing manejaba en 1937, estas no eran suficientes para que se materializaran realmente en la construcción de una computadora.
 * Lamentablemente, hizo falta un conflicto bélico a gran escala, la Segunda Guerra Mundial, para que matemáticos e ingenieros aunaran esfuerzos para conseguir que se diseñara y construyera la computadora.
 
+![Pelicula Enigma](img/pelicula.jpg)
+
 ## Máquina de Turing
 
 * Es un dispositivo (máquina) abstracto, sin existencia real, que representa la configuración más sencilla de una computadora.
@@ -52,6 +54,8 @@
     aB → ab
     bB → bb
     ```
+
+![MT con Turing](img/MT-con-turing.png)
 
 ### Arquitectura
 

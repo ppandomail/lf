@@ -24,6 +24,8 @@
 * Por cada estado, símbolo de entrada o palabra vacía (λ), y símbolo en el tope de la pila, determina la transición a otro estado y decide que se debe escribir en la pila.
 * La pila puede encontrarse o no inicializada con el símbolo inicial de pila (también llamado distinguido), es decir, cuando la pila está vacía se puede leer en su tope el valor de p0.
 
+![AP](img/ap.png)
+
 ## Ejemplo AP
 
 * L = {1^n 0^n / n ≥ 1}
