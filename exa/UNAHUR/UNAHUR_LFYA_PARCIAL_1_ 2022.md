@@ -28,7 +28,7 @@
 
 ---
 
-1. [2 puntos] - Constrúyase un AFD M que acepta el L(N), a partir del AFN N = <{q0, q1}, {0, 1}, q0, {q1}, {δ(q0, 0)={q1, q1}, δ(q0, 1) = {q1}, δ(q1, 1) = {q0, q1}}>
+1. [2 puntos] - Constrúyase un AFD M que acepta el L(N), a partir del AFN N = <{q0, q1}, {0, 1}, q0, {q1}, {δ(q0, 0)={q0, q1}, δ(q0, 1) = {q1}, δ(q1, 1) = {q0, q1}}>
 1. [2 puntos] - Diseñese la ER del siguiente lenguaje "secuencias de cero o mas 1s o 01s o 001s, seguidas de menos de tres 0s"
 1. [2 puntos] - Constrúyase un AFD para L = {w / w contiene por lo menos tres 0s}
 1. [2 puntos] - Diseñese una GR para L = {w / w es cualquier palabra, excepto 01, 101, 0100}
