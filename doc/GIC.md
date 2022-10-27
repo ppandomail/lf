@@ -27,6 +27,38 @@
 
 ## Ejemplo GIC
 
+* Ejemplo 1: L = {a^n b^n / n ≥ 1}
+
+  ```plain
+  S -> aSb | ab
+  ```
+
+* Ejemplo 2: L = {a^n b^(2n+1) c^r / n ≥ 0, r ≥ 1}
+
+  ```plain
+  S -> bC | AC
+  A -> abbb | aAbb
+  C -> cC | c
+  ```
+
+* Ejemplo 3: L = {0^n 1^m / n > 0 ^ n > m}
+
+  ```plain
+  S -> 0 | 0S | 0S1
+  ````
+
+* Ejemplo 4: L = {xyx y^p z y^(2p+1) a^i b^k c^n / p, i, k ≥ 0 ^ n > i+k}
+
+```plain
+S -> xyxAB
+A -> yAyy | zy
+B -> aBc | C
+C -> bCc | D
+D -> cD | c
+```
+
+* Ejemplo 5: Colchita
+
 ![GIC colchita](img/gic.jpg)
 
 ## Eficiencia en el diseño de gramáticas
@@ -86,7 +118,7 @@
 
 ## Formas Normales
 
-* Son simplificaciones a las reglas de  producción de una gramática de tipo 2 (independientes de contexto).
+* Son simplificaciones a las reglas de producción de una gramática de tipo 2 (independientes de contexto).
 * Proveen una forma canónica en la cual representar una GIC.
 * Su utilización se traduce en compiladores más eficientes para diversos lenguajes de programación.
 * Tipos:
@@ -97,7 +129,16 @@
 ### Forma Normal de Chomsky (FNC o CNF)
 
 * En esta forma de representar las gramáticas, las producciones pueden tener las siguientes formas: P = {(S -> λ) | (A -> BC) | (A -> a) / A, B, C ∈ ΣN,  a ∈ ΣT }
-* Ejemplo G en FNC:
+
+* Ejemplo 1 de GIC en FNC:
+
+```plain
+S -> AB | b
+A -> a
+B -> SA
+```
+
+* Ejemplo 2 de GIC en FNC:
 
 ```plain
 A  -> CD | EB | λ
@@ -113,7 +154,7 @@ E  -> 1
 
   ```plain
   Mientras existen producciones cuyo lado derecho no respeta la FNC hacer:
-  1) Reemplazar cada producción A -> B / B -> v1| v2|…| vn por la producción A -> v1 | v2 | ... | vn 
+  1) Reemplazar cada producción A -> B / B -> v1 | v2 | ... | vn por la producción A -> v1 | v2 | ... | vn 
 
   A -> B 
   B -> a | b | c
@@ -186,7 +227,7 @@ C  -> 2
     b) Reemplazar cada a ∈ ΣT que no está en la parte izquierda de β por nuevos A’ ∈ ΣN (esto deja solo no terminales a derecha).
   ```
 
-* Ejemplo:
+* Ejemplo 1:
 
 ```plain
 S  -> AB
@@ -232,6 +273,25 @@ B -> c
 E -> b
 ```
 
+* Ejemplo 2:
+
+```plain
+S -> xyxAB
+A -> yAyy | zy
+B -> aBc | C
+C -> bCc | D
+D -> cD | c
+
+S -> xYXAB
+A -> yAYY | zY
+B -> aBE | bCE | cD | c
+C -> bCE | cD | c
+D -> cD | c
+Y -> y
+X -> x
+E -> c
+```
+
 * Ventaja: se conoce que cada palabra de longitud n es derivable en n pasos.
 
 ### Forma Normal de Backus-Naur (FNB o BNF)
@@ -257,7 +317,7 @@ E -> b
 
 ```plain
 <identificador> ::= <letra> | <identificador> <letra> | <identificador> <dígito>
-<letra> ::= a | b | c | ... | z | A | B | C | … | Z
+<letra> ::= a | b | c | ... | z | A | B | C | ... | Z
 <dígito> ::= 0 | 1 | 2 | ... | 9
 ```
 
@@ -327,7 +387,7 @@ E -> b
 
       1. Construya el árbol de derivación para generar la expresión 1 + 2 * (3 + 4) + 5.
       1. ¿Cuál es la menor expresión que se puede derivar desde la GIC? Escríbala y justifique su respuesta.
-      1. ¿Es ((2)) una expresión válida? Demuestre que sí o que no por derivación. 
+      1. ¿Es ((2)) una expresión válida? Demuestre que sí o que no por derivación.
       1. Intente derivar 1 + 2 + + 3.
 
 1. Dada la siguiente Gramática Formal:
@@ -407,7 +467,6 @@ E -> b
 
 1. {ww^(-1) / w,w^(-1) ∈ Σ*}  Σ = {a,b}
 1. {a^(2k)b^(2n)c^kd^j / k, n, j ≥ 0 } Ʃ = {a, b, c, d}
-
 
 ## Ejercicios diseño GIC que genera el LIC definido coloquialmente
 

@@ -68,6 +68,33 @@ Sino
             PRIM(a1...an) = PRIM(a1)
 ```
 
+### Algoritmo Conjunto de Siguientes
+
+```plain
+Sea A -> a1...an una producción
+Para obtener SIG(A), se inspecciona la GIC buscando todas las ocurrencias de A. 
+
+Si (A es el axioma) 
+    SIG(A) = {$}
+Sino 
+    SIG(A) = {}
+Para (Produccion p : producciones) se pueden dar estas situaciones
+    (...Ax...), donde x ∈ ΣT, entonces SIG(A) = SIG(A) U {x}
+    (...AB...), donde B ∈ ΣN, entonces SIG(A) = SIG(A) U (PRIM(B) – {λ})
+    (T -> ...A), donde A es el último símbolo del lado derecho en cierta producción o (T -> ...AB) en que λ ∈ PRIM(B), entonces SIG(A) = SIG(A) U SIG(T)
+```
+
+### Algoritmo Conjunto de Predicciones
+
+```plain
+Si (λ ∈ PRIM(a1...an))
+    PRED(A -> a1...an) = (PRIM(a1...an) – {λ}) U SIG(A)
+Sino
+    PRED(A -> a1...an) = PRIM(a1...an)
+```
+
+### Ejemplos
+
 * Ejemplo 1:
 
   ```grammar
@@ -77,6 +104,12 @@ Sino
 
   * PRIM(S) = PRIM(S -> aST) U PRIM(S -> b) = {a, b}
   * PRIM(T) = PRIM(T -> cT) U PRIM(T -> d) = {c, d}
+  * SIG(S) = {$, c, d}
+  * SIG(T) = {$, c, d}
+  * PRED(S -> aST) = {a}
+  * PRED(S -> b) = {b}
+  * PRED(T -> cT) = {c}
+  * PRED(T -> d) = {d}
 
 * Ejemplo 2:
 
@@ -85,22 +118,81 @@ Sino
   ```
 
   * PRIM(S) = PRIM(S -> c(S,S)) U PRIM(S -> g(S)) U PRIM(S -> 1) U PRIM(S -> 2) = {c, g, 1, 2}
+  * SIG(S) = {$, ',', )}
+  * PRED(S -> c(S,S)) = {c}
+  * PRED(S -> g(S)) = {g}
+  * PRED(S -> 1) = {1}
+  * PRED(S -> 2) = {2}
 
 * Ejemplo 3:
 
   ```grammar
-  P -> HDB |Pf 
-  H -> i | λ
-  D -> v|λ
-  B -> s |Dfd | λ
+  S -> aSe | B
+  B -> bBe | C
+  C -> cCe | d
   ```
 
-  * PRIM(H) = {i, λ}
-  * PRIM(D) = {v, λ}
-  * PRIM(B) = {s, v, fd, λ}
-  * PRIM(P) = {i, s, v, fd, λ, f}
+  * PRIM(S) = {a, b, c, d}
+  * PRIM(B) = {b, c, d}
+  * PRIM(C) = {c, d}
+  * SIG(S) = {e, $}
+  * SIG(B) = {e, $}
+  * SIG(C) = {e, $}
+  * PRED(S -> aSe) = {a}
+  * PRED(S -> B) = {b, c, d}
+  * PRED(B -> bBe) = {b}
+  * PRED(B -> C) = {c, d}
+  * PRED(C -> cCe) = {c}
+  * PRED(D -> d) = {d}
 
 * Ejemplo 4:
+
+  ```grammar
+  S -> aSb | λ
+  ```
+
+  * PRIM(S) = {a, λ}
+  * SIG(S) = {$, b}
+  * PRED(S -> aSb) = {a}
+  * PRED(S -> λ) = {$, b}
+
+* Ejemplo 5:
+
+  ```grammar
+  S -> iSE | o
+  E -> eSfi | fi
+  ```
+
+  * PRIM(S) = {i, o}
+  * PRIM(E) = {e, f}
+  * SIG(S) = {$, e, f}
+  * SIG(E) = {$, e, f}
+  * PRED(S -> iSE) = {i}
+  * PRED(S -> o) = {o}
+  * PRED(E -> eSfi) = {e}
+  * PRED(E -> fi) = {f}
+
+* Ejemplo 6:
+
+  ```grammar
+  E -> TS
+  T -> + | -
+  S -> num | λ
+  ```
+
+  * PRIM(E) = {+, -}
+  * PRIM(T) = {+, -}
+  * PRIM(S) = {num, λ}
+  * SIG(E) = {$}
+  * SIG(T) = {num, $}
+  * SIG(S) = {$}
+  * PRED(E -> TS) = {+, -}
+  * PRED(T -> +) = {+}
+  * PRED(T -> -) = {-}
+  * PRED(S -> num) = {num}
+  * PRED(S -> λ) = {$}
+
+* Ejemplo 7:
 
   ```grammar
   A -> BCD 
@@ -109,38 +201,97 @@ Sino
   D -> i
   ```
 
-  * PRIM(D) = {i}
-  * PRIM(C) = {c, e, g, λ}
-  * PRIM(B) = {a, λ}
   * PRIM(A) = {a, c, e, g, i}
+  * PRIM(B) = {a, λ}
+  * PRIM(C) = {c, e, g, λ}
+  * PRIM(D) = {i}
+  * SIG(A) = {$, d}
+  * SIG(B) = {f, c, e, g, i}
+  * SIG(C) = {i, b}
+  * SIG(D) = {h, $, d}
+  * PRED(A -> BCD) = {a, c, e, g, i}
+  * PRED(B -> aCb) = {a}
+  * PRED(B -> λ) = {c, e, g, f, i}
+  * PRED(C -> cAd) = {c}
+  * PRED(C -> eBf) = {e}
+  * PRED(C -> gDh) = {g}
+  * PRED(C -> λ) = {i, b}
+  * PRED(D -> i) = {i}
 
-* Ejemplo 5:
+* Ejemplo 8:
 
   ```grammar
-  S  -> aSe | B
-  B  -> bBe | C
-  C -> cCe | d
+  S -> zMNz
+  M -> aMa|z
+  N -> bNb|z
   ```
 
-  * PRIM(S) = {a, b, c, d}
-  * PRIM(B) = {b, c, d}
-  * PRIM(C) = {c, d}
+  * PRIM(S) = {z}
+  * PRIM(M) = {a, z}
+  * PRIM(N) = {b, z}
+  * SIG(S) = {$}
+  * SIG(M) = {b, z, a}
+  * SIG(N) = {z, b}
+  * PRED(S -> zMNz) = {z}
+  * PRED(M -> aMa) = {a}
+  * PRED(M -> z) = {z}
+  * PRED(N -> bNb) = {b}
+  * PRED(N -> z) = {z}
 
-* Ejemplo 6:
+* Ejemplo 9:
 
   ```grammar
-  S -> ABe | C
-  A -> dB | aS | c
-  B -> AS | b
-  C -> b
+  S -> AB
+  A -> a | λ
+  B -> bCd
+  C -> c | λ
   ```
 
-  * PRIM(S) = {a, b, c, d}
-  * PRIM(A) = {a, c, d}
-  * PRIM(B) = {a, b, c, d}
-  * PRIM(C) = {b}
+  * PRIM(S) = {a, b}
+  * PRIM(A) = {a, λ}
+  * PRIM(B) = {b}
+  * PRIM(C) = {c, λ}
+  * SIG(S) = {$}
+  * SIG(A) = {b}
+  * SIG(B) = {$}
+  * SIG(C) = {d}
+  * PRED(S -> AB) = {a, b}
+  * PRED(A -> a) = {a}
+  * PRED(A -> λ) = {b}
+  * PRED(B -> bCd) = {b}
+  * PRED(C -> c) = {c}
+  * PRED(C -> λ) = {d}
 
-* Ejemplo 7:
+* Ejemplo 10:
+
+  ```grammar
+  terminales = {f, i, v, s, fd}
+
+  P -> HDB | Pf 
+  H -> i | λ
+  D -> v | λ
+  B -> s | Dfd | λ
+  ```
+
+  * PRIM(P) = {i, s, v, fd, λ, f}
+  * PRIM(H) = {i, λ}
+  * PRIM(D) = {v, λ}
+  * PRIM(B) = {s, v, fd, λ}
+  * SIG(P) = {$, f}
+  * SIG(H) = {s, v, fd, $, f}
+  * SIG(D) = {s, v, fd, $, f}
+  * SIG(B) = {$, f}
+  * PRED(P -> HDB) = {i, s, v, fd, $, f}
+  * PRED(P -> Pf) = {i, s, v, fd, f}
+  * PRED(H -> i) = {i}
+  * PRED(H -> λ) = {s, v, fd, $, f}
+  * PRED(D -> v) = {v}
+  * PRED(D -> λ) = {s, v, fd, $, f}
+  * PRED(B -> s) = {s}
+  * PRED(B -> Dfd) = {v, fd}
+  * PRED(B -> λ) = {$, f}
+
+* Ejemplo 11:
 
   ```grammar
   S  -> iCtP
@@ -159,79 +310,6 @@ Sino
   * PRIM(P) = {d}
   * PRIM(Q) = {d}
   * PRIM(R) = {d}
-
-### Algoritmo Conjunto de Siguientes
-
-```plain
-Sea A -> a1...an una producción
-Para obtener SIG(A), se inspecciona la GIC buscando todas las ocurrencias de A. 
-
-Si (A es el axioma) 
-    SIG(A) = {$}
-Sino 
-    SIG(A) = {}
-Para (Produccion p : producciones) se pueden dar estas situaciones
-    (...Ax...), donde x ∈ ΣT, entonces SIG(A) = SIG(A) U {x}
-    (...AB...), donde B ∈ ΣN, entonces SIG(A) = SIG(A) U (PRIM(B) – {λ})
-    (T -> ...A), donde A es el último símbolo del lado derecho en cierta producción o (T -> ...AB) en que λ ∈ PRIM(B), entonces SIG(A) = SIG(A) U SIG(T)
-```
-
-* Ejemplo 1:
-
-  ```grammar
-  S -> aST | b
-  T -> cT | d
-  ```
-
-  * SIG(S) = {$, c, d}
-  * SIG(T) = {$, c, d}
-
-* Ejemplo 2:
-
-  ```grammar
-  S -> c(S,S) | g(S) | 1 | 2
-  ```
-
-  * SIG(S) = {$, ',', )}
-
-* Ejemplo 3:
-
-  ```grammar
-  P -> HDB |Pf 
-  H -> i | λ
-  D -> v|λ
-  B -> s |Dfd | λ
-  ````
-
-  * SIG(P) = {$, f}
-  * SIG(H) = {s, v, fd, $, f}
-  * SIG(D) = {s, v, fd, $, f}
-  * SIG(B) = {$, f}
-
-* Ejemplo 4:
-
-  ```grammar
-  S  -> aSe | B
-  B  -> bBe | C
-  C -> cCe | d
-  ```
-
-  * SIG(S) = {e, $}
-  * SIG(B) = {e}
-  * SIG(C) = {e}
-
-* Ejemplo 5:
-
-  ```grammar
-  S  -> iCtP
-  C -> CoD | D | (C)
-  D -> DaE | E
-  E -> l
-  P -> P+Q | Q
-  Q -> Q*R | R
-  R -> d
-  ```
-
   * SIG(S) = {$}
   * SIG(C) = {t, o, )}
   * SIG(D) = {t, a}
@@ -239,71 +317,10 @@ Para (Produccion p : producciones) se pueden dar estas situaciones
   * SIG(P) = {$, +}
   * SIG(Q) = {$, +, *}
   * SIG(R) = {$, +, *}
-
-* Ejemplo 6:
-
-  ```grammar
-  A -> BCD 
-  B -> aCb | λ
-  C -> cAd | eBf | gDh | λ
-  D -> i
-  ```
-
-  * SIG(A) = {$, d}
-  * SIG(B) = {f, c, e, g, i}
-  * SIG(C) = {i, b}
-  * SIG(D) = {h, $, d}
-
-### Algoritmo Conjunto de Predicciones
-
-```plain
-Si (λ ∈ PRIM(a1...an))
-    PRED(A -> a1...an) = (PRIM(a1...an) – {λ}) U SIG(A)
-Sino
-    PRED(A -> a1...an) = PRIM(a1...an)
-```
-
-* Ejemplo 1:
-
-    ```grammar
-    S -> aST | b
-    T -> cT | d
-    ```
-
-  * PRED(S -> aST) = {a}
-  * PRED(S -> b) = {b}
-  * PRED(T -> cT) = {c}
-  * PRED(T -> d) = {d}
-
-* Ejemplo 2:
-
-    ```grammar
-    S -> c(S,S) | g(S) | 1 | 2
-    ```
-
-  * PRED(S -> c(S,S)) = {c}
-  * PRED(S -> g(S)) = {g}
-  * PRED(S -> 1) = {1}
-  * PRED(S -> 2) = {2}
-
-* Ejemplo 3:
-
-  ```grammar
-  P -> HDB |Pf 
-  H -> i | λ
-  D -> v|λ
-  B -> s |Dfd | λ
-  ```
-
-  * PRED(P -> HDB) = {i, s, v, fd, $, f}
-  * PRED(P -> Pf) = {i, s, v, fd, f}
-  * PRED(H -> i) = {i}
-  * PRED(H -> λ) = {s, v, fd, $, f}
-  * PRED(D -> v) = {v}
-  * PRED(D -> λ) = {s, v, fd, $, f}
-  * PRED(B -> s) = {s}
-  * PRED(B -> Dfd) = {v, fd}
-  * PRED(B -> λ) = {$, f}
+  * PRED(S -> iCtP) = {i}
+  * PRED(C -> CoD) = {(, l}
+  * PRED(C -> D) = {l}
+  * PRED(C -> (C)) = {()}
 
 ### Gramáticas LL(1)
 
@@ -330,65 +347,6 @@ Sino
   ```
 
   * PRED(S -> c(S,S)) ∩ PRED(S -> g(S)) ∩ PRED(S -> 1) ∩ PRED(S -> 2) = {c} ∩ {g} ∩ {1} ∩ {2} = {}
-
-* Ejemplo 3:
-
-  ```grammar
-  E -> TS
-  T -> +|-
-  S -> num|λ
-  ```
-
-  * PRED(E -> TS) = {+, -}
-  * PRED(T -> +) = {+}
-  * PRED(T -> -) = {-}
-  * PRED(S -> num) = {num}
-  * PRED(S -> λ) = {$}
-
-* Ejemplo 4:
-
-  ```grammar
-  S -> AB
-  A -> a | λ
-  B -> bCd
-  C -> c | λ
-  ```
-
-  * PRED(S -> AB) = {a, b}
-  * PRED(A -> a) = {a}
-  * PRED(A -> λ) = {b}
-  * PRED(B -> bCd) = {b}
-  * PRED(C -> c) = {c}
-  * PRED(C -> λ) = {d}
-
-* Ejemplo 5:
-
-  ```grammar
-  S -> aSe | B
-  B -> bBe | C
-  C -> cCe | d
-  ```
-
-  * PRED(S -> aSe) = {a}
-  * PRED(S -> B) = {b, c, d}
-  * PRED(B -> bBe) = {b}
-  * PRED(B -> C) = {c, d}
-  * PRED(C -> cCe) = {c}
-  * PRED(C -> e) = {d}
-
-* Ejemplo 6:
-
-  ```grammar
-  S  -> zMNz
-  M-> aMa|z
-  N -> bNb|z
-  ```
-
-  * PRED(S -> zMNz) = {z}
-  * PRED(M -> aMa) = {a}
-  * PRED(M -> z) = {z}
-  * PRED(N -> bNb) = {b}
-  * PRED(N -> z) = {z}
 
 ### Conversión a GIC LL(1)
 

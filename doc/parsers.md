@@ -82,7 +82,7 @@ T -> cT | d
 
 * Tipos de análisis:
   * **Análisis Sintáctico Ascendente con retroceso** -> ASA con retroceso
-  * **Análisis Sintáctico Ascendente Predictivo** -> ASAP SLR
+  * **Análisis Sintáctico Ascendente Predictivo** -> ASAP SLR, LR(1), LR(k), LALR
 
 ## Ejercicios
 

@@ -265,7 +265,8 @@
 
 ## Algoritmo de Clases: AFD -> AFDmin
 
-* Es el AFD con la mínima cantidad de estados que reconoce a un LR. Por ello, se lo considera como el único autómata óptimo asociado a la aceptación de determinado LR.
+* Es el AFD con la mínima cantidad de estados que reconoce a un LR.
+* Por ello, se lo considera como el único autómata óptimo asociado a la aceptación de determinado LR.
 * Tiene la TT más reducida, con menor cantidad de filas, hecho que beneficia la implementación del AFD mediante un programa de computadora.
 * Ejemplo:
 
@@ -373,6 +374,74 @@
 
 ![AFmin](img/afmin.png)
 
+* Ejemplo 1:
+
+  * AFD de a*b
+
+    | Q | a | b |
+    | -- | -- | -- |
+    | >q0 | q1 | q2 |
+    | q1 | q1 | q2 |
+    | *q2 | qe | qe |
+    | qe | qe | qe |
+
+  * AFDmin
+
+    | Q | a | b |
+    | -- | -- | -- |
+    | >q0 | q0 | q2 |
+    | *q2 | - | - |
+
+* Ejemplo 2:
+
+  * AFD de (a|b)*
+
+    | Q | a | b |
+    | -- | -- | -- |
+    | >*q0 | q1 | q1 |
+    | *q1 | q1 | q1 |
+
+  * AFDmin
+
+    | Q | a | b |
+    | -- | -- | -- |
+    | >*q0 | q0 | q0 |
+
+* Ejemplo 3:
+
+  * AFD de b\*a(b\*ab\*a)\*b\*
+
+    | Q | a | b |
+    | -- | -- | -- |
+    | >q0 | q1 | q0 |
+    | *q1 | q2 | q1 |
+    | q2 | q1 | q2 |
+
+  * AFDmin
+
+    | Q | a | b |
+    | -- | -- | -- |
+    | >q0 | q1 | q0 |
+    | *q1 | q0 | q1 |
+
+* Ejemplo 4:
+
+  * AFD de (a|b)((a|b)(a|b))*
+
+    | Q | a | b |
+    | -- | -- | -- |
+    | >q0 | q1 | q1 |
+    | *q1 | q2 | q2 |
+    | q2 | q3 | q3 |
+    | *q3 | q2 | q2 |
+
+* AFDmin
+
+    | Q | a | b |
+    | -- | -- | -- |
+    | >q0 | q1 | q1 |
+    | *q1 | q0 | q0 |
+
 ### AFD -> GR
 
 * AFD = \<Q, Σ, q0, F, δ\>
@@ -381,7 +450,18 @@
   * Si δ(q, a) = p y p ∈ F, entonces q -> a, (a ∈ Σ, q ∈ Q, p ∈ Q)
   * Si q0 ∈ F, entonces q -> λ.
 
-* Ejemplo 1:
+* Ejemplo 1: a*b
+
+  | Q | a | b |
+  | -- | -- | -- |
+  | >q0 | q0 | q1 |
+  | *q1 | - | - |
+
+      ```plain
+      q0 -> aq0 | b
+      ```
+
+* Ejemplo 2:
 
   | Q | 0 | 1 |
   | -- | -- | -- |
@@ -399,7 +479,7 @@
       q4 -> 0q0 | 1q4 | 1
       ```
 
-* Ejemplo 2:
+* Ejemplo 3:
 
   | Q | 0 | 1 |
   | -- | -- | -- |
@@ -415,7 +495,7 @@
       C -> 0C | 1C | 0 | 1
       ```
 
-* Ejemplo 3:
+* Ejemplo 4: λ | a\* | (a\*ba\*b)\*ccc(ccc)\*
 
   | Q | a | b | c |
   | -- | -- | -- | -- |
@@ -437,17 +517,21 @@
 
 * GR = \<ΣT, ΣN, S, P\>
 * Se construye el autómata equivalente AF = \<Q, Σ, q0, F, δ\>. Donde:
-  * Q = ΣN U {F},  Σ = ΣT , q0 = S
+  * Q = ΣN U {F}
+  * Σ = ΣT
+  * q0 = S
   * F = {F}, donde F ∉ ΣN  es un nuevo símbolo no terminal.
   * δ:
     * Si A -> vB entonces δ(A, v) = B
     * Si A -> v entonces δ(A, v) = F
     * Si S -> λ entonces δ(S, λ) = F
 
+* Ejemplo: (ab)*
+
           ```plain
-          A -> 0B | λ
-          B -> 1C | 1
-          C -> 0B
+          A -> aB | λ
+          B -> bC | b
+          C -> aB
           ```
 
           | Q | a | b | λ |
@@ -457,7 +541,7 @@
           | C | B | - | - |
           | *F | - | - | - |
 
-    * AF <{A, B, C, F}, {0, 1}, A, {F}, {δ(A, 0) = B, δ(A, λ) = F, δ(B, 1) = C, δ(B, 1) = F, δ(C, 0) = B}>
+  * AF <{A, B, C, F}, {a, b}, A, {F}, {δ(A, a) = B, δ(A, λ) = F, δ(B, b) = {C, F}, δ(C, a) = B}>
 
 ## Lema del bombeo para LR
 
