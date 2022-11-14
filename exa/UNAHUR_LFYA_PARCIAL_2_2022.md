@@ -31,7 +31,7 @@
 1. [2 puntos] - Diséñese una GIC para L = {a^n b^m / n <> m; n,m > 0}
 
     * **Solución:**
-    * Podemos desglosar el LIC de la siguiente manera: L = {a^n b^m / n > m; n, m > 0} U{a^n b^m / n < m; n, m > 0}
+    * Podemos desglosar el LIC de la siguiente manera: L = {a^n b^m / n > m; n, m > 0} U {a^n b^m / n < m; n, m > 0}
     * S -> A | B
     * A -> aAb | aA | aab
     * B -> aBb | Bb | abb
