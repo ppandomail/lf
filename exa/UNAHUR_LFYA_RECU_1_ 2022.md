@@ -30,8 +30,25 @@
 
 1. [3.3 puntos] - Constrúyase un AFD que acepta todas y solo las palabras que tienen número par de letras y también un número par de dígitos. Considerar el alfabeto formado por los símbolos L y D.
 
+    * **Solución:**
+
+    | Q | L | D |
+    | -- | -- | -- |
+    | >*q0 | q1 | q2 |
+    | q1 | q0 | q3 |
+    | q2 | q3 | q0 |
+    | q3 | q2 | q1 |
+
 1. [3.3 puntos] - Diseñese la ER del siguiente lenguaje L = {wc^(3n) / w ∈ {unahur, uba} ^ la cantidad de unahur es par ^ n >= 0}
 
+    * **Solución:**
+    * (uba\*unahuruba\*unahuruba\*)\*(ccc)\*
+
 1. [3.3 puntos] - Diseñese una GR para el lenguaje formado por palabras en {a, b} de longitud par terminadas en a.
+
+    * **Solución:**
+    * S -> aA | bA
+    * A -> aB | bB | a
+    * B -> aA | bA
 
 ---

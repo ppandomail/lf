@@ -30,8 +30,30 @@
 
 1. [3.3 puntos] - Diséñese una GIC para L = {x^n y^m z^n / n > 0 ^ m es par} U {a^n b^m a^m b^n / n, m >= 0}
 
+    * **Solución:**
+    * S -> A | C | λ
+    * A -> xAz | xBz | xz
+    * B -> yyB | yy
+    * C -> aCb | ab | D
+    * D -> bDa | ba
+
 1. [3.3 puntos] - Hágase el reconocimiento formal de la cadena unahurubaubaunahur, sobre un AP por vaciado de pila, mostrando en cada paso cómo queda la pila. L = {ww^R / w ∈ {unahur, uba}*}
 
+    * **Solución:**
+    * S -> unahurSA | ubaSB | λ
+    * A -> unahur
+    * B -> uba
+
 1. [3.3 puntos] - Diséñese una MT unicinta que reconozca el siguiente lenguaje L = {w / w ∈ {x, y}* ^ |w|x = |w|y}
+
+    * **Solución:**
+
+    | Q | x | y | X | Y | B |
+    | -- | -- | -- | -- | -- | -- |
+    | q0 | q2XR| q1XR | | q0YR | q4BS |
+    | q1 | q3YL | q1yR | | q1YR | |
+    | q2 | q2xR| q3YL | | q2YR | |
+    | q3 | q3xL | q3yL | q0XR | q3YL | |
+    | *q4 | | | | | |
 
 ---
