@@ -2,7 +2,7 @@
 
 ## Docentes
 
-* Titular: Mg. Ing. Pablo Pandolfo
+* Asociado: Mg. Ing. Pablo Pandolfo
 
 * UNO:
   * Adjunta: Lic. Silvia Cuagliarelli
