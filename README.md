@@ -118,7 +118,11 @@
 
 **NOTA:** La nota del recuperatorio reemplaza al parcial.
 
-## Condiciones para aprobar UADE
+## Cronograma UADE
+
+* **En construcción**
+
+## Criterios de evaluación UADE
 
 * **Regularidad**
   * Dos parciales, con nota >= 4
