@@ -61,11 +61,11 @@
 1. Lenguajes Incontextuales
     1. [GIC](doc/GIC.md)
     1. [AP](doc/AP.md)
-    1. [LL/LR (solo UADE y UNO)](doc/parsers.md)
+    1. [LL/LR (sólo UADE y UNO -con retroceso-)](doc/parsers.md)
         1. [LL](doc/ASD.md)
         1. [LR](doc/ASA.md)
 1. [Máquina de Turing](doc/MT.md)
-1. Computabilidad y Complejidad computacional (solo UADE):
+1. Computabilidad y Complejidad computacional (sólo UADE):
     1. [Computabilidad](doc/computabilidad.md)
     1. [Complejidad](doc/complejidad.md)
 1. [Otros autómatas (sólo UADE)](doc/otros.md)
@@ -77,10 +77,57 @@
 * [Teoría de autómatas y lenguajes formales (Kelley)](biblio/)
 * [Apuntes (Pablo Pandolfo)](doc/)
 
-## Condiciones para aprobar
+## Cronograma UNO
 
-* 75% asistencia
-* Aprobar 2 parciales con nota >= 4
-* TP (solo UNO)
-* Final con nota >= 4
-* Promoción UADE con ambos parciales nota >= 7
+| **Clase** | **Fecha** | **Tema** |
+| -- | -- | -- |
+| 01 | 14/03 | Presentación. Lenguajes Formales. Clasificación de Chomsky. P1 |
+| 02 | 21/03 | Lenguajes Regulares. GR (P2). ER (P3) |
+| 03 | 28/03 | AF (P4) |
+| 04 | 04/04 | Algoritmos. L Pumping LR (P5) |
+| 05 | 11/04 | Repaso P1, P2, P3, P4. Ej. Tipo Parcial |
+| 06 | 18/04 | **1er. Parcial** |
+| 07 | 25/04 | Lenguajes Independientes del Contexto: GIC, FNC, FNG, FNB (P6) |
+| 08 | 02/05 | AP. L Pumping LIC (P7) |
+| 09 | 09/05 | Parser LL y LR con retroceso (P8). **Enunciado del TP** |
+| 10 | 16/05 | Práctica GIC, AP, LL, LR |
+| 11 | 23/05 | MT (P9) |
+| 12 | 30/05 | Práctica MT. **Entrega TP** |
+| 13 | 06/06 | Repaso P6, P7, P8 P9. Ej. Tipo Parcial |
+| 14 | 13/06 | **2do. Parcial** |
+| 15 | 20/06 | **FERIADO** |
+| 16 | 27/06 | **Recuperatorios. Entrega TP**. Cierre de Notas |
+
+## Criterios de evaluación UNO
+
+* **Regularidad**
+  * Dos parciales, con nota >= 4 y nota <= 6
+  * 80% asistencia
+  * Resolución TP Obligatorio
+  * Dos recuperatorios, con nota >= 4 y nota <= 6
+
+* **Final (Alumnos Regulares)**
+  * Final, con nota >= 4 oral y/o escrito
+
+* **Promoción**
+  * Dos parciales, con nota >= 7
+  * 80% asistencia
+  * Resolución TP Obligatorio
+  * Dos recuperatorios, con nota >= 7
+  * Nota final: promedio de las notas de los parciales o recuperatorios con nota >= 7
+
+**NOTA:** La nota del recuperatorio reemplaza al parcial.
+
+## Condiciones para aprobar UADE
+
+* **Regularidad**
+  * Dos parciales, con nota >= 4
+  * 75% asistencia
+  * Dos recuperatorios, con nota >= 4
+
+* **Final (Alumnos Regulares)**
+  * Final, con nota >= 4 oral y/o escrito
+
+* **Promoción**
+  * Dos parciales, con nota >= 7
+  * 75% asistencia
