@@ -120,7 +120,25 @@
 
 ## Cronograma UADE
 
-* **En construcción**
+| **Clase** | **Fecha** | **Tema** |
+| -- | -- | -- |
+| 01 | 15/03 | Presentación. Lenguajes Formales |
+| 02 | 22/03 | Lenguajes Regulares. GR |
+| 03 | 29/03 | Lenguajes Regulares. ER |
+| 04 | 05/04 | Lenguajes Regulares. AF |
+| 05 | 12/04 | Lenguajes Regulares. Algoritmos AF |
+| 06 | 19/04 | Lenguajes Regulares. Algoritmos AF. Lema del Bombeo. Repaso General |
+| 07 | 26/04 | **Primer Parcial** |
+| 08 | 03/05 | Revisión Primer Parcial. Lenguajes Incontextuales. GIC |
+| 09 | 10/05 | Lenguajes Incontextuales. AP |
+| 10 | 17/05 | Lenguajes Incontextuales. Parsers LL y LR |
+| 11 | 24/05 | Lenguajes Incontextuales. LL(1) |
+| 12 | 31/05 | MT unicinta y multicinta |
+| 13 | 07/06 | Teoría de la Computabilidad |
+| 14 | 14/06 | Teoría de la Complejidad Computacional |
+| 15 | 21/06 | **Segundo Parcial** |
+| 16 | 28/06 | Revisión Segundo Parcial. Otras máquinas: Mealy, Moore y Redes de Petri |
+| 17 | 05/07 | **Recuperatorio y Final Adelantado** |
 
 ## Criterios de evaluación UADE
 
