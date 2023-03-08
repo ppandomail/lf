@@ -1,8 +1,8 @@
-# Lenguajes Formales (UNO) / Lenguajes Formales y Autómatas (UNAHUR) / Teoría de la Computación (UADE)
+# Lenguajes Formales (UNO) / Lenguajes Formales y Autómatas (UNAHUR) / Teoría de la Computación (UADE) / Autómatas y Lenguajes Formales (UB)
 
 ## Docentes
 
-* Asociado: Mg. Ing. Pablo Pandolfo
+* Titular: Mg. Ing. Pablo Pandolfo
 
 * UNO:
   * Adjunta: Lic. Silvia Cuagliarelli
@@ -13,10 +13,7 @@
 
 ## Objetivos
 
-* Conocer los fundamentos teóricos:
-  * conceptos matemáticos formales fundamentales de la computación
-  * uso de modelos para solucionar problemas
-* que subyacen los procesos de computación.
+* Conocer los fundamentos teóricos: conceptos matemáticos formales fundamentales de la computación y el uso de modelos para solucionar problemas que subyacen los procesos de computación.
 
 ## Distintos nombres
 
@@ -52,22 +49,22 @@
 
 ## Programa
 
-1. [Introducción](doc/LF.md)
+1. [Introducción a los Lenguajes Formales](doc/LF.md)
 1. Lenguajes Regulares:
     1. [GR](doc/GR.md)
     1. [ER](doc/ER.md)
     1. [AF](doc/AF.md)
     1. [Alg AF](doc/AF2.md)
-1. Lenguajes Incontextuales
+1. Lenguajes Incontextuales:
     1. [GIC](doc/GIC.md)
     1. [AP](doc/AP.md)
     1. [LL/LR (sólo UADE y UNO -con retroceso-)](doc/parsers.md)
         1. [LL](doc/ASD.md)
         1. [LR](doc/ASA.md)
 1. [Máquina de Turing](doc/MT.md)
-1. Computabilidad y Complejidad computacional (sólo UADE):
-    1. [Computabilidad](doc/computabilidad.md)
-    1. [Complejidad](doc/complejidad.md)
+1. Teoría de la Computabilidad y Complejidad Computacional (sólo UADE):
+    1. [Teoría de la Computabilidad](doc/computabilidad.md)
+    1. [Teoría de la Complejidad Computacional](doc/complejidad.md)
 1. [Otros autómatas (sólo UADE)](doc/otros.md)
 
 ## Bibliografía
@@ -87,7 +84,7 @@
 | 04 | 04/04 | Algoritmos. L Pumping LR (P5) |
 | 05 | 11/04 | Repaso P1, P2, P3, P4. Ej. Tipo Parcial |
 | 06 | 18/04 | **1er. Parcial** |
-| 07 | 25/04 | Lenguajes Independientes del Contexto: GIC, FNC, FNG, FNB (P6) |
+| 07 | 25/04 | Lenguajes Incontextuales: GIC, FNC, FNG, FNB (P6) |
 | 08 | 02/05 | AP. L Pumping LIC (P7) |
 | 09 | 09/05 | Parser LL y LR con retroceso (P8). **Enunciado del TP** |
 | 10 | 16/05 | Práctica GIC, AP, LL, LR |
