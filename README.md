@@ -9,7 +9,7 @@
   * Ayudante: Sr. Pablo Rechimon
 
 * UADE:
-  * Ayudante: Ing. Fernando Basteiro
+  * JTP: Ing. Fernando Basteiro
 
 ## Objetivos
 
@@ -142,7 +142,7 @@
 * **Regularidad**
   * Dos parciales, con nota >= 4
   * 75% asistencia
-  * Dos recuperatorios, con nota >= 4
+  * Un recuperatorio (uno de los dos parciales), con nota >= 4
 
 * **Final (Alumnos Regulares)**
   * Final, con nota >= 4 oral y/o escrito
