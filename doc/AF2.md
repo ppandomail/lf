@@ -276,7 +276,10 @@
   | q1 | q3 | q4 |
   | q2 | q7 | q8 |
   | q3 | q3 | q2 |
-  
+  | *q4 | q5 | q8 |
+  | *q5 | q6 | q8 |
+  | *q6 | q6 | q8 |
+  | *q7 | q8 | q8 |
   | q8 | q8 | q8 |
 
 1. Particionar el conjunto de estados del AFD completo en dos clases: la clase de los estados no finales (C0) y la clase de los estados finales (C1)
