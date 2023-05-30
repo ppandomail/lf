@@ -251,6 +251,26 @@
 * δ(q, a) = δ2(q, a) si q ∈ Q2 y a ∈ Σ
 * δ(q, λ) = q2  ∀q ∈ F1
 
+## Programa Prolog que implementa un AF
+
+```prolog
+% Ejemplo: ER a* (b | bb)
+final(q1).
+final(q2).
+transicion(q0, a, q0).
+transicion(q0, b, q1).
+transicion(q1, b, q2).
+automata([], E) :- final(E).
+automata([H|Q], E) :- transicion(E, H, E2), automata(Q, E2), !.
+automata(L) :- automata(L, q0).
+
+% ?- automata([b, b, b]).
+% false
+
+% ?- automata([a, a, b, b]).
+% true
+```
+
 ## En resumen
 
 ![resumen](img/af.jpeg)

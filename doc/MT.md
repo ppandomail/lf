@@ -267,6 +267,50 @@
 * Las MTD son un caso particular de las MTND.
 * Por tanto, no se gana ninguna potencia adicional a causa del no determinismo.
 
+## Programa Prolog que implementa una MT
+
+```prolog
+turing(Tape0, Tape) :-
+     perform(q0, [], Ls, Tape0, Rs),
+     reverse(Ls, Ls1),
+     append(Ls1, Rs, Tape).
+
+perform(qf, Ls, Ls, Rs, Rs) :- !.
+perform(Q0, Ls0, Ls, Rs0, Rs) :-
+     symbol(Rs0, Sym, RsRest),
+     once(rule(Q0, Sym, Q1, NewSym, Action)),
+     action(Action, Ls0, Ls1, [NewSym|RsRest], Rs1),
+     perform(Q1, Ls1, Ls, Rs1, Rs).
+
+symbol([], b, []).
+symbol([Sym|Rs], Sym, Rs).
+
+action(left, Ls0, Ls, Rs0, Rs) :- left(Ls0, Ls, Rs0, Rs).
+action(stay, Ls, Ls, Rs, Rs).
+action(right, Ls0, [Sym|Ls0], [Sym|Rs], Rs).
+
+left([], [], Rs0, [b|Rs0]).
+left([L|Ls], Ls, Rs, [L|Rs]).
+
+% Se declaran las reglas para el lenguaje {a^n b^n / n > 0 } 
+rule(q0, 0, q1, x, right).
+rule(q1, 0, q1, 0, right).
+rule(q1, y, q1, y, right).
+rule(q1, 1, q2, y, left).
+rule(q2, 0, q2, 0, left).
+rule(q2, y, q2, y, left).
+rule(q2, x, q0, x, right).
+rule(q0, y, q3, y, right).
+rule(q3, y, q3, y, right).
+rule(q3, b, qf, b, stay).
+
+% ?- turing([0, 0, 1, 1, 1, 0], Ts).
+% false
+
+% ?- turing([0, 0, 1, 1], Ts).
+% [x, x, y, y, b]
+```
+
 ## Ejercicios diseño de MT-aceptable
 
 1. Palabras con cantidad par de 0’s.
