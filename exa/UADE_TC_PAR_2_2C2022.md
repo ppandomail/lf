@@ -23,7 +23,7 @@
 * Sea cuidadoso con las faltas de ortografía y sus oraciones.
 * No desarrollar el examen en lápiz.
 * Aprobación del examen: Con nota mayor o igual a 4 (cuatro)
-* Condiciones de aprobación: 60% coorecto.
+* Condiciones de aprobación: 60% correcto.
 * Duración de examen: 3 horas.
 
 ---

@@ -822,3 +822,12 @@ Sino
     L -> S ; L | λ
     S -> a + a
     ```
+
+1. Constrúyase si es posible la matriz predictiva para la siguiente GIC
+
+    ```grammar
+    S -> (A)
+    A -> CB
+    B -> ;A | λ
+    C -> x | S
+    ```
