@@ -114,6 +114,8 @@
 | O(n^2) cuadrático | Camino más corto entre dos nodos de un grafo |
 | O(2^n) exp| Resolver Torres de Hanoi |
 
+![Complejidad Algorítmica](img/complejidad.JPG)
+
 ## Complejidad de los problemas
 
 * Una función de cadena f es Turing computable si existe una MT M que, dada una cadena de entrada w, calcula u siempre que f(w) = u.
