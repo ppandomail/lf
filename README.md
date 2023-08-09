@@ -119,23 +119,25 @@
 
 | **Clase** | **Fecha** | **Tema** |
 | -- | -- | -- |
-| 01 | 15/03 | Presentación. Lenguajes Formales |
-| 02 | 22/03 | Lenguajes Regulares. GR |
-| 03 | 29/03 | Lenguajes Regulares. ER |
-| 04 | 05/04 | Lenguajes Regulares. AF |
-| 05 | 12/04 | Lenguajes Regulares. Algoritmos AF |
-| 06 | 19/04 | Lenguajes Regulares. Algoritmos AF. Lema del Bombeo. Repaso General |
-| 07 | 26/04 | **Primer Parcial** |
-| 08 | 03/05 | Revisión Primer Parcial. Lenguajes Incontextuales. GIC |
-| 09 | 10/05 | Lenguajes Incontextuales. AP |
-| 10 | 17/05 | Lenguajes Incontextuales. Parsers LL y LR |
-| 11 | 24/05 | Lenguajes Incontextuales. LL(1) |
-| 12 | 31/05 | MT unicinta y multicinta |
-| 13 | 07/06 | Teoría de la Computabilidad |
-| 14 | 14/06 | Teoría de la Complejidad Computacional |
-| 15 | 21/06 | **Segundo Parcial** |
-| 16 | 28/06 | Revisión Segundo Parcial. Otras máquinas: Mealy, Moore y Redes de Petri |
-| 17 | 05/07 | **Recuperatorio y Final Adelantado** |
+| 01 | 09/08 | Presentación. Lenguajes Formales |
+| 02 | 16/08 | Lenguajes Regulares. GR |
+| 03 | 23/08 | Lenguajes Regulares. ER |
+| 04 | 30/08 | Lenguajes Regulares. AF |
+| 05 | 06/09 | Lenguajes Regulares. Algoritmos AF |
+| 06 | 13/09 | Lenguajes Regulares. Algoritmos AF |
+| 07 | 20/09 | Lenguajes Regulares. Lema del Bombeo. Repaso General |
+| 08 | 27/09 | **Primer Parcial** |
+| 09 | 04/10 | Revisión Primer Parcial. Lenguajes Incontextuales. GIC |
+| 10 | 11/10 | Lenguajes Incontextuales. AP |
+| 11 | 18/10 | Lenguajes Incontextuales. Parsers LL y LR |
+| 12 | 25/10 | Lenguajes Incontextuales. LL(1) |
+| 13 | 01/11 | MT unicinta |
+| 14 | 08/11 | MT multicintas |
+| 15 | 15/11 | Teoría de la Computabilidad y Complejidad Computacional |
+| 16 | 22/11 | **Segundo Parcial** |
+| 17 | 29/11 | Revisión Segundo Parcial. Otras máquinas: Mealy, Moore y Redes de Petri |
+| 18 | 06/12 | **Recuperatorio y Final Adelantado** |
+| FINAL | 13/12 | **Final Regular** |
 
 ## Criterios de evaluación UADE
 
