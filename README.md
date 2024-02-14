@@ -1,4 +1,4 @@
-# Lenguajes Formales (UNO) / Lenguajes Formales y Autómatas (UNAHUR) / Teoría de la Computación (UADE) / Autómatas y Lenguajes Formales (UB)
+# Lenguajes Formales (UNO) / Lenguajes Formales y Autómatas (UNAHUR) / Teoría de la Computación (UADE)
 
 ## Docentes
 
@@ -7,9 +7,6 @@
 * UNO:
   * Adjunta: Lic. Silvia Cuagliarelli
   * Ayudante: Sr. Pablo Rechimon
-
-* UADE:
-  * JTP: Ing. Fernando Basteiro
 
 ## Objetivos
 
