@@ -6,7 +6,7 @@
 
 * UNO:
   * Adjunta: Lic. Silvia Cuagliarelli
-  * Ayudante: Sr. Pablo Rechimon
+  * Ayudante: Anta. Pablo Rechimon
 
 ## Objetivos
 
@@ -27,7 +27,7 @@
 * Sistemas Operativos
 * Redes
 * ...
-* Teoría de la Computación (a partir de la decada de 1930)
+* Teoría de la Computación (a partir de la década de 1930)
   * Teoría de los Lenguajes Formales
   * Teoría de Autómatas
   * Teoría de la Computabilidad
@@ -62,14 +62,12 @@
 1. Teoría de la Computabilidad y Complejidad Computacional (sólo UADE):
     1. [Teoría de la Computabilidad](doc/computabilidad.md)
     1. [Teoría de la Complejidad Computacional](doc/complejidad.md)
-1. [Otros autómatas (sólo UADE)](doc/otros.md)
 
 ## Bibliografía
 
 * [Teoría de autómatas, lenguajes y computación (Hopcroft, Motwani y Ullman)](biblio/)
 * [Teoría de la computación, lenguajes formales, autómatas y complejidad (Glenn Brookshear)](biblio/)
 * [Teoría de autómatas y lenguajes formales (Kelley)](biblio/)
-* [Apuntes (Pablo Pandolfo)](doc/)
 
 ## Cronograma UNO
 
