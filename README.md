@@ -44,7 +44,7 @@
 * Buscadores textuales
 * Compiladores
 
-## Programa
+## Programa Lenguajes Formales
 
 1. [Introducción a los Lenguajes Formales](doc/LF.md)
 1. Lenguajes Regulares:
@@ -55,13 +55,15 @@
 1. Lenguajes Incontextuales:
     1. [GIC](doc/GIC.md)
     1. [AP](doc/AP.md)
-    1. [LL/LR (sólo UADE y UNO -con retroceso-)](doc/parsers.md)
+    1. [LL/LR (sólo UNO)](doc/parsers.md)
         1. [LL](doc/ASD.md)
         1. [LR](doc/ASA.md)
 1. [Máquina de Turing](doc/MT.md)
-1. Teoría de la Computabilidad y Complejidad Computacional (sólo UADE):
-    1. [Teoría de la Computabilidad](doc/computabilidad.md)
-    1. [Teoría de la Complejidad Computacional](doc/complejidad.md)
+
+## Programa Teoría de la Computación
+
+1. [Teoría de la Computabilidad](doc/computabilidad.md)
+1. [Teoría de la Complejidad Computacional](doc/complejidad.md)
 
 ## Bibliografía
 
