@@ -325,7 +325,7 @@ rule(q3, b, qf, b, stay).
 
 1. {wb / w ∈ {a, b}*}
 1. {yx^nzy / n ≥ 0}
-1. {ww / w ∈ a {a, b}+}
+1. {w#w / w ∈ a {a, b}+}
 1. {xww^(-1)y / x, y, w ∈ a {a, b}+ y |x| ≥ |y|}
 1. {ww donde w ∈ {a, b}*}
 1. {a^nb^kd^(2n)e^(n+1) / k, n ≥ 1} sobre Σ = {a, b, c, d, e}

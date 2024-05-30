@@ -2,6 +2,18 @@
 
 * Parte de la computación que analiza y determina los problemas que pueden resolverse por medio de un algoritmo o bien por una MT.
 
+## Introducción
+
+* ¿Se puede ordenar una lista con una computadora?
+* Problema:
+  * [4,2,3,1] -> [1,2,3,4]
+  * Entscheidungsproblem / Hilbert y Ackerman. El problema viene de Leibnitz. Construyó una máquina para hacer cálculos numéricos. Luego se preguntó si sería posible trabajar con cálculo simbólico.
+  * Dada una proposición en un sistema formal, ¿existe un algoritmo tal que pueda decidir si la proposición es cierta (y por tanto es un teorema del sistema) o por el contrario es falsa?
+  * 3 respuestas:
+    * Cálculo lambda, Church
+    * Funciones recursivas, Kleene
+    * Máquinas de Turing, Turing
+
 ## Función computable
 
 * Una **función f es computable**, si existe un algoritmo que puede ser descrito en un número finito de pasos o enunciados y con cuya ayuda se puede obtener efectivamente el valor de la función f(w) para todo posible argumento w.
@@ -114,10 +126,11 @@
 ## Tesis de Church - Turing
 
 * Alonzo Church formuló con Alan Turing lo que se ha bautizado como Tesis de Church - Turing.
-* La tesis establece que la clase de problemas que puede resolver una MTU, y por tanto una computadora, son los que su solución puede ser expresada por medio de un algoritmo (expresión de la época: "método efectivo de computación").
+* La tesis establece que la clase de problemas que puede resolver una MTU, y por tanto una computadora, son los que su solución puede ser expresada por medio de un algoritmo (expresión de la época: "método efectivo de computación / procedimiento efectivo de cómputo").
 * De estas consideraciones se concluye que una computadora es una MTU que procesa algoritmos. Cuando la solución a un problema es expresable por medio de un algoritmo.
 * Si una función f es computada por una MT T, entonces las quíntuplas que definen constituyen en sí un algoritmo, pues son una lista finita de instrucciones, codificadas en un lenguaje, y que pueden llevarse a cabo de manera mecánica.
 * Church enunció una tesis similar, pero utilizando otro formalismo: las funciones recursivas parciales o generales (clase de funciones de los números naturales en los números naturales f: N -> N que son "computables" en un sentido intuitivo). Ejemplo: función constante cero C(x)=0, función sucesor S(x) = x + 1, función proyección Πn,i (x1, ..., xn) = xi
+* No hay una demostración formal ya que no es hay una formulación matemática, se acepta. Conjetura
 
 ### Tesis de Turing
 
@@ -140,16 +153,128 @@
 * ¿Qué cosas las MT NO pueden hacer?
 * Se pueden categorizar a los problemas de acuerdo a la posibilidad de resolverlos en términos de MT.
 
-## Problemas de decisión (PD)
+## Problemas y lenguajes
+
+* Un problema se describe con un lenguaje => cuanto más formal el lenguaje, más precisa la formulación del problema.
+* Los problemas se clasifican en:
+  * Problemas de Decisión
+  * Problemas de Salida General
+* Los lenguajes formales se clasifican en:
+  * Lenguajes Recursivos
+  * Lenguajes Recursivos enumerables
+
+## Problemas de Decisión (PD)
 
 * Es aquel formulado por una pregunta (referida a alguna propiedad) que requiere una respuesta de tipo "sí/no"; es decir, cuando el resultado de la computación es sí o no (1 ó 0).
-* Esta clase de computabilidad se conoce como resolubilidad.
-* Ejemplo: El problema "dada una GIC G, ¿L(G) es vacío?". Hay un número infinito de casos, uno por cada GIC. Además, para cada caso, se puede determinar una respuesta afirmativa o negativa.
 
-### Tipos de problemas de decisión
+w ----> MT ----> si
+           ----> no
 
-* **Solubles (resolubles, decidibles, computables)**: si existe un algoritmo que es capaz de responder sí o no a cada uno de dichos casos. Existe una MT que **siempre para** al resolver el problema. Ejemplos: Dado un número natural, ¿es par?. Dada una GIC G, ¿L(G) es vacío?. Dada una GR G y una palabra w, ¿w ∈ L(G)?
-* **Insolubles (irresolubles, indecidibles, no computables)**: si no existe un algoritmo que es capaz de responder sí o no a cada uno de los dichos casos. **No existe una MT para resolver el problema**. Ejemplos Dada una GIC G, ¿G es ambigua?. Dada una MT M, ¿M se detendrá comenzando en el estado inicial con w en la cinta?
+* Ejemplo:
+  * Dado un número natural n, decidir si n es par o no
+  * Dada una cadena arbitraria w y un LR L, determinar si w pertenece o no a L.
+  * Dada una GIC G, ¿L(G) es vacío?. Hay un número infinito de casos, uno por cada GIC. Además, para cada caso, se puede determinar una respuesta afirmativa o negativa.
+
+### Tipos de Problemas de Decisión
+
+* **Decidibles**:
+  * Existe un ALGORITMO que para TODA INSTANCIA del problema devuelve la RESPUESTA CORRECTA (responder sí o no a cada caso).
+  * Existe una MT que **siempre para** al resolver el problema.
+* **Indecidibles**:
+  * Existe un PROCEDIMIENTO que sólo da RESPUESTA para ALGUNAS INSTANCIAS del problema.
+  * **No existe una MT para resolver el problema**.
+  * Ejemplos:
+    * Decidir si una cadena pertenece o no pertenece a un LRE
+    * Dada una GIC G, ¿G es ambigua?.
+    * Dada una MT M, ¿M se detendrá comenzando en el estado inicial con w en la cinta? (Problema del Halting)
+    * Problema de Correspondencia Post
+
+## Problemas de Salida General (PSG)
+
+* Las posibles respuestas son respuestas "generales".
+
+w ----> MT ----> rta 1
+           ----> rta 2
+           ----> ...
+           ----> rta n
+
+* Ejemplos:
+  * Calcular el promedio de una lista de números.
+  * Dterminar el camino entre dos ciudades.
+
+### Tipos de Problemas de Salida General
+
+* **Solubles**: existe un ALGORITMO que para TODA INSTANCIA del problema devuelve la RESPUESTA CORRECTA (responder sí o no a cada caso). Existe una MT que **siempre para** al resolver el problema.
+* **Insolubles**: existe un PROCEDIMIENTO que sólo da RESPUESTA para ALGUNAS INSTANCIAS del problema. **No existe una MT para resolver el problema**.
+
+## Teoría de Clasificación de Problemas
+
+* La Teoría de Clasificación de Problemas se basa en el estudio de los Problemas de Decisión.
+* Todo problema de salida general con un cierto grado de dificultad, se puede transformar en un problema de decisión del mismo grado de dificultad (Reducción de problemas)
+* Ejemplos
+  * Determinar un camino entre dos ciudades => Problema salida general
+  * ¿Hay un camino entre dos ciudades? => Problema de decisión
+
+## Lenguajes Formales
+
+* Los Lenguajes formales se clasifican en:
+
+* **Lenguajes Recursivos**:
+  * Existe un algoritmo que determina para cualquier cadena si pertenece o no pertenece al lenguaje.
+  * Todo Lenguaje Recursivo es también Recursivo Enumerable.
+  * Se pueden asociar algoritmos: LR, LIC, LDC
+
+* **Lenguajes Recursivos Enumerables**:
+  * Existe un procedimiento que sólo acepta las cadenas que pertenecen al lenguaje pero para las que no pertenecen no siempre da respuesta.
+  * Se pueden asociar procedimientos: LRE
+
+| PD | PSG | Lenguajes que los describen | |
+| -- | -- | -- | -- |
+| Decidibles | Solubles | Recursivos (LR, LIC, LDC) | Algoritmos |
+| Indecidibles | Insolubles | Recursivo Enumerables (LRE) | Procedimientos |
+
+## Problema de Correspondencia Post
+
+* Dadas dos listas A y B de cadenas sobre un alfabeto, determinar si existe una concatenación de cadenas A y B de la forma: xi1 xi2 ... xim = wi1 wi2 ... wim donde xij ∈ A y wij ∈ B (si elijo el indice i para x elijo el mismo indice i para w)
+
+* Ejemplo 1:
+
+| Lista A | Lista B |
+| -- | -- |
+| Xi | Wi |
+| 1 | 111 |
+| 10111 | 10 |
+| 10 | 0|
+
+* x2 x1 x1 x3 = w2 w1 w1 w3
+  * x2 x1 x1 x3 = 10111 1 1 10
+  * w2 w1 w1 w3 = 10 111 111 0
+* Para esta entrada, si tomamos los indices 2, 1, 1, 3 se obtiene una solución del problema
+
+* Ejemplo 2:
+
+| Lista A | Lista B |
+| -- | -- |
+| Xi | Wi |
+| 10 | 101 |
+| 011 | 11 |
+| 101 | 011 |
+
+* x1 x3 x1 <> w1 w3 w1
+  * x1 x3 x1 = 10 101 10
+  * w1 w3 w1 = 101 011 101
+
+* x1 x3 x3 x3 <> w1 w3 w3 w3
+  * x1 x3 x3 x3 = 10 101 101 101
+  * w1 w3 w3 w3 = 101 011 011 011
+
+* Se debe comenzar con la primera cadena de ambas listas
+* Después la única elección posible es la tercera cadena, pero siempre queda un "uno de mas" en la cadena armada a partir de la lista B.
+* Se puede seguir infinitamente buscando si existe solución
+
+* Para algunas instancias de las listas A y B se puede obtener una respuesta
+* Para otras instancias de las listas A y B algunas veces no se puede dar respuesta
+* Problema de Correspondencia Post es indecidible
 
 ## Problema de la parada
 

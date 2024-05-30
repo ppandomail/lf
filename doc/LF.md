@@ -25,6 +25,7 @@
 ## Palabra (w)
 
 * Es una secuencia finita de símbolos tomados de cierto alfabeto y colocados uno a continuación de otro.
+* Una secuencia es una colección enumerada de objetos en la cual las repeticiones están permitidas y el orden importa.
 * Se construye CONCATENANDO (yuxtaponiendo) símbolos de un alfabeto dado.
 * w = s1s2 ...sn        donde si ∈ Σ, para 1 ≤ i ≤ n
 * Ejemplos:
