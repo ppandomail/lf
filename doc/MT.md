@@ -1,5 +1,27 @@
 # Máquina de Turing (MT)
 
+## Extendiendo el poder de cómputo
+
+* Lenguajes:
+  * Lenguajes Regulares => AF
+  * Lenguajes Incontextuales => AP
+  * Lenguajes Contextuales => ALA
+
+* ALA: Autómata Linealmente Acotado, no nos detendremos a estudiar este autómata (pues puede verse como restricción de otro formalismo que es más potente aún...)
+* Dado que hemos incrementado nuestro poder de cómputo lentamente, y entendemos mejor el concepto de autómata, ahora seremos más ambiciosos..
+* **¿Existe un autómata que reconozca cualquier lenguaje de los que vimos anteriormente?**
+* Hasta el momento, cada autómata que estudiábamos no era capaz de reconocer algún lenguaje
+  * Los **AF** se veían limitados ante L = {a^n b^n / n>0}
+  * Los **AP** se veían limitados ante L = {a^n b^n c^n / n>0}
+* Vale la pena preguntarse si se repetirá esta situación una vez más...
+* **¿Existe algún lenguaje que este nuevo autómata no pueda reconocer?** De ser así, **¿puede ser reemplazado por otro más poderoso?**
+
+* **¿Qué significaría definir una clase de autómatas que reconozca los lenguajes anteriores...**
+  * ... y que **exista** un lenguaje **L** que no pueda reconocer...
+  * ... y que **no** pueda construirse otro autómata más potente?...
+
+* **Pregunta central en computación: ¿qué máquinas puedo construir? ¿qué límites tendrán?**
+
 ## Alan Mathison Turing
 
 * (Inglés, 23/06/1912-1954)

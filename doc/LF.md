@@ -1,10 +1,48 @@
 # Introducción a los Lenguajes Formales
 
+## Reflexión acerca del Universo conocido
+
+1. Se estima que existen 2 millones de millones de galaxias
+1. Nuestra galaxia, la Via Láctea: Entre 150.000.000.000 y 250.000.000.000 de estrellas
+1. El Sol: nuestra estrella
+
+* El Universo ha llamado la atención a la humanidad desde hace miles de años
+* **Los seres humanos fuimos desarrollando diferentes teorías para explicar cómo funcionaba el Universo y qué abarcaba exactamente**
+* Muchas teorías fueron consolidándose en los últimos siglos (ejemplo: los planetas giran alrededor del Sol o más genéricamente, en torno a una estrella)
+• En todos los casos, quienes estudiaban el Universo buscaban **REGULARIDADES (patrones)** que ayudaran a entender qué sucedía
+* Las regularidades permiten construir **MODELOS y TEORÍAS** sobre el mundo
+* Ejemplo: Comportamiento del Cometa Halley
+* Ejemplo: Predicción de los eclipses
+
+## Las teorías pueden refinarse
+
+| Años | | Teoría |
+| -- | -- | -- |
+| 100 - 170 | Ptolomeo | Modelo de universo geocéntrico (la Tierra era el centro) |
+| 1430 - 1543 | Nicolás Copérnico | Tierra y los demás planetas giraban alrededor del Sol en sistema heliocéntrico |
+| 1571 - 1630 | Johanes Kepler | Cada planeta se mueve a lo largo de una elipse, con el Sol situado en un foco de esta |
+| 1642 - 1727 | Isaac Newton | Principio de acción-reacción: la fuerza neta aplicada sobre un objeto es directamente proporcional a la aceleración que este adquiere en su trayectoria |
+| 1879 - 1955 | Albert Einstein | Teoría de la relatividad: tanto el espacio como el tiempo en el que transcurren los eventos es relativo a la velocidad del observador |
+
+## Qué ha sucedido recientemente
+
+* Los últimos 100 años vieron el surgimiento y consolidación de diferentes teorías formales (entre ellas la lógica y la teoría de los lenguajes formales)
+* Estas teorías cobraron especial importancia en los últimos años por el impacto social de INTELIGENCIA ARTIFICIAL y la incidencia de la computación en todos los niveles humanos
+* Para poder entender cómo desarrollar adecuadamente algoritmos complejos y saber cuáles son las limitaciones de las computadoras es necesario entender ciertos conceptos fundacionales
+
 ## Lenguaje Formal (L)
 
 * Los LENGUAJES FORMALES están formados por PALABRAS, las palabras son CADENAS y las cadenas están constituidas por SÍMBOLOS de un ALFABETO.
+* Son lenguajes definidos sobre un alfabeto Σ
 
 ## Símbolo (ó)
+
+* Los seres humanos han representado el conocimiento usando símbolos desde hace varios milenios
+* El lenguaje escrito es un ejemplo de dicho uso
+* Recientemente en la historia surgió la pregunta ¿Qué cosas pueden representarse con símbolos? ¿Cuál es el límite?
+* Esta pregunta cobró especial protagonismo con el surgimiento de las computadoras electrónicas, que afectaron el comportamiento de toda la civilización humana en las últimas décadas (1980 – actualidad)
+* Esto se intensificó con el advenimiento de Internet ...
+* Para entender los límites y capacidades de usar símbolos, necesitamos teorías formales que nos ayuden a entenderlos
 
 * Es el elemento constructivo básico; es la entidad fundamental, indivisible (atómica), a partir de la cual se forman los alfabetos.
 * Ejemplos:
@@ -35,8 +73,9 @@
 
 ### Longitud de una palabra
 
-* Es la cantidad o número de símbolos del alfabeto que la componen.
-* Se representa |w|.
+* Es la cantidad o número de símbolos del alfabeto que la componen
+* Se representa |w| = k o long(w) = k
+* Formalmente long: Σ* -> Nat U {0}
 * Ejemplos:
   * |palabra| = 7; en el caso de que los símbolos sean los del alfabeto español.
   * |palabra| = 3; en el caso que Σ = {na, pa, la, bra}
@@ -60,6 +99,7 @@
 ### Concatenación de dos palabras
 
 * La operación de CONCATENACIÓN aplicada a palabras (w1w2) produce una nueva palabra formada por los símbolos de la primera palabra seguidos inmediatamente por los símbolos de la segunda palabra.
+* Formalmente .: Σ\* x Σ\* -> Σ\*
 * NO ES CONMUTATIVA, es decir,  w1 w2 ≠ w2 w1
 * La palabra vacía (λ) es la IDENTIDAD para la concatenación.
 * Esto es: para cualquier palabra w, w λ = λ w = w
@@ -207,7 +247,7 @@
   * L1 L2 = {w1w2 ∈ Σ* : w1 ∈ L1 ^ w2 ∈ L2} =  {nana, napa, lana, nananana, napanana, ...}
 
 * Potencia:
-  * L^n = {{λ} si n=0 v LL^(n-1) si n>0}
+  * L^n = { {λ} si n=0 v LL^(n-1) si n>0}
   * L^2 = {00, 01, 10, 11}
 
 * Reflexión:
@@ -246,8 +286,9 @@
 
 ## Jerarquía de Chomsky
 
-* En 1956 y 1959, el lingüista norteamericano Noam Chomsky publicó dos trabajos sobre los Lenguajes Naturales que, aplicados al área de los Lenguajes Formales, produjeron lo que se conoce como Jerarquía de Chomsky.
-* Establece una clasificación (según las restricciones que se imponen a sus producciones) de cuatro tipos de gramáticas formales que, a su vez, generan cuatro tipos diferentes de lenguajes formales.
+* En 1956 y 1959, el lingüista norteamericano Noam Chomsky publicó dos trabajos sobre los Lenguajes Naturales que, aplicados al área de los Lenguajes Formales, produjeron lo que se conoce como Jerarquía de Chomsky
+* Su idea: modelar los lenguajes naturales, con miras a la traducción automática
+* Establece una clasificación (según las restricciones que se imponen a sus producciones) de cuatro tipos de gramáticas formales que, a su vez, generan cuatro tipos diferentes de lenguajes formales
 
 ![Jerarquía de Chomsky](img/jerarquia.png)
 

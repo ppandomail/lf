@@ -108,8 +108,10 @@
 * Ejemplos:
   * P = {(S -> C0), (S -> D1), (C -> 1), (D -> C1)}
   * P = {(A -> 1B), (B -> 1), (B -> 0C), (B -> 1C), (C -> 1)}
-  * P = {(S -> λ}, (S -> aA), (A -> aB), (A -> a), (B -> aA)}
+  * P = {(S -> λ), (S -> aA), (A -> aB), (A -> a), (B -> aA)}
   * P = {(S -> λ), (S -> Ca), (C -> Da), (C -> a), (D -> Ca)}
+  * P = {(S -> a), (S -> aB), (B -> bB), (B -> aB), (B -> a), (B -> b)} para el L = {aw / w ∈ {a, b}*}
+  * P = {(S -> aS), (S -> bS), (S -> bT'), (T' -> bT''), (T'' -> b), (T'' -> bT'''), (T''' -> aT'''), (T''' -> bT'''), (T''' -> a), (T''' -> b)} para el L = {wbbbw / w ∈ {a, b}*}
 
 ## Gramáticas Quasi Regulares (GQR)
 

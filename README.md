@@ -62,8 +62,9 @@
 
 ## Programa Teoría de la Computación
 
-1. [Teoría de la Computabilidad](doc/computabilidad.md)
-1. [Teoría de la Complejidad Computacional](doc/complejidad.md)
+1. [Teoría de la Computabilidad](doc/COMPU.md)
+1. [Teoría de la Complejidad Computacional](doc/COMPLE.md)
+1. [Conclusiones](doc/CONCLUSIONES.md)
 
 ## Bibliografía
 

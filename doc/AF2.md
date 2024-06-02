@@ -583,6 +583,8 @@
   * Búsqueda de la existencia de una cadena en un archivo.
   * Reconocimiento de cadenas de entrada que satisfaga ciertos criterios (por ejemplo, si se espera un entero sin signo como dato de entrada y el usuario confunde uno de los dígitos con un carácter no numérico, se puede dar todo tipo de resultados impropios, desde una terminación anormal hasta el cálculo de resultados incorrectos).
   * Solución: especificar la información correcta por medio de ER: Ejemplo: L(L|D|_)*(L|D)
+  * Compiladores de Lenguajes de Programación
+  * Procesamiento de lenguaje natural
 
 ## Ejercicios Algoritmo de Thompson: ER -> AFNλ
 
