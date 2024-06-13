@@ -120,11 +120,11 @@ R.Unido) y Alonzo Church (EEUU)
 
   * Г = {a, *}
   * Σ = {a}
-  * b = {*}
-  * Q = {q0, q1}
+  * b = *
+  * Q = {q0, q1, q2}
   * q0 = q0
-  * F = {q1}
-  * δ = {δ(q0,a) = (q1,a,R), δ(q1,a) = (q0,a,R)}
+  * F = {q2}
+  * δ = {δ(q0,a) = (q1,a,R), δ(q1,a) = (q0,a,R), δ(q0,\*) = (q2,\*,S)}
 
 ### Ejemplo de MT computando una función
 
