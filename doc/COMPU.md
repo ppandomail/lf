@@ -155,24 +155,26 @@ Internet algún simulador y probarlo; la notación puede variar ligeramente en c
   * σ: es el símbolo de la cinta sobre el que se encuentra la cabeza de entrada/salida
   * w2: palabra que hay a continuación de la cabeza de entrada/salida
 
+* Ejemplo: (\*\*q0aaaa\*\*)
+
 ### Movimiento en MT
 
 * Se denota el paso de una configuración a otra por medio del símbolo: ├
-* Ejemplo: p11 ├ 0q1 ...
+* Ejemplo: (\*\*q0aaaa\*\*) ├ (\*\*aq1aaa\*\*)
 
 ### Computación
 
 * Es la secuencia de todos los movimientos que conducen a una configuración de parada.
-* Ejemplo: p11 ├* 1111s□
+* Ejemplo: (\*\*q0aaaa\*\*) ├* (\*\*aaaaq2\*\*)
 
-### En honor a Kurt Gödel y Alan Turin
+### En honor a Kurt Gödel y Alan Turing
 
 * **Premio Gödel**: se concede anualmente; son 5000 us$ para el mejor trabajo en teoría de ciencias de la computación.
 * **Premio Turing**: se lo conoce como el Premio Nobel de la Computación. El sponsor es Intel Corporation, y el premio son 100.000 us$.
 
 ## MT para computar funciones
 
-* Una función **fT: Σ* -> Σ* es computable por una MT**, si existe una  MT T = < Г, Σ, b, Q, q0, F, δ> tal que q0w ├\* fT(w)r□ , donde w, f ∈ Σ\*, r ∈ F
+* Una función **fT: Σ\* -> Σ\* es computable por una MT**, si existe una  MT T = < Г, Σ, b, Q, q0, F, δ> tal que q0w ├\* fT(w)r□ , donde w, f ∈ Σ\*, r ∈ F
 * **En otras palabras:** comenzando en estado inicial q0, con una
 representación de w ∈ Σ\* en la cinta, T se detiene con un estado final fT(w) ∈ Σ\* en la cinta
 * \*\*\*w\*\*\* => \*\*\*fT(w)\*\*\*
@@ -187,10 +189,10 @@ representación de w ∈ Σ\* en la cinta, T se detiene con un estado final fT(w
 * Las MT también pueden ser utilizadas para calcular resultados u operaciones a partir de la entrada.
 * En vez de considerar como "basura" el contenido de la cinta al llegar a halt, se podría ver como un resultado calculado.
 * Una MT M calcula una función f : Σ\* -> Σ\* si para toda entrada w, M calcula un resultado u tal que f(w) = u. Si hay una MT que calcula una función f, se dice que f es Turing-calculable.
-* Las MT se pueden utilizar para cálculos de funciones, en donde los números de esas funciones se encuentran codificados en unarios (unos).  Ejemplo 5 = 11111.
-* Si la función tiene más de un valor de entrada, los mismos se encuentran en la cinta de entrada separados por el símbolo cero (0).
+* Las MT se pueden utilizar para cálculos de funciones, en donde los números de esas funciones se encuentran codificados en unarios (unos).  Ejemplo 5 = 111111
+* Si la función tiene más de un valor de entrada, los mismos se encuentran en la cinta de entrada separados por el símbolo distinto de 1, por ejemplo: #
 * El resultado de la función también se encuentra codificado en unario.
-* En el caso de querer presentar el valor cero "0", el mismo se muestra a través de una cinta vacía, es decir, con todas sus posiciones con valor "B"; ó con solo el valor "0".
+* En el caso de querer representar el valor cero "0", el mismo se muestra a través del símbolo 1.
 
 ### Ejemplo MT que calcula el complemento a 1 de un número binario
 
