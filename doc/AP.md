@@ -108,7 +108,7 @@
 ## Tipos de AP
 
 * **Autómatas de Pila Deterministas (APD)**:
-  * Un AP es determinista cuando si hay alguna transición λ dados un estado q y un símbolo de la pila $, entonces no puede haber transición con ningún símbolo de entrada, y, además, no puede haber más de una transición dados el mismo estado q y símbolo de la pila en el tope de la pila $, incluyendo las transiciones λ.
+  * Un AP es determinista cuando si hay alguna transición λ dados un estado q y un símbolo de la pila \$, entonces no puede haber transición con ningún símbolo de entrada, y, además, no puede haber más de una transición dados el mismo estado q y símbolo de la pila en el tope de la pila $, incluyendo las transiciones λ.
 
 * **Autómatas de Pila No Deterministas (APN)**:
   * Ejemplo:
