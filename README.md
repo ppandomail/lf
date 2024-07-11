@@ -64,6 +64,7 @@
 
 1. [Teoría de la Computabilidad](doc/COMPU.md)
 1. [Teoría de la Complejidad Computacional](doc/COMPLE.md)
+1. [Proyectos](proy/)
 1. [Conclusiones](doc/CONCLUSIONES.md)
 
 ## Bibliografía
