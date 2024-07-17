@@ -6,7 +6,7 @@
 
 * UNO:
   * Adjunta: Lic. Silvia Cuagliarelli
-  * Ayudante: Anta. Pablo Rechimon
+  * Ayudante: Lic. Pablo Rechimon
 
 ## Objetivos
 
