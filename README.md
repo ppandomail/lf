@@ -1,4 +1,4 @@
-# Lenguajes Formales (UNO) / Lenguajes Formales y Autómatas (UNAHUR) / Teoría de la Computación (UADE) / Teoría de la Computación (UNAHUR)
+# Lenguajes Formales (UNO) / Lenguajes Formales y Autómatas (UNAHUR) / Teoría de la Computación (UNAHUR)
 
 ## Docentes
 
@@ -10,7 +10,7 @@
 
 ## Objetivos
 
-* Conocer los fundamentos teóricos: conceptos matemáticos formales fundamentales de la computación y el uso de modelos para solucionar problemas que subyacen los procesos de computación.
+* Conocer los fundamentos teóricos: conceptos matemáticos formales fundamentales de la computación y el uso de modelos para solucionar problemas que subyacen los procesos de computación
 
 ## Distintos nombres
 
@@ -46,33 +46,35 @@
 
 ## Programa Lenguajes Formales
 
-1. [Introducción a los Lenguajes Formales](doc/LF.md)
-1. Lenguajes Regulares:
-    1. [GR](doc/GR.md)
-    1. [ER](doc/ER.md)
-    1. [AF](doc/AF.md)
-    1. [Alg AF](doc/AF2.md)
-1. Lenguajes Incontextuales:
-    1. [GIC](doc/GIC.md)
-    1. [AP](doc/AP.md)
-    1. [LL/LR (sólo UNO)](doc/parsers.md)
-        1. [LL](doc/ASD.md)
-        1. [LR](doc/ASA.md)
-1. [Máquina de Turing](doc/MT.md)
+| Unidad | | Universidad | Contenido | Ejercicios |
+| -- | -- | -- | -- | -- |
+| 01 | Intro | TODOS | [Introducción](doc/01-intro-contenido.md) | [Ejercicios](doc/01-intro-ejercicios.md)   |
+| 02 | LR    | TODOS | [GR](doc/02-gr-contenido.md)              | [Ejercicios](doc/02-gr-ejercicios.md)      |
+| 02 | LR    | TODOS | [ER](doc/03-er-contenido.md)              | [Ejercicios](doc/03-er-ejercicios.md)      |
+| 02 | LR    | TODOS | [AF](doc/04-af-contenido.md)              | [Ejercicios](doc/04-af-ejercicios.md)      |
+| 02 | LR    | TODOS | [Alg AF](doc/05-algaf-contenido.md)       | [Ejercicios](doc/05-algaf-ejercicios.md)   |
+| 03 | LIC   | TODOS | [GIC](doc/06-gic-contenido.md)            | [Ejercicios](doc/06-gic-ejercicios.md)     |
+| 03 | LIC   | TODOS | [AP](doc/07-ap-contenido.md)              | [Ejercicios](doc/07-ap-ejercicios.md)      |
+| 03 | LIC   | UNO   | [Parsers](doc/08-parsers-contenido.md)    | [Ejercicios](doc/08-parsers-ejercicios.md) |
+| 03 | LIC   | UNO   | [LL](doc/09-asd-contenido.md)             | [Ejercicios](doc/09-asd-ejercicios.md)     |
+| 03 | LIC   | UNO   | [LR](doc/10-asa-contenido.md)             | [Ejercicios](doc/10-asa-ejercicios.md)     |
+| 04 | LIC   | TODOS | [MT](doc/11-mt-contenido.md)              | [Ejercicios](doc/11-mt-ejercicios.md)      |
 
 ## Programa Teoría de la Computación
 
-1. [Teoría de la Computabilidad](doc/COMPU.md)
-1. [Teoría de la Complejidad Computacional](doc/COMPLE.md)
-1. [Proyectos](proy/)
-1. [Maquinaria computacional e Inteligencia (Alan Turing)](biblio/Maquinaria%20computacional%20e%20inteligencia%20(Turing).pdf)
-1. [Conclusiones](doc/CONCLUSIONES.md)
+| Unidad | | Universidad | Contenido | Ejercicios |
+| -- | -- | -- | -- | -- |
+| 01 | TC   | UNAHUR | [Teoría de la Computabilidad](doc/12-comput-contenido.md)            | [Ejercicios](doc/12-comput-ejercicios.md) |
+| 02 | TCC  | UNAHUR | [Teoría de la Complejidad Computacional](doc/13-comple-contenido.md) | [Ejercicios](doc/13-comple-ejercicios.md) |
+| 03 | MAQ  | UNAHUR | [Maquinaria computacional e Inteligencia](doc/14-maquinaria-computacional.pdf) ||
+| 04 | PROY | UNAHUR | [Proyectos](proy/) ||
+| 05 | FIN  | UNAHUR | [Conclusiones](doc/15-conclusiones.md) ||
 
 ## Bibliografía
 
 * [Teoría de autómatas, lenguajes y computación (Hopcroft, Motwani y Ullman)](biblio/)
-* [Teoría de la computación, lenguajes formales, autómatas y complejidad (Glenn Brookshear)](biblio/)
-* [Teoría de autómatas y lenguajes formales (Kelley)](biblio/)
+* [Autómatas y Lenguajes (Brena)](biblio/)
+* [Computabilidad, complejidad computacional y verificación de programas (Rosenfeld)](biblio/)
 
 ## Cronograma UNO
 
@@ -113,41 +115,4 @@
   * Dos recuperatorios, con nota >= 7
   * Nota final: promedio de las notas de los parciales o recuperatorios con nota >= 7
 
-**NOTA:** La nota del recuperatorio reemplaza al parcial.
-
-## Cronograma UADE
-
-| **Clase** | **Fecha** | **Tema** |
-| -- | -- | -- |
-| 01 | 09/08 | Presentación. LF |
-| 02 | 16/08 | LR - GR |
-| 03 | 23/08 | LR - ER |
-| 04 | 30/08 | LR - AF |
-| 05 | 06/09 | LR - Alg AF |
-| 06 | 13/09 | LR - Alg AF. Bombeo. Repaso General |
-| 07 | 20/09 | **Primer Parcial** |
-| 08 | 27/09 | Revisión Parcial. LIC - GIC |
-| 09 | 04/10 | LIC - AP |
-| 10 | 11/10 | LIC - Parsers LL y LR |
-| 11 | 18/10 | LIC - GIC LL(1) |
-| 12 | 25/10 | MT unicinta |
-| 13 | 01/11 | MT multicintas |
-| 14 | 08/11 | Teoría de la Computabilidad y Complejidad Computacional |
-| 15 | 15/11 | **Segundo Parcial** |
-| 16 | 22/11 | Revisión Parcial. Otras máquinas |
-| 17 | 29/11 | **Recuperatorio y Final Adelantado** |
-| FINAL | 13/12 | **Final Regular** |
-
-## Criterios de evaluación UADE
-
-* **Regularidad**
-  * Dos parciales, con nota >= 4
-  * 75% asistencia
-  * Un recuperatorio (uno de los dos parciales), con nota >= 4
-
-* **Final (Alumnos Regulares)**
-  * Final, con nota >= 4 oral y/o escrito
-
-* **Promoción**
-  * Dos parciales, con nota >= 7
-  * 75% asistencia
+**NOTA:** La nota del recuperatorio reemplaza al parcial

@@ -173,7 +173,7 @@ Proc select(T[1..n])          costo veces
 * Sea M una MT de k cintas. Se supone que M realiza como máximo T(n) movimientos sobre toda cadena de longitud n y para una función T: N -> N
 * Entonces se dice que M tiene complejidad temporal T(n) o que es un MT con cota temporal T(n)
 * Además se dice que L(M) es un lenguaje temporalmente acotado por T(n) o con complejidad temporal T(n)
-* Es el número de pasos que se ejecutan durante los cálculos.
+* Es el número de pasos que se ejecutan durante los cálculos
 
 | Configuración Inicial | Complejidad Temporal |
 | -- | -- |
@@ -218,38 +218,38 @@ Proc select(T[1..n])          costo veces
 
 ## Clases de Problemas
 
-* Entre los problemas decidibles, el hecho de saber si una MT se parará en un tiempo finito no resulta práctico, si dicho tiempo es excesivo.
+* Entre los problemas decidibles, el hecho de saber si una MT se parará en un tiempo finito no resulta práctico, si dicho tiempo es excesivo
 * Por eso es interesante estudiar las necesidades de ejecución de un algoritmo.
 * Para ello, se suelen distinguir  dos clases de problemas: P y NP
 
 ### Clase P
 
-* Prácticamente todos los algoritmos que se ejecutan en una computadora tienen una complejidad polinomial, es decir; la relación entre el tamaño del problema (número de datos o valor de n) y el tiempo de ejecución se puede encontrar por medio de una expresión polinomial.
+* Prácticamente todos los algoritmos que se ejecutan en una computadora tienen una complejidad polinomial, es decir; la relación entre el tamaño del problema (número de datos o valor de n) y el tiempo de ejecución se puede encontrar por medio de una expresión polinomial
 * Son algoritmos que tienen una complejidad de O(n), O(log n)
 * Ejemplos: algoritmos de búsqueda, ordenamiento, etc.
-* La clase P se compone de todos los lenguajes que acepta una MTD que tiene una cota temporal polinómica.
-* Un lenguaje se dice polinomialmente decidible, si es Turing-decidible con una MT acotada polinomialmente.
+* La clase P se compone de todos los lenguajes que acepta una MTD que tiene una cota temporal polinómica
+* Un lenguaje se dice polinomialmente decidible, si es Turing-decidible con una MT acotada polinomialmente
 * P es la clase de lenguajes polinomialmente decidibles
-* Informalmente, P es la clase de problemas que se resuelven en un tiempo polinomial por una MTD.
-* Aparentemente, el Problema del Viajante no se encuentra en esta categoría, ya que el tiempo para hallar la solución crece exponencialmente con la cantidad de ciudades del mapa.
-* A pesar de los constantes esfuerzos de encontrar una MTD que resuelva el Problema del Viajante (entre otros) en tiempo polinomial, ninguna se ha encontrado.
-* Sin embargo, este problema, y otros similares, se pueden resolver en tiempo polinomial, pero con MTND.
+* Informalmente, P es la clase de problemas que se resuelven en un tiempo polinomial por una MTD
+* Aparentemente, el Problema del Viajante no se encuentra en esta categoría, ya que el tiempo para hallar la solución crece exponencialmente con la cantidad de ciudades del mapa
+* A pesar de los constantes esfuerzos de encontrar una MTD que resuelva el Problema del Viajante (entre otros) en tiempo polinomial, ninguna se ha encontrado
+* Sin embargo, este problema, y otros similares, se pueden resolver en tiempo polinomial, pero con MTND
 
 ### Clase NP
 
-* Son aquellos algoritmos en donde el número de pasos que se deben realizar para llegar al resultado tienen un crecimiento exponencial en relación a la cantidad de datos o valor de n.
-* Esto ocurre en los algoritmos para encontrar combinaciones.
-* Ejemplo: factorial de n, obtener los movimientos que se realizan para acomodar n discos con el algoritmo de las torres de Hanoi.
-* Se dice que no es conveniente ejecutar algoritmos con complejidad NP con valores medianamente grandes de n, ya que la computadora no puede con ellos, no solamente por el factor tiempo sino también por el espacio.
-* La clase NP se compone de todos los lenguajes que aceptan MTND que tengan una cota temporal polinómica.
-* Se define entonces otra clase de problemas.
-* NP es la clase de lenguajes decidibles con MTND  polinomialmente acotadas.
-* Informalmente, NP es la clase de problemas que pueden ser resueltos por una MTND en tiempo polinomial.
+* Son aquellos algoritmos en donde el número de pasos que se deben realizar para llegar al resultado tienen un crecimiento exponencial en relación a la cantidad de datos o valor de n
+* Esto ocurre en los algoritmos para encontrar combinaciones
+* Ejemplo: factorial de n, obtener los movimientos que se realizan para acomodar n discos con el algoritmo de las torres de Hanoi
+* Se dice que no es conveniente ejecutar algoritmos con complejidad NP con valores medianamente grandes de n, ya que la computadora no puede con ellos, no solamente por el factor tiempo sino también por el espacio
+* La clase NP se compone de todos los lenguajes que aceptan MTND que tengan una cota temporal polinómica
+* Se define entonces otra clase de problemas
+* NP es la clase de lenguajes decidibles con MTND  polinomialmente acotada
+* Informalmente, NP es la clase de problemas que pueden ser resueltos por una MTND en tiempo polinomial
 * Ejemplos:
-  * Dados 2 AFN con el mismo alfabeto, responder "S" si y sólo si aceptan lenguajes distintos.
+  * Dados 2 AFN con el mismo alfabeto, responder "S" si y sólo si aceptan lenguajes distintos
   * Dada un GIC y un entero positivo k, responder "S" si y sólo si la GIC no es LR(k)
-  * Dada una colección finita k de enteros positivos y otro entero positivo n, responder "S" si y sólo si existe un subconjunto de k cuya suma sea n.
-  * Dado un grafo, responder "S" si y sólo si dicho grafo contiene una ruta que visita precisamente una vez cada uno de los vértices y termina en el mismo vértice donde se inició (esta ruta se conoce como circuito de Hamilton).
+  * Dada una colección finita k de enteros positivos y otro entero positivo n, responder "S" si y sólo si existe un subconjunto de k cuya suma sea n
+  * Dado un grafo, responder "S" si y sólo si dicho grafo contiene una ruta que visita precisamente una vez cada uno de los vértices y termina en el mismo vértice donde se inició (esta ruta se conoce como circuito de Hamilton)
 
 ### P vs. NP
 
@@ -263,15 +263,10 @@ Proc select(T[1..n])          costo veces
 
 ### NP-completos
 
-* Un problema L que pertenece a NP es NP-completo si todos los demás problemas de NP se pueden reducir a él en tiempo polinómico en una MTD.
-* Esta  clase de problemas es importante, pues bastaría encontrar una solución en tiempo polinómico en una MTD para un solo problema L que sea NP-completo, para demostrar que P = NP.
-* En efecto: como cualquier problema NP se puede reducir a L en tiempo polinómico y L se puede resolver en tiempo polinómico, todo problema en NP tiene que tener una solución determinista en tiempo polinómico.
-* Teorema de Cook. SAT es NP-completo.
-* Dada una expresión de la lógica proposicional, el problema SAT tiene por objeto descubrir si es posible satisfacerla. Por ejemplo: p ^ (q v ¬p).
-* La expresión completa será verdadera si y sólo si las dos cláusulas son verdaderas. Se puede afirmar que ésta es satisfactible.
-* Este problema es resoluble. Pertenece a NP y es NP-completo.
-
-## Ejercicios
-
-1. Dada una MT que reconoce el lenguaje L = {wcw^(-1) / w ∈ Σ*} determinar las complejidades espacial y temporal realizada por la misma.
-1. Dada una MT que calcula la función de cadena f((ab)^n) = (ab)^(n+1), determinar las complejidades espacial y temporal realizada por la misma.
+* Un problema L que pertenece a NP es NP-completo si todos los demás problemas de NP se pueden reducir a él en tiempo polinómico en una MTD
+* Esta  clase de problemas es importante, pues bastaría encontrar una solución en tiempo polinómico en una MTD para un solo problema L que sea NP-completo, para demostrar que P = NP
+* En efecto: como cualquier problema NP se puede reducir a L en tiempo polinómico y L se puede resolver en tiempo polinómico, todo problema en NP tiene que tener una solución determinista en tiempo polinómico
+* Teorema de Cook. SAT es NP-completo
+* Dada una expresión de la lógica proposicional, el problema SAT tiene por objeto descubrir si es posible satisfacerla. Por ejemplo: p ^ (q v ¬p)
+* La expresión completa será verdadera si y sólo si las dos cláusulas son verdaderas. Se puede afirmar que ésta es satisfactible
+* Este problema es resoluble. Pertenece a NP y es NP-completo

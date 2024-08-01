@@ -15,6 +15,6 @@
 * Por más de sesenta años, varios científicos han tratado de responder a estas preguntas, y produjeron ingeniosas respuestas que impactaron en las Ciencias de la Computación
 * En esta materia hemos visto varios formalismos que surgieron como respuesta a estas preguntas
 
-![No hay nada más práctico que una buena teoría](img/teoria.png)
+  ![No hay nada más práctico que una buena teoría](img/teoria.png)
 
-![Gracias a ellos](img/investigadores.png)
+  ![Gracias a ellos](img/investigadores.png)
