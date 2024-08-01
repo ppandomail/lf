@@ -58,7 +58,7 @@
 | 03 | LIC   | UNO   | [Parsers](doc/08-parsers-contenido.md)    | [Ejercicios](doc/08-parsers-ejercicios.md) |
 | 03 | LIC   | UNO   | [LL](doc/09-asd-contenido.md)             | [Ejercicios](doc/09-asd-ejercicios.md)     |
 | 03 | LIC   | UNO   | [LR](doc/10-asa-contenido.md)             | [Ejercicios](doc/10-asa-ejercicios.md)     |
-| 04 | LIC   | TODOS | [MT](doc/11-mt-contenido.md)              | [Ejercicios](doc/11-mt-ejercicios.md)      |
+| 04 | MT    | TODOS | [MT](doc/11-mt-contenido.md)              | [Ejercicios](doc/11-mt-ejercicios.md)      |
 
 ## Programa Teoría de la Computación
 
