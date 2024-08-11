@@ -1,101 +1,61 @@
 # Introducción a los Lenguajes Formales
 
-## Reflexión acerca del Universo conocido
-
-1. Se estima que existen 2 millones de millones de galaxias
-1. Nuestra galaxia, la Via Láctea: Entre 150.000.000.000 y 250.000.000.000 de estrellas
-1. El Sol: nuestra estrella
-
-* El Universo ha llamado la atención a la humanidad desde hace miles de años
-* **Los seres humanos fuimos desarrollando diferentes teorías para explicar cómo funcionaba el Universo y qué abarcaba exactamente**
-* Muchas teorías fueron consolidándose en los últimos siglos (ejemplo: los planetas giran alrededor del Sol o más genéricamente, en torno a una estrella)
-• En todos los casos, quienes estudiaban el Universo buscaban **REGULARIDADES (patrones)** que ayudaran a entender qué sucedía
-* Las regularidades permiten construir **MODELOS y TEORÍAS** sobre el mundo
-* Ejemplo: Comportamiento del Cometa Halley
-* Ejemplo: Predicción de los eclipses
-
-## Las teorías pueden refinarse
-
-| Años | | Teoría |
-| -- | -- | -- |
-| 100 - 170   | Ptolomeo          | Modelo de universo geocéntrico (la Tierra era el centro) |
-| 1430 - 1543 | Nicolás Copérnico | Tierra y los demás planetas giraban alrededor del Sol en sistema heliocéntrico |
-| 1571 - 1630 | Johanes Kepler    | Cada planeta se mueve a lo largo de una elipse, con el Sol situado en un foco de esta |
-| 1642 - 1727 | Isaac Newton      | Principio de acción-reacción: la fuerza neta aplicada sobre un objeto es directamente proporcional a la aceleración que este adquiere en su trayectoria |
-| 1879 - 1955 | Albert Einstein   | Teoría de la relatividad: tanto el espacio como el tiempo en el que transcurren los eventos es relativo a la velocidad del observador |
-
-## Qué ha sucedido recientemente
-
-* Los últimos 100 años vieron el surgimiento y consolidación de diferentes teorías formales (entre ellas la lógica y la teoría de los lenguajes formales)
-* Estas teorías cobraron especial importancia en los últimos años por el impacto social de INTELIGENCIA ARTIFICIAL y la incidencia de la computación en todos los niveles humanos
-* Para poder entender cómo desarrollar adecuadamente algoritmos complejos y saber cuáles son las limitaciones de las computadoras es necesario entender ciertos conceptos fundacionales
-
 ## Lenguaje Formal (L)
 
-* Los LENGUAJES FORMALES están formados por PALABRAS, las palabras son CADENAS y las cadenas están constituidas por SÍMBOLOS de un ALFABETO
+* Esta formado por PALABRAS que son cadenas constituídas por SÍMBOLOS de un ALFABETO
 * Son lenguajes definidos sobre un alfabeto Σ
 
 ## Símbolo (ó)
 
-* Los seres humanos han representado el conocimiento usando símbolos desde hace varios milenios
-* El lenguaje escrito es un ejemplo de dicho uso
-* Recientemente en la historia surgió la pregunta ¿Qué cosas pueden representarse con símbolos? ¿Cuál es el límite?
-* Esta pregunta cobró especial protagonismo con el surgimiento de las computadoras electrónicas, que afectaron el comportamiento de toda la civilización humana en las últimas décadas (1980 – actualidad)
-* Esto se intensificó con el advenimiento de Internet ...
-* Para entender los límites y capacidades de usar símbolos, necesitamos teorías formales que nos ayuden a entenderlos
-
-* Es el elemento constructivo básico; es la entidad fundamental, indivisible (atómica), a partir de la cual se forman los alfabetos
+* Es el elemento constructivo básico; es la entidad fundamental, indivisible (atómica)
 * Ejemplos:
-  * La letra a es un símbolo que forma parte del alfabeto español, inglés, etc.
-  * Los símbolos >, = y + son elementos del alfabeto de los operadores de los lenguajes Pascal y ANSI C
-  * Los símbolos IF, ELSE, THEN para construir una sentencia condicional simple en un lenguaje de programación
+
+  | Símbolos ||
+  | -- | -- |
+  | **a**              | forma parte del alfabeto español, inglés, etc. |
+  | **>, = y +**       | son elementos del alfabeto de los operadores de los lenguajes Pascal y ANSI C |
+  | **IF, ELSE, THEN** | para construir una sentencia condicional simple en un lenguaje de programación |
 
 ## Alfabeto (Σ)
 
-* Es un conjunto no vacío y finito de símbolos indivisibles (letras, números, combinaciones de letras y números, etc.)
-* Se lo identifica con la letra griega Σ (sigma)
+* Es un conjunto no vacío y finito de símbolos indivisibles
 * Con sus símbolos se construyen las palabras de un lenguaje
 
   | Σ | |
   | -- | -- |
-  | Σ1 = {0, 1} | proporciona los símbolos utilizados en la construcción de los números binarios |
-  | Σ2 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, -, +} | proporciona los números enteros con signo en base 10 |
-  | Σ3 = {na, pa, la, bra} | alfabeto formado por cuatro símbolos |
-  | Σ4 = {a, b, ab} | no son símbolos indivisibles ab se forma con a y b. Es un alfabeto AMBIGUO |
+  | **Σ1 = {0, 1}** | proporciona los símbolos utilizados en la construcción de los números binarios |
+  | **Σ2 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, -, +}** | proporciona los números enteros con signo en base 10 |
+  | **Σ3 = {na, pa, la, bra}** | alfabeto formado por cuatro símbolos |
+  | **Σ4 = {a, b, ab}** | no son símbolos indivisibles ab se forma con a y b. Es un alfabeto AMBIGUO |
 
 ## Palabra (w)
 
-* Es una secuencia finita de símbolos tomados de cierto alfabeto y colocados uno a continuación de otro
+* Es una secuencia finita de símbolos tomados de cierto alfabeto y colocados uno a continuación de otro (concatenación/yuxtaposición)
 * Una secuencia es una colección enumerada de objetos en la cual las repeticiones están permitidas y el orden importa
-* Se construye CONCATENANDO (yuxtaponiendo) símbolos de un alfabeto dado
-* w = s1s2 ... sn        donde si ∈ Σ, para 1 ≤ i ≤ n
+* w = s1s2 ... sn  donde si ∈ Σ, para 1 ≤ i ≤ n
 
   | w | se lee | |
   | -- | -- | -- |
-  | abac    | "a-b-a-c"                   | es una palabra formada con símbolos del alfabeto {a, b, c} |
-  | 101110  | "uno-cero-uno-uno-uno-cero" | es una palabra construida con símbolos del alfabeto {0, 1} |
-  | abc, abb, aaaaaa |                    | son palabras construidas con símbolos del alfabeto {a, b, c} |
+  | **abac**    | "a-b-a-c"                   | es una palabra formada con símbolos del alfabeto {a, b, c} |
+  | **101110**  | "uno-cero-uno-uno-uno-cero" | es una palabra construida con símbolos del alfabeto {0, 1} |
+  | **abc, abb, aaaaaa** |                    | son palabras construidas con símbolos del alfabeto {a, b, c} |
 
-### Longitud de una palabra
+### Longitud de una palabra (|w|)
 
-* Es la cantidad o número de símbolos del alfabeto que la componen
-* Se representa |w| = k o long(w) = k
-* Formalmente long: Σ* -> Nat U {0}
+* Es la cantidad de símbolos del alfabeto que la componen
+* Formalmente |w|: Σ* -> Nat U {0}
 
   | w | \|w\| | Σ |
   | -- | -- | -- |
-  | palabra | 7 | {a, b, c, d, ..., z} |
-  | palabra | 3 | {na, pa, la, bra} |
-  | abac    | 4 | {a, b, c} |
-  | b       | 1 | {a, b} |
+  | **palabra** | 7 | {a, b, c, d, ..., z} |
+  | **palabra** | 3 | {na, pa, la, bra} |
+  | **abac**    | 4 | {a, b, c} |
+  | **b**       | 1 | {a, b} |
 
-### Palabra vacía
+### Palabra vacía (λ - lambda - )
 
-* Se representa λ (lambda)
-* Otros autores la denotan con el símbolo 𝜺 (epsilon)
-* Es la palabra que no tiene símbolos
-* Es la palabra de longitud 0 (|λ| = 0)
-* El símbolo λ (lambda) no forma parte de ningún alfabeto
+* Es la palabra que no tiene símbolos, es decir, |λ| = 0
+* λ no forma parte de ningún alfabeto
 
 ### Potenciación de un símbolo
 
@@ -104,21 +64,20 @@
 
 | w | |
 | -- | -- |
-| aaaaabbbbbbb | a^5b^7 |
-| aaaabbbb     | a^4b^4 |
+| **aaaaabbbbbbb** | **a^5b^7** |
+| **aaaabbbb**     | **a^4b^4** |
 
 ### Concatenación de dos palabras
 
-* La operación de CONCATENACIÓN aplicada a palabras (w1w2) produce una nueva palabra formada por los símbolos de la primera palabra seguidos inmediatamente por los símbolos de la segunda palabra
+* Operación aplicada a palabras (w1w2) y produce una nueva palabra formada por los símbolos de la primera palabra seguidos inmediatamente por los símbolos de la segunda palabra
 * Formalmente .: Σ\* x Σ\* -> Σ\*
-* NO ES CONMUTATIVA, es decir,  w1 w2 ≠ w2 w1
-* La palabra vacía (λ) es la IDENTIDAD para la concatenación
-* Esto es: para cualquier palabra w, w λ = λ w = w
+* No es conmutativa, es decir, w1 w2 ≠ w2 w1
+* λ es la identidad para la concatenación, es decir, w λ = λ w = w
 
   | w1 | w2 | w1w2 |
   | -- | -- | -- |
-  | aab | ba    | aabba    |
-  | abc | aaaaa | abcaaaaa |
+  | aab | ba    | **aabba**    |
+  | abc | aaaaa | **abcaaaaa** |
 
 ### Potenciación de una palabra
 
@@ -127,12 +86,12 @@
 
   | w  | w^0 | w^2  | w^3    |
   | -- | --  | --   | --     |
-  | ab | λ   | abab | ababab |
-  | a  | λ   | aa   | aaa    |
+  | **ab** | λ   | abab | ababab |
+  | **a**  | λ   | aa   | aaa    |
 
 ### Igualdad de palabras
 
-* Si w1 es una palabra (w1 = a1a2…an) y w2 es otra palabra (w2 = b1b2…bm), (w1, w2 ∈ Σ*), entonces w1 = w2 si se cumple que:
+* Si w1 es una palabra (w1 = a1a2 ... an) y w2 es otra palabra (w2 = b1b2 ... bm), (w1, w2 ∈ Σ*), entonces w1 = w2 si se cumple que:
   * |w1| = |w2|  y
   * (∀i: 1 ≤ i ≤ n: ai = bi)
 * Ejemplos:
@@ -146,40 +105,44 @@
 
 | w | w^-1 |
 | -- | -- |
-| ab    | ba |
-| abc   | cba |
-| aaaab | baaaa |
+| **ab**    | **ba** |
+| **abc**   | **cba** |
+| **aaaab** | **baaaa** |
 
 ### Prefijo, sufijo e infijo de una palabra
 
 | | | Ejemplo para w = abcd |
 | -- | -- | -- |
-| **Prefijo** | secuencia de cero o más símbolos iniciales de esa palabra | λ, a, ab, abc, abcd |
-| **Sufijo**  | secuencia de cero o más símbolos finales de esa palabra   | λ, d, cd, bcd, abcd |
-| **Infijo**  | secuencia de símbolos que se obtiene eliminando cero o más símbolos iniciales y cero o más símbolos finales de esa cadena | abcd, bcd, cd, d, abc, ab, a, bc, b, c, λ |
+| **Prefijo** | secuencia de 0 ó + símbolos iniciales de esa palabra | **λ, a, ab, abc, abcd** |
+| **Sufijo**  | secuencia de 0 ó + símbolos finales de esa palabra   | **λ, d, cd, bcd, abcd** |
+| **Infijo**  | secuencia de símbolos que se obtiene eliminando 0 ó + símbolos iniciales y 0 ó + símbolos finales de esa cadena | **abcd, bcd, cd, d, abc, ab, a, bc, b, c, λ** |
 
-## Lenguaje Natural
+## Lenguaje Natural vs Lenguaje Formal
 
-* Es el lenguaje hablado y/o escrito que es utilizado por los seres humanos para comunicarse
-* Características:
-  * EVOLUCIONAN con el paso del tiempo, incorporando nuevos términos y reglas gramaticales para mejorar y actualizar la comunicación
-  * Sus REGLAS GRAMATICALES surgen después del lenguaje, para poder explicar su estructura, es decir, su sintaxis
-  * El SIGNIFICADO (o sea, la semántica) de cada palabra y de cada oración de un lenguaje natural es, en general, más importante que su composición sintáctica
-* Admite frases ambiguas (puede tener más de una interpretación). Ejemplo: En el cerro hay una llama
+| | Lenguaje Natural | Lenguaje Formal |
+| -- | -- | -- |
+| Definición   | hablado y/o escrito por los seres humanos para comunicarse | abstracto |
+| Foco         | Semántica (significado de las palabras)                    | Sintaxis  |
+| Evolucionan? | SI, incorporando nuevos términos y reglas gramaticales     | NO        |
+| Reglas       | después del lenguaje                                       | antes     |  
+| Ambigüedad?  | admite (ejemplo: En el cerro hay una llama)                | no admite |
+  
+### Definición de un lenguaje formal
 
-## Lenguaje Formal
-
-* Es un conjunto de palabras formadas con los símbolos de un alfabeto dado, y tiene una característica fundamental: es un lenguaje abstracto, en el que el término FORMAL pone de manifiesto que, en esta disciplina, solo estamos interesados en la forma de una cadena (sintaxis) y no en su significado (semántica)
-* Están definidos por reglas gramaticales PREESTABLECIDAS y se deben ajustar rigurosamente a ellas. En consecuencia, un lenguaje formal nunca puede evolucionar
-* Pueden ser descripto por enumeración (extensión), por comprensión, mediante una frase en un lenguaje natural (castellano) o mediante otras formas especiales
-* Ejemplo: Sea Σ = {a}, un alfabeto con un solo símbolo. Los que siguen son algunos lenguajes que se pueden construir sobre este alfabeto: L1 = {a}; L2 = {aa, aaa}; L3 = {λ, a, a^18}
+|||
+| -- | -- |
+| **Enumeración (extensión)** | {aa, aaaa, aaaaaa, aaaaaaaa, ... } |
+| **Comprensión coloquial**   | {palabras con cantidad par de aes} |
+| **Comprensión simbólica**   | {a^2n / n >= 1} |
 
 ### Cardinalidad de un lenguaje formal
 
 * Es la cantidad de palabras que lo componen
-* Ejemplos:
-  * L = {a, ab, aab} es un lenguaje de cardinalidad 3 sobre el alfabeto {a, b}
-  * El lenguaje L = {λ}  es un lenguaje de cardinalidad 1, ya que contiene una sola palabra
+
+  | L(Σ), Σ = {a, b} | Cardinalidad |
+  | -- | -- |
+  | L = {a, ab, aab} | **3** |
+  | L = {λ}          | **1** |
 
 ### Sublenguaje
 
@@ -188,9 +151,7 @@
 
 ### Tipos de Lenguajes formales según cardinalidad
 
-#### Lenguajes formales finitos
-
-* Lenguajes con un número finito de palabras
+* **Lenguajes formales finitos**: lenguajes con un número finito de palabras
 
   | L | |
   | -- | -- |
@@ -198,33 +159,33 @@
   | L = {λ}          | Lenguaje finito que contiene sólo la palabra vacía |
   | L = {a, ab, aab} | Lenguaje finito que contiene sólo tres palabras |
 
-#### Lenguajes formales infinitos
+* **Lenguajes formales infinitos**: lenguajes con un número infinito de palabras
 
-* Lenguajes con una cantidad infinita de palabras, pero cada una de longitud finita (no existen las palabras de longitud infinita)
-* Ejemplo: L = {a^n / n ≥ 1} es un LF infinito ya que no existe un límite superior para el supra índice n. Cada palabra de este lenguaje está formada por una secuencia de una o más aes. Por ello, la concatenación de dos palabras cualesquiera de este lenguaje producirá siempre otra palabra del lenguaje L. Por esta propiedad, se dice que este lenguaje L es cerrado bajo la concatenación
+| L ||
+| -- | -- |
+| L = {a^n / n ≥ 1}            | Lenguaje infinito (no exite límite superior para el supra índice n) |
+| L = {a^(2n+1) b^n / n > 1}   | Lenguaje infinito |
+| L = {a^(2n+1) b^m / n,m > 1} | Lenguaje infinito |
 
-### Lenguaje Universal (clausura sobre un alfabeto)
+### Lenguaje Universal (Σ* - clausura sobre un alfabeto)
 
 * Es un lenguaje infinito que contiene todas las palabras que se pueden formar con símbolos del alfabeto Σ, más la palabra vacía, ya que pertenece a todos los universos
-* Se lo representa con la notación Σ*, que se lee “sigma clausura” o “sigma estrella” o W(Σ)
-* Es cerrado bajo concatenación
+* Es cerrado bajo concatenación, es decir, la concatenación de dos palabras cualesquiera de este lenguaje producirá siempre otra palabra del lenguaje
 
-* Σ* = U Σ^i    para i ≥ 0
+* Σ* = U Σ^i para i ≥ 0
 * Σ^i es el conjunto de todas las palabras de longitud i sobre Σ
 
-* Ejemplos: Si Σ = {a, b, c}, entonces
-  * Σ^0 = {λ}
-  * Σ^1 = {a, b, c}
-  * Σ^2 = {a, b, c}{a, b, c} = {aa, ab, ac, ba, bb, bc, ca, cb, cc}  
-  * Σ* = {λ, a, b, aa, ab, ba, bb, aaa, aab, aba, abb, ..., aabaabbbab, ...}
+  | Si Σ = {a, b, c}, entonces |
+  | -- |
+  | Σ^0 = {λ} |
+  | Σ^1 = {a, b, c} |
+  | Σ^2 = {a, b, c} {a, b, c} = {aa, ab, ac, ba, bb, bc, ca, cb, cc} |
+  | Σ* = {λ, a, b, aa, ab, ba, bb, aaa, aab, aba, abb, ..., aabaabbbab, ...} |
 
-### Lenguaje sobre un alfabeto
+### Lenguaje sobre un alfabeto (L(Σ))
 
 * Es todo subconjunto de Σ*, entonces L ⊆ Σ*
-* Se lo representa con la notación L(Σ)
-* Un lenguaje puede ser finito o infinito
 * Como el universo asociado a un alfabeto es infinito, hay infinitos lenguajes asociados a un alfabeto
-* Un lenguaje se puede definir por comprensión o extensión
 * Ejemplos:
   * Si Σ = {na, pa, la, bra}, dos posibles lenguajes de Σ serían:
     * L1(Σ) = {nana, napa, lana}, y
@@ -238,49 +199,33 @@
 
 ### Operaciones con lenguajes
 
-* Sea L1 = {nana, napa, lana}, L2 = {λ, nana, pana, palabra, papa, pala}, L = {0, 1}
+* Sea L1 = {nana, napa, lana}, L2 = {λ, nana, pana, palabra, papa, pala}, L3 = {0, 1}, L4 = {0, 10}
 
-* Unión:
-  * L1 U L2  = {w ∈ Σ* : w ∈ L1 v  w ∈ L2} = {λ, nana, napa, lana, pana, palabra, papa, pala}
 
-* Intersección:
-  * L1 ∩ L2  = {w ∈ Σ* : w ∈ L1 ^ w ∈ L2} = {nana}
-
-* Complemento:
-  * ~L1  =  {w ∈ Σ* : w ∉ L1} = {λ, nanana, palana, ...}
-
-* Diferencia:
-  * L1 - L2 = L1 ∩ ~L2 =  {napa, lana}
-
-* Producto:
-  * L1 L2 = {w1w2 ∈ Σ* : w1 ∈ L1 ^ w2 ∈ L2} =  {nana, napa, lana, nananana, napanana, ...}
-
-* Potencia:
-  * L^n = { {λ} si n=0 v LL^(n-1) si n>0}
-  * L^2 = {00, 01, 10, 11}
-
-* Reflexión:
-  * L^(-1) = {w^(-1) : w ∈ L}
-  * Si L = {0, 10}, entonces L^(-1) = {0, 01}
-
-* Cierre estrella (Kleene):
-  * L* = U L^i  i ≥ 0
-  * L* = {λ, 0, 1, 00, 01, 10, 11, 000, 001, ...}
-
-* Cierre positivo:
-  * L+ = U L^i i > 0
-  * L+ = {0, 1, 00, 01, 10, 11, 000, 001, ...}
+| Operación | Definición | Ejemplo |
+| -- | -- | -- |
+| **Unión**        | L1 U L2  = {w ∈ Σ* : w ∈ L1 v  w ∈ L2}  | {λ, nana, napa, lana, pana, palabra, papa, pala} |
+| **Intersección** | L1 ∩ L2  = {w ∈ Σ* : w ∈ L1 ^ w ∈ L2}   | {nana} |
+| **Complemento**  | ~L1  =  {w ∈ Σ* : w ∉ L1}               | {λ, nanana, palana, ...} |
+| **Diferencia**   | L1 - L2 = L1 ∩ ~L2                      | {napa, lana} |
+| **Producto**     | L1 L2 = {w1w2 ∈ Σ* : w1 ∈ L1 ^ w2 ∈ L2} | {nana, napa, lana, nananana, napanana, ...} |
+| **Potencia**     | L^n = { {λ} si n=0 v LL^(n-1) si n>0}   | L3^2 = {00, 01, 10, 11} |
+| **Reflexión**    | L^(-1) = {w^(-1) : w ∈ L}               | L4^(-1) = {0, 01} |
+| **Cierre estrella (Kleene)** | L* = U L^i  i ≥ 0           | L3* = {λ, 0, 1, 00, 01, 10, 11, 000, 001, ...} |
+| **Cierre positivo**          | L+ = U L^i i > 0            | L3+ = {0, 1, 00, 01, 10, 11, 000, 001, ...} |
 
 ### Propiedades de los lenguajes
 
-* LØ = Ø = ØL
-* La concatenación es asociativa: (L1 L2) L3 = L1 (L2 L3)
-* La concatenación no es conmutativa: L1 L2 ≠ L2 L1
-* Distributiva con respecto a la unión: L1 (L2 U L3) = L1L2  U  L1L3
-* No distributiva con respecto a la intersección: L1 (L2 ∩ L3) ≠ L1L2  ∩  L1L3
-* Potencia del lenguaje: L^0 = {λ}     L^1 = L     L^2 = LL    ...     L^k = LL^(k-1)
-* Clausura del Lenguaje: L* = L^0 U L^1 U L^2 U L^3 U ...
-* Reversa del Lenguaje: L^R = L^(-1) = {w^R ∈ Σ* / w ∈ L}
+| Propiedad | |
+| -- | -- |
+| **Concatenación con lenguaje vacio**           | LØ = Ø = ØL |
+| **Concatenación es asociativa**                | (L1 L2) L3 = L1 (L2 L3) |
+| **Concatenación no es conmutativa**            | L1 L2 ≠ L2 L1 |
+| **Distributiva respecto a la unión**           | L1 (L2 U L3) = L1L2  U  L1L3 |
+| **No distributiva respecto a la intersección** | L1 (L2 ∩ L3) ≠ L1L2  ∩  L1L3 |
+| **Potencia del lenguaje**                      | L^0 = {λ}, L^1 = L, L^2 = LL, ..., L^k = LL^(k-1) |
+| **Clausura del Lenguaje**                      | L* = L^0 U L^1 U L^2 U L^3 U ... |
+| **Reversa del Lenguaje**                       | L^R = L^(-1) = {w^R ∈ Σ* / w ∈ L} |
 
 ### Equivalencias
 
