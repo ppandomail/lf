@@ -5,12 +5,12 @@
 * Esta formado por PALABRAS que son cadenas constituídas por SÍMBOLOS de un ALFABETO
 * Son lenguajes definidos sobre un alfabeto Σ
 
-## Símbolo (ó)
+## Símbolo (σ)
 
 * Es el elemento constructivo básico; es la entidad fundamental, indivisible (atómica)
 * Ejemplos:
 
-  | Símbolos ||
+  | σ ||
   | -- | -- |
   | **a**              | forma parte del alfabeto español, inglés, etc. |
   | **>, = y +**       | son elementos del alfabeto de los operadores de los lenguajes Pascal y ANSI C |
@@ -32,7 +32,7 @@
 
 * Es una secuencia finita de símbolos tomados de cierto alfabeto y colocados uno a continuación de otro (concatenación/yuxtaposición)
 * Una secuencia es una colección enumerada de objetos en la cual las repeticiones están permitidas y el orden importa
-* w = s1s2 ... sn  donde si ∈ Σ, para 1 ≤ i ≤ n
+* w = σ1σ2 ... σn  donde σi ∈ Σ, para 1 ≤ i ≤ n
 
   | w | se lee | |
   | -- | -- | -- |
@@ -59,7 +59,7 @@
 
 ### Potenciación de un símbolo
 
-* c^n representa la repetición del símbolo c, n veces
+* σ^n representa la repetición del símbolo σ, n veces
 * Simplifica la escritura de palabras
 
 | w | |
@@ -100,8 +100,8 @@
 
 ### Reflexión o reversa de una palabra
 
-* Si w es una palabra (w = a1a2 ... an), entonces w^-1 o w^R representa la palabra que resulta de invertir el orden de los símbolos en la palabra
-* w^-1 = an ... a2 a1
+* Si w es una palabra (w = σ1σ2 ... σn), entonces w^-1 o w^R representa la palabra que resulta de invertir el orden de los símbolos en la palabra
+* w^-1 = σn ... σ2σ1
 
 | w | w^-1 |
 | -- | -- |
@@ -147,7 +147,7 @@
 ### Sublenguaje
 
 * Dado que un lenguaje formal es un conjunto, un SUBLENGUAJE es un subconjunto de un lenguaje dado
-* Ejemplo: Sea L1 = {a, ab, aab}. Entonces,  L2 = {ab, aab} es un sublenguaje de L1, mientras que L3 = { } es el sublenguaje vacío de L1
+* Ejemplo: Sea L1 = {a, ab, aab}. Entonces, L2 = {ab, aab} es un sublenguaje de L1, mientras que L3 = { } es el sublenguaje vacío de L1
 
 ### Tipos de Lenguajes formales según cardinalidad
 
@@ -161,11 +161,11 @@
 
 * **Lenguajes formales infinitos**: lenguajes con un número infinito de palabras
 
-| L ||
-| -- | -- |
-| L = {a^n / n ≥ 1}            | Lenguaje infinito (no exite límite superior para el supra índice n) |
-| L = {a^(2n+1) b^n / n > 1}   | Lenguaje infinito |
-| L = {a^(2n+1) b^m / n,m > 1} | Lenguaje infinito |
+  | L | |
+  | -- | -- |
+  | L = {a^n / n ≥ 1}            | Lenguaje infinito (no existe límite superior para el supra índice n) |
+  | L = {a^(2n+1) b^n / n > 1}   | Lenguaje infinito |
+  | L = {a^(2n+1) b^m / n,m > 1} | Lenguaje infinito |
 
 ### Lenguaje Universal (Σ* - clausura sobre un alfabeto)
 
@@ -201,18 +201,17 @@
 
 * Sea L1 = {nana, napa, lana}, L2 = {λ, nana, pana, palabra, papa, pala}, L3 = {0, 1}, L4 = {0, 10}
 
-
-| Operación | Definición | Ejemplo |
-| -- | -- | -- |
-| **Unión**        | L1 U L2  = {w ∈ Σ* : w ∈ L1 v  w ∈ L2}  | {λ, nana, napa, lana, pana, palabra, papa, pala} |
-| **Intersección** | L1 ∩ L2  = {w ∈ Σ* : w ∈ L1 ^ w ∈ L2}   | {nana} |
-| **Complemento**  | ~L1  =  {w ∈ Σ* : w ∉ L1}               | {λ, nanana, palana, ...} |
-| **Diferencia**   | L1 - L2 = L1 ∩ ~L2                      | {napa, lana} |
-| **Producto**     | L1 L2 = {w1w2 ∈ Σ* : w1 ∈ L1 ^ w2 ∈ L2} | {nana, napa, lana, nananana, napanana, ...} |
-| **Potencia**     | L^n = { {λ} si n=0 v LL^(n-1) si n>0}   | L3^2 = {00, 01, 10, 11} |
-| **Reflexión**    | L^(-1) = {w^(-1) : w ∈ L}               | L4^(-1) = {0, 01} |
-| **Cierre estrella (Kleene)** | L* = U L^i  i ≥ 0           | L3* = {λ, 0, 1, 00, 01, 10, 11, 000, 001, ...} |
-| **Cierre positivo**          | L+ = U L^i i > 0            | L3+ = {0, 1, 00, 01, 10, 11, 000, 001, ...} |
+  | Operación | Definición | Ejemplo |
+  | -- | -- | -- |
+  | **Unión**        | L1 U L2  = {w ∈ Σ* : w ∈ L1 v  w ∈ L2}  | {λ, nana, napa, lana, pana, palabra, papa, pala} |
+  | **Intersección** | L1 ∩ L2  = {w ∈ Σ* : w ∈ L1 ^ w ∈ L2}   | {nana} |
+  | **Complemento**  | ~L1  =  {w ∈ Σ* : w ∉ L1}               | {λ, nanana, palana, ...} |
+  | **Diferencia**   | L1 - L2 = L1 ∩ ~L2                      | {napa, lana} |
+  | **Producto**     | L1 L2 = {w1w2 ∈ Σ* : w1 ∈ L1 ^ w2 ∈ L2} | {nana, napa, lana, nananana, napanana, ...} |
+  | **Potencia**     | L^n = { {λ} si n=0 v LL^(n-1) si n>0}   | L3^2 = {00, 01, 10, 11} |
+  | **Reflexión**    | L^(-1) = {w^(-1) : w ∈ L}               | L4^(-1) = {0, 01} |
+  | **Cierre estrella (Kleene)** | L* = U L^i  i ≥ 0           | L3* = {λ, 0, 1, 00, 01, 10, 11, 000, 001, ...} |
+  | **Cierre positivo**          | L+ = U L^i i > 0            | L3+ = {0, 1, 00, 01, 10, 11, 000, 001, ...} |
 
 ### Propiedades de los lenguajes
 
