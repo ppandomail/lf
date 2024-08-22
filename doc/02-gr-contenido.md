@@ -2,55 +2,54 @@
 
 ## Gramática Formal (GF)
 
-* Son descripciones estructurales de las sentencias de los lenguajes, tanto formales (lenguajes de programación) como naturales (humanos).
-* Generan las palabras que forman un lenguaje formal definido sobre un alfabeto Σ.
-* Describen "cómo" se pueden generar las palabras de un lenguaje.
-* Es un conjunto de producciones (reglas de reescritura) que se aplican para obtener cada una de las palabras del lenguaje formal que la gramática formal en cuestión genera.
+* Son **descripciones estructurales de las sentencias** de los lenguajes ("cómo se pueden generar")
+* Es un conjunto de producciones (reglas de reescritura) que se aplican para **generar** cada una de las **palabras** del lenguaje formal definido sobre un Σ
 * Ejemplo:
-  * Sea el lenguaje L = {a}, formado por una sola palabra. Este lenguaje es generado por una gramática con una única producción: S -> a
-  * Se lee “S produce a” o “S deriva a”.
+  * Sea L = {a}, formado por una sola palabra
+  * Este lenguaje es generado por una gramática con una única producción: S -> a
+  * Se lee "S produce/deriva a"
 
 ### Producción
 
 * α -> β
 * Es una regla de reescritura formada por 3 partes:
-  * el lado izquierdo,
-  * el lado derecho, y
-  * la flecha, que indica que el lado izquierdo de la producción “produce” (o “es reemplazado por” o “equivale a”) el lado derecho.  
+  * lado izquierdo
+  * lado derecho
+  * flecha: indica que el lado izquierdo "produce" (o "es reemplazado por" o "equivale a") el lado derecho  
 
 ### Definición formal
 
-* Toda gramática formal G,  se define como una cuádrupla G = (ΣT, ΣN, S, P) donde:
-  * ΣT : alfabeto de símbolos terminales.
-  * ΣN : alfabeto de símbolos no terminales.
-  * S : símbolo inicial (start) o axioma o símbolo distinguido.
-  * P : conjunto finito no vacío de producciones.
+* Toda gramática formal G, se define como una cuádrupla G = (ΣT, ΣN, S, P) donde:
+
+  |||| Ejemplo |
+  | -- | -- | -- | -- |
+  | ΣT | alfabeto de símbolos terminales          | | |
+  | ΣN | alfabeto de símbolos no terminales       | | |
+  | S  | axioma o símbolo start o distinguido     | | |
+  | P  | conjunto finito no vacío de producciones | | |
 
 #### ΣT
 
-* Alfabeto de símbolos terminales.
-* Es el conjunto finito de símbolos terminales del alfabeto sobre el cual se construye el lenguaje formal que es generado por la gramática descripta.
+* Es el conjunto finito de símbolos terminales del alfabeto sobre el cual se construye el lenguaje formal que es generado por la gramática descripta
 * Ejemplo: ΣT = {0, 1}
 
 #### ΣN
 
-* Alfabeto de símbolos no terminales.
 * Conjunto finito de símbolos especiales denominados no terminales que permiten representar subconjuntos del lenguaje o estados intermedios de la generación de las palabras del lenguaje, cumpliéndose:
   * Σ = ΣT U ΣN
   * ΣT ∩ ΣN = {}
 
 #### S
 
-* Símbolo inicial (start) o axioma o símbolo distinguido.  
-* Es un símbolo no terminal especial.
+* Es un símbolo no terminal especial
 * S ∈ ΣN
-* Desde el cual siempre debe comenzar a aplicarse las producciones que generan todas las palabras de un determinado lenguaje formal.
+* Desde el cual siempre debe comenzar a aplicarse las producciones que generan todas las palabras de un determinado lenguaje formal
 * Algunos autores consideran que el símbolo S no puede aparecer en la derecha de una producción.
 
 #### P
 
-* Conjunto finito de producciones (reglas de reescritura).
-* Permiten generar palabras a partir de S.
+* Conjunto finito de producciones (reglas de reescritura)
+* Permiten generar palabras a partir de S
 * Cada producción tiene como única restricción que en la parte izquierda debe haber al menos un símbolo no terminal. Es decir,  P = {(xAy -> v) / v, x, y ∈ Σ*  , A ∈ ΣN}
 * Ejemplo:
   A -> 1B1 | 0B0
@@ -71,14 +70,14 @@
   * α -> β
   * |β| < |α|
 
-* Transforma una palabra en otra de menor longitud.
+* Transforma una palabra en otra de menor longitud
 * Ejemplos:
   * 0C0 -> 1
   * A -> λ
 
 ### Regla recursiva
 
-* Si el mismo símbolo no terminal aparece en los dos lados de la producción.
+* Si el mismo símbolo no terminal aparece en los dos lados de la producción
 * Es decir, existe un A ∈ ΣN tal que (A -> xAy) ∈ P, (x, y ∈ Σ*)
 * Ejemplos:
   * A -> 0A0
@@ -96,12 +95,12 @@
 
 ## Gramáticas Regulares (GR)
 
-* Generan las palabras de los LR.
-* Son las gramáticas más restrictivas.
+* Generan las palabras de los LR
+* Son las gramáticas más restrictivas
 * Si sus producciones tienen las siguientes restricciones:
-  * el lado izquierdo debe tener un solo no terminal,
-  * el lado derecho debe estar formado por un solo terminal, o un no terminal seguido de un terminal.  
-  * el símbolo distinguido puede o no derivar a λ
+  * lado izquierdo: un solo no terminal
+  * lado derecho: formado por un solo terminal, o un no terminal seguido de un terminal
+  * axioma: puede o no derivar a λ
 * Pueden ser:
   * Lineales por la izquierda (GRLI): P = {(S -> λ) | (A -> Bv) | (A -> v) / (A, B) ∈ ΣN, v ∈ ΣT}
   * Lineales por la derecha (GRLD):   P = {(S -> λ) | (A -> vB) | (A -> v) / (A, B) ∈ ΣN, v ∈ ΣT}
@@ -115,7 +114,7 @@
 
 ## Gramáticas Quasi Regulares (GQR)
 
-* Vinculadas a la sintaxis de los lenguajes de programación.
+* Vinculadas a la sintaxis de los lenguajes de programación
 * Abrevia la escritura de una GR
 * Ejemplo: L = {w1 w2 / w1 ∈ {a, b, c} ^ w2 ∈ {a, b, c}* }
 * GR:   S -> aS | bS | cS | a | b | c
@@ -123,14 +122,14 @@
 
 ## Derivación
 
-* Es el proceso que permite obtener cada una de las palabras de un LF a partir del axioma de una GF que lo genera y aplicando sucesivamente las producciones convenientes de esa GF.
+* Es el proceso que permite obtener cada una de las palabras de un LF a partir del axioma de una GF que lo genera y aplicando sucesivamente las producciones convenientes de esa GF
 * Existen diferentes formas de representar una derivación:
-  * Derivación Horizontal
-  * Derivación Vertical
+  * Horizontal
+  * Vertical
 
 ### Derivación Horizontal
 
-* Utilizando el símbolo => en cada paso de una derivación.
+* Utilizando el símbolo => en cada paso de una derivación
 * Ejemplo: L = {a^nb / n > 0}  P = {(S -> aA), (A -> aA), (A -> b)}
   * S => aA => ab                     ab ∈ L
   * S => aA => aaA => aab             aab ∈ L
@@ -138,9 +137,9 @@
 
 ### Derivación Vertical
 
-* Árbol de derivación: permite mostrar gráficamente cómo se puede derivar cualquier palabra de un lenguaje a partir del axioma de una gramática que genera ese lenguaje.
-* Reemplazado un no terminal por su lado derecho para producir un nuevo subárbol.
-* Son utilizados en la construcción de compiladores para representar el análisis sintáctico de los programas fuente y sirviendo de base para la generación de código.
+* Árbol de derivación: permite mostrar gráficamente cómo se puede derivar cualquier palabra de un lenguaje a partir del axioma de una gramática que genera ese lenguaje
+* Reemplazado un no terminal por su lado derecho para producir un nuevo subárbol
+* Son utilizados en la construcción de compiladores para representar el análisis sintáctico de los programas fuente y sirviendo de base para la generación de código
 * Ejemplo: L = {a^nb / n > 0}  P = {(S -> aA), (A -> aA), (A -> b)}
 
              S
@@ -171,9 +170,9 @@
 
 ## Gramáticas ambiguas
 
-* Una gramática es ambigua si tiene al menos una sentencia ambigua.
-* Una sentencia es ambigua si tiene más de una derivación o árbol de derivación.
-* Un lenguaje es ambiguo si existe una gramática ambigua que lo genera.
+* Una gramática es ambigua si tiene al menos una sentencia ambigua
+* Una sentencia es ambigua si tiene más de una derivación o árbol de derivación
+* Un lenguaje es ambiguo si existe una gramática ambigua que lo genera
 * En algunos casos, dada una gramática ambigua, se puede encontrar otra gramática que produzca el mismo lenguaje pero que no sea ambigua.
 * Ejemplo 1:
 
