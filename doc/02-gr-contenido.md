@@ -5,9 +5,10 @@
 * Son **descripciones estructurales de las sentencias** de los lenguajes ("cómo se pueden generar")
 * Es un conjunto de producciones (reglas de reescritura) que se aplican para **generar** cada una de las **palabras** del lenguaje formal definido sobre un Σ
 * Ejemplo:
-  * Sea L = {a}, formado por una sola palabra
-  * Este lenguaje es generado por una gramática con una única producción: S -> a
-  * Se lee "S produce/deriva a"
+
+  | Lenguaje | Gramática | Se lee |
+  | -- | -- | -- |
+  | L = {a} | S -> a | "S produce/deriva a" |
 
 ### Producción
 
@@ -23,102 +24,92 @@
 
   |||| Ejemplo |
   | -- | -- | -- | -- |
-  | ΣT | alfabeto de símbolos terminales          | | |
-  | ΣN | alfabeto de símbolos no terminales       | | |
-  | S  | axioma o símbolo start o distinguido     | | |
-  | P  | conjunto finito no vacío de producciones | | |
+  | **ΣT** | alfabeto de símbolos terminales          | alfabeto sobre el cual se construye el lenguaje formal | ΣT = {0, 1} |
+  | **ΣN** | alfabeto de símbolos no terminales       | permiten representar estados intermedios de la generación de las palabras del lenguaje, ΣT ∩ ΣN = {} | ΣN = {S, A} |
+  | **S**  | axioma o símbolo start o distinguido     | siempre debe comenzar a aplicarse las producciones que generan todas las palabras de un determinado lenguaje formal, S ∈ ΣN | S = S |
+  | **P**  | conjunto finito no vacío de producciones | permiten generar palabras a partir de S, P = {(xAy -> v) / v, x, y ∈ Σ*  , A ∈ ΣN} | P = {(A -> 1B1), (A -> 0B0), (B -> A), (B -> 1), (B -> 0), (B -> λ)} |
 
-#### ΣT
-
-* Es el conjunto finito de símbolos terminales del alfabeto sobre el cual se construye el lenguaje formal que es generado por la gramática descripta
-* Ejemplo: ΣT = {0, 1}
-
-#### ΣN
-
-* Conjunto finito de símbolos especiales denominados no terminales que permiten representar subconjuntos del lenguaje o estados intermedios de la generación de las palabras del lenguaje, cumpliéndose:
-  * Σ = ΣT U ΣN
-  * ΣT ∩ ΣN = {}
-
-#### S
-
-* Es un símbolo no terminal especial
-* S ∈ ΣN
-* Desde el cual siempre debe comenzar a aplicarse las producciones que generan todas las palabras de un determinado lenguaje formal
-* Algunos autores consideran que el símbolo S no puede aparecer en la derecha de una producción.
-
-#### P
-
-* Conjunto finito de producciones (reglas de reescritura)
-* Permiten generar palabras a partir de S
-* Cada producción tiene como única restricción que en la parte izquierda debe haber al menos un símbolo no terminal. Es decir,  P = {(xAy -> v) / v, x, y ∈ Σ*  , A ∈ ΣN}
 * Ejemplo:
-  A -> 1B1 | 0B0
-  B -> A | 1 | 0 | λ
 
-### Ejemplo
-
-* VN = {S, T}
-* VT = {a, b}
-* S = S
-* P = {(S -> aT), (T -> a), (T -> b)}
-
-* L = {aa, ab}
+  |||
+  | -- | -- |
+  | ΣN | {S, T} |
+  | ΣT | {a, b} |
+  | S  | S |
+  | P  | {(S -> aT), (T -> a), (T -> b)} |
+  | L  | {aa, ab} |
 
 ### Regla compresora
 
-* Aquella cuya parte derecha está formada por menos símbolos que la parte izquierda:
-  * α -> β
-  * |β| < |α|
-
+* Aquella cuya parte derecha está formada por menos símbolos que la parte izquierda: |β| < |α|
 * Transforma una palabra en otra de menor longitud
-* Ejemplos:
-  * 0C0 -> 1
-  * A -> λ
+
+  | Ejemplos |
+  | -- |
+  | 0C0 -> 1 |
+  | A -> λ   |
 
 ### Regla recursiva
 
 * Si el mismo símbolo no terminal aparece en los dos lados de la producción
-* Es decir, existe un A ∈ ΣN tal que (A -> xAy) ∈ P, (x, y ∈ Σ*)
-* Ejemplos:
-  * A -> 0A0
-  * B -> B10
-  * C -> 111C
+* Es decir, ∃A ∈ ΣN / (A -> xAy) ∈ P, (x, y ∈ Σ*)
+
+  | Ejemplos |
+  | -- |
+  | A -> 0A0  |
+  | B -> B10  |
+  | C -> 111C |
 
 ### Tipos de gramáticas
 
-* G3: Gramática tipo 3 o Regular -> Lenguaje Regular (LR)
-* G2: Gramática tipo 2 o Independiente (libre) de Contexto (incontextuales) -> Lenguaje Independiente de Contexto (LIC)
-* G1: Gramática tipo 1 o Dependiente (sensible) de Contexto (contextuales) -> Lenguaje Dependiente de Contexto (LDC)
-* G0: Gramática tipo 0 o sin restricciones (Irrestricta) -> Lenguaje Recursivamente Enumerable o No Restringido (LRE)
+|||||
+| -- | -- | -- | -- |
+| **G3** | Gramática Tipo 3 o Regular | **LR** | Lenguaje Regular |
+| **G2** | Gramática Tipo 2 o Independiente (libre) de Contexto (incontextuales) | **LIC** | Lenguaje Independiente de Contexto |
+| **G1** | Gramática Tipo 1 o Dependiente (sensible) de Contexto (contextuales)  | **LDC** | Lenguaje Dependiente de Contexto   |
+| **G0** | Gramática Tipo 0 o Sin restricciones (Irrestricta) | **LRE** | Lenguaje Recursivamente Enumerable o No Restringido   |
 
 ![Tipos de Gramáticas](img/tipos-gramaticas.png)
 
 ## Gramáticas Regulares (GR)
 
 * Generan las palabras de los LR
-* Son las gramáticas más restrictivas
-* Si sus producciones tienen las siguientes restricciones:
-  * lado izquierdo: un solo no terminal
-  * lado derecho: formado por un solo terminal, o un no terminal seguido de un terminal
-  * axioma: puede o no derivar a λ
+* Son las más restrictivas
+* Restricciones:
+  
+  |||
+  | -- | -- |
+  | **lado izquierdo** | un solo no terminal |
+  | **lado derecho**   | formado por un solo terminal, o un no terminal seguido de un terminal |
+  | **axioma**         | puede o no derivar a λ |
+
 * Pueden ser:
-  * Lineales por la izquierda (GRLI): P = {(S -> λ) | (A -> Bv) | (A -> v) / (A, B) ∈ ΣN, v ∈ ΣT}
-  * Lineales por la derecha (GRLD):   P = {(S -> λ) | (A -> vB) | (A -> v) / (A, B) ∈ ΣN, v ∈ ΣT}
+
+  ||||
+  | -- | -- | -- |
+  | **Lineales por la izquierda** | GRLI | P = {(S -> λ) \| (A -> Bv) \| (A -> v) / (A, B) ∈ ΣN, v ∈ ΣT} |
+  | **Lineales por la derecha**   | GRLD | P = {(S -> λ) \| (A -> vB) \| (A -> v) / (A, B) ∈ ΣN, v ∈ ΣT} |
+
 * Ejemplos:
-  * P = {(S -> C0), (S -> D1), (C -> 1), (D -> C1)}
-  * P = {(A -> 1B), (B -> 1), (B -> 0C), (B -> 1C), (C -> 1)}
-  * P = {(S -> λ), (S -> aA), (A -> aB), (A -> a), (B -> aA)}
-  * P = {(S -> λ), (S -> Ca), (C -> Da), (C -> a), (D -> Ca)}
-  * P = {(S -> a), (S -> aB), (B -> bB), (B -> aB), (B -> a), (B -> b)} para el L = {aw / w ∈ {a, b}*}
-  * P = {(S -> aS), (S -> bS), (S -> bT'), (T' -> bT''), (T'' -> b), (T'' -> bT'''), (T''' -> aT'''), (T''' -> bT'''), (T''' -> a), (T''' -> b)} para el L = {wbbbw / w ∈ {a, b}*}
+
+  ||
+  | -- |
+  | P = {(S -> C0), (S -> D1), (C -> 1), (D -> C1)} |
+  | P = {(A -> 1B), (B -> 1), (B -> 0C), (B -> 1C), (C -> 1)} |
+  | P = {(S -> λ), (S -> aA), (A -> aB), (A -> a), (B -> aA)} |
+  | P = {(S -> λ), (S -> Ca), (C -> Da), (C -> a), (D -> Ca)} |
+  | P = {(S -> a), (S -> aB), (B -> bB), (B -> aB), (B -> a), (B -> b)} para el L = {aw / w ∈ {a, b}*} |
+  | P = {(S -> aS), (S -> bS), (S -> bT'), (T' -> bT''), (T'' -> b), (T'' -> bT'''), (T''' -> aT'''), (T''' -> bT'''), (T''' -> a), (T''' -> b)} para el L = {wbbbw / w ∈ {a, b}*} |
 
 ## Gramáticas Quasi Regulares (GQR)
 
 * Vinculadas a la sintaxis de los lenguajes de programación
 * Abrevia la escritura de una GR
-* Ejemplo: L = {w1 w2 / w1 ∈ {a, b, c} ^ w2 ∈ {a, b, c}* }
-* GR:   S -> aS | bS | cS | a | b | c
-* GQR:  S -> A | AS    A -> a | b | c
+* Ejemplo:
+
+  | L | GR | GQR |
+  | -- | -- | -- |
+  | {w1 w2 / w1 ∈ {a, b, c} ^ w2 ∈ {a, b, c}* } | S -> aS \| bS \| cS \| a \| b \| c | S -> A \| AS  A -> a \| b \| c |
 
 ## Derivación
 
@@ -150,7 +141,7 @@
 
 ## Lenguaje generado por una gramática L(G)
 
-* Es el conjunto de todas las sentencias de la gramática; es decir, todas las palabras que se pueden obtener a partir del axioma de la gramática por la aplicación de derivaciones:
+* Es el conjunto de todas las palabras que se pueden obtener a partir del axioma de la gramática por la aplicación de derivaciones:
 * L(G) = {w ∈ ΣT* : S => w}
 * Ejemplo: L(G) = {ab, aab, aaab, aaaab, ...}
 
@@ -160,7 +151,7 @@
 * Ejemplo
 
       ```plain
-      S  -> c A d
+      S -> c A d
       A -> ab | a
       ```
 
@@ -173,13 +164,14 @@
 * Una gramática es ambigua si tiene al menos una sentencia ambigua
 * Una sentencia es ambigua si tiene más de una derivación o árbol de derivación
 * Un lenguaje es ambiguo si existe una gramática ambigua que lo genera
-* En algunos casos, dada una gramática ambigua, se puede encontrar otra gramática que produzca el mismo lenguaje pero que no sea ambigua.
+* En algunos casos, dada una gramática ambigua, se puede encontrar otra gramática que produzca el mismo lenguaje pero que no sea ambigua
 * Ejemplo 1:
 
       ```plain
       S -> 1B | 11
       B -> 1
       ```
+
   * Dos derivaciones para 11:
     * S => 1B => 11
     * S => 11
@@ -189,6 +181,7 @@
       ```plain
       E -> E+E | E-E | num | id | (E)
       ```
+
   * Dos derivaciones para id+id-id (una por la izquierda y otra por la derecha)
     * E => E-E => E+E-E => id+E-E => id+id-E => id+id-id
     * E => E-E => E-id => E+E-id => E+id-id => id+id-id
@@ -213,12 +206,13 @@
 
 ## Factorización a izquierda
 
-* Proceso que elimina el problema de que aparezcan producciones de un mismo símbolo no terminal en cuya parte derecha, la primera parte sea común.
+* Proceso que elimina el problema de que aparezcan producciones de un mismo símbolo no terminal en cuya parte derecha, la primera parte sea común
 * Ejemplo:
 
       ```plain
       S -> if C then S else S | if C then S | repeat S until C | repeat S forever
       ```
+
 * Algoritmo:
 
       ```plain
