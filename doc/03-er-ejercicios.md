@@ -10,7 +10,7 @@
 1. Describa, mediante una frase sin ambigüedades, el LR representado por la ER a(b|a)b
 1. ¿La cadena a^24b^24a^24 es una palabra de LR representado por la ER (aba)*? Justifique su respuesta
 1. Dados los LR infinitos representados por las ERs a\* y aa\* respectivamente. ¿Cuál tiene mayor cantidad de palabras? Justifique su respuesta
-1. Justifique la afirmación: la ER b\*ab\*ab\* representa al lenguaje "Todas las palabras sobre el alfabeto {a, b} con exactamente dos aes". Algunas palabras de este lenguaje son: aa, babba, bbaabbb, aba
+1. Justifique la afirmación: la ER b\*ab\*ab\* representa al lenguaje "Todas las palabras sobre el alfabeto {a, b} con exactamente dos aes" Algunas palabras de este lenguaje son: aa, babba, bbaabbb, aba
 1. Si el Σ fuera "todos los dígitos decimales", ¿cuál sería la ERU sobre ese alfabeto?
 
 ## Ejercicios w del L(ER)
@@ -67,8 +67,8 @@
 
 ## Ejercicios Determinar si ERs son equivalentes
 
-1. aa|ab|ba|bb , a(a|b)|b(a|b) y (a|b)(a|b)
-1. aa|ab|ba , a(a|b)|ba  y  ab|ba|aa
+1. aa|ab|ba|bb, a(a|b)|b(a|b) y (a|b)(a|b)
+1. aa|ab|ba, a(a|b)|ba y ab|ba|aa
 1. a^1000 y a*
 1. (b | (c | a) a\* (b | c))\* (c | a) a\* , b\* (c | a) ((b | c) b\* (c | a))\* a\* , b\* (c | a) (a\* (b | c) b\* (c | a))\*  y  b\* (c | a) (a\* (b | c) b\* (c | a))\* a\*
 
