@@ -18,13 +18,13 @@
 
   | Lenguaje | ¿Es regular? |
   | -- | -- |
-  | {a^b^n / 1 ≤ n ≤ 4}                        | **SI** |
-  | {a^n / n ≥ 1}                              | **SI** |
-  | {a^nb^n / n ≥ 1}                           | **NO** |
-  | {a^n / 1 ≤ n ≤ 1000}                       | **SI** |
-  | {a^nb^t / n ≥ 1, t ≥ 1}                    | **SI** |
-  | {(ab)^n (cde)^t a^z / n ≥ 1, t ≥ 1, z ≥ 1} | **SI** |
-  | {1^(2n+1) 0 / n ≥ 0}                       | **SI** |
+  | {a^nb^n / 1 ≤ n ≤ 4}                        | **SI** |
+  | {a^n / n ≥ 1}                               | **SI** |
+  | {a^nb^n / n ≥ 1}                            | **NO** |
+  | {a^n / 1 ≤ n ≤ 1000}                        | **SI** |
+  | {a^nb^t / n ≥ 1, t ≥ 1}                     | **SI** |
+  | {(ab)^n (cde)^t a^z / n ≥ 1, t ≥ 1, z ≥ 1}  | **SI** |
+  | {1^(2n+1) 0 / n ≥ 0}                        | **SI** |
 
 ## Expresiones Regulares (ER)
 
@@ -147,7 +147,7 @@
 | Operación | |
 | -- | -- |
 | **unión**              | Si L1 es representado por la ER a\*b y L2 es representado por la ER ba \| b\*, L1 U L2 es representado por la ER = (a\*b) \| (ba \| b\*) = a\*b \| ba \| b\* |
-| **oncatenación**       | Si L1 es representado por la ER a\*b y L2 es representado por la ER a \| b\*, el LR concatenación L1L2 es representado por la ER = a\*b(a \| b\*) |
+| **concatenación**       | Si L1 es representado por la ER a\*b y L2 es representado por la ER a \| b\*, el LR concatenación L1L2 es representado por la ER = a\*b(a \| b\*) |
 | **clausura de Klenne** | Si L es representado por la ER a\*b, L\* es representado por la ER = (a\*b)\* |
 | **clausura positiva**  | Si L es representado por la ER a\*b, L+ es representado por la ER = (a\*b)+ |
 | **complemento**        | Si L es representado por la ER a(a \| b)\*, L^c es representado por la ER = b(a \| b)\* \| λ |
