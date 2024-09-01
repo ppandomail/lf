@@ -3,7 +3,7 @@
 ## Definición
 
 * Es una herramienta abstracta que se utiliza para reconocer un determinado LR
-* Es un modelo formal matemático de un sistema que recibe una cadena constituida por símbolos de cierto alfabeto Σ y tiene capacidad de determinar si esa cadena pertenece al LR que el AF reconoce
+* Es un modelo formal matemático de un sistema que recibe una palabra y tiene la capacidad de determinar si pertenece al LR que el AF reconoce
 * Es una máquina de estados finitos. Una máquina es una abstracción matemática que capturan solamente el aspecto referente a las secuencias de eventos (transiciones) que ocurren
 
   ![AF grande](img/afgrande1.png)
@@ -12,58 +12,59 @@
 
 ## Reconocimiento
 
-* RECONOCER un LR: aceptar cada cadena que es una palabra del LR y rechazar cada cadena que no pertenece al lenguaje
+* RECONOCER un LR: aceptar cada palabra del LR y rechazar cada palabra que no pertenece al lenguaje
 * Una palabra es aceptada si:
-  * Cadena ha sido consumida (se ha analizado todos los símbolos de la cadena)
-  * El AF se encuentra en un estado especial llamado ESTADO FINAL o ESTADO DE ACEPTACIÓN
+  1. Se han analizado todos los símbolos de la palabra
+  1. El AF se encuentra en un ESTADO FINAL o DE ACEPTACIÓN
 
 ## Definición formal
 
-* Formalmente un autómata finito se define como una 5-upla:  M = <Q, Σ, q0, F, δ>
-  * Q: conjunto finito de estados
-  * Σ: alfabeto (conjunto finito de símbolos) de entrada reconocido por el autómata
-  * q0: estado inicial q0 ∈ Q, único en un conjunto
-  * F: conjunto de estados finales o estados de aceptación, F ⊆ Q
-  * δ: función de transición de estados, δ: Q x Σ -> Q
+* Formalmente un AF se define como una 5-upla:  M = <Q, Σ, q0, F, δ>
+
+  |||
+  | -- | -- |
+  | **Q**  | conjunto finito de estados |
+  | **Σ**  | alfabeto de entrada reconocido por el autómata |
+  | **q0** | estado inicial (único), q0 ∈ Q |
+  | **F**  | conjunto de estados finales o de aceptación, F ⊆ Q |
+  | **δ**  | función de transición de estados, δ: Q x Σ -> Q |
 
 ## Representación gráfica
 
-* Un autómata generalmente se representa por un grafo dirigido y etiquetado (etiquetas posibles: ó o λ), llamado diagrama de transición de estados
-* Cada nodo o vértice representa un estado
-* Cada flecha o arista representa una transición
-* El estado inicial se representa con un nodo con una flecha que no tiene origen
-* Los estado finales se representan por doble círculo
+* Un AF se representa por un grafo dirigido y etiquetado (etiquetas posibles: ó o λ), llamado diagrama de transición de estados
 
-![AF a*b](img/af1.png)
+  | Elemento | Representa | Tipos |
+  | -- | -- | -- |
+  | **nodo o vértice** | estado     | {inicial, intermedios, finales (doble círculo)} |
+  | **fecha o arista** | transición | {con símbolo, con lambda} |
+
+  ![AF a*b](img/af1.png)
 
 ## Casos
 
-* ACEPTACIÓN: cadena ab
-  * ACTIVIDAD:  q0 -> a -> q0 -> b -> q1   ACEPTA
-  * Se dice que la cadena w es aceptada por el AF M cuando δ(q0, w) ∈ F
-  * Se define el Lenguaje aceptado por el AF M como: L(M) = {w ∈ Σ* / δ(q0, w) ∈ F}
-* RECHAZO: cadena a
-  * ACTIVIDAD:  q0 -> a -> q0    RECHAZA
-* RECHAZO: cadena abab
-  * ACTIVIDAD:  q0 -> a -> q0 -> b -> q1 -> a -> ?  RECHAZA
+| Casos | Palabra | Actividad | Observaciones |
+| -- | -- | -- | -- |
+| **aceptación** | **ab**   | q0 -> a -> q0 -> b -> q1           | AF leyó todos los símbolos de la palabra y se encuentra en un estado final |
+| **rechazo**    | **a**    | q0 -> a -> q0                      | AF leyó todos los símbolos de la palabra y NO se encuentra en un estado final |
+| **rechazo**    | **abab** | q0 -> a -> q0 -> b -> q1 -> a -> ? | En un estado no hay transición para leer el símbolo |
+
+* Se dice que la cadena w es aceptada por el AF M cuando δ(q0, w) ∈ F
+* Se define el Lenguaje aceptado por el AF M como: L(M) = {w ∈ Σ* / δ(q0, w) ∈ F}
 
 ## Malos diseños
 
-* **Incorrecto**: "Sobran palabras". El autómata acepta algunas palabras que no debería aceptar
-* **Incompleto**: "Faltan palabras". Palabras en el lenguaje que no son aceptadas por el autómata cuando debería serlo
+||||
+| -- | -- | -- |
+| **incorrecto** | "sobran palabras" | AF acepta palabras que no debería aceptar |
+| **incompleto** | "faltan palabras" | palabras en el lenguaje que no son aceptadas por el AF |
 
 ## Tipos de AF
 
-* **Autómatas Finitos Deterministas (AFD)**:
-  * Deterministic Finite Automaton.
-  * Para cualquier estado en que se encuentre el autómata en un momento dado, la lectura de un símbolo determina, SIN AMBIGÜEDADES, cuál será el estado de llegada en la próxima transición. (unívocamente determinado)
-  * Es un AFN (ya que es un caso especial).
-  * Se puede encontrar un AFD por cada AFN que acepte el mismo lenguaje.
-* **Autómatas Finitos No Deterministas (AFN)**:
-  * Non-deterministic Finite Automaton.
-  * Permite cero, una o más transiciones a partir de un estado con un determinado símbolo de entrada.
-  * Una cadena de entrada se dice que es aceptada por un AFN si existe una secuencia de transiciones, correspondiente a la cadena de entrada, que lleva del estado inicial a algún estado final.
-  * Acepta transiciones vacías: el autómata puede cambiar de estado sin tener que leer ningún símbolo de la entrada (arcos sin etiquetas entre pares de estados).
+| Autómatas Finitos Deterministas (AFD) | Autómatas Finitos No Deterministas (AFN) |
+| -- | -- |
+| Para cualquier estado en que se encuentre el autómata en un momento dado, la lectura de un símbolo determina, SIN AMBIGÜEDADES, cuál será el estado de llegada en la próxima transición. (unívocamente determinado) | Permite cero, una o más transiciones a partir de un estado con un determinado símbolo de entrada |
+| Es un AFN (ya que es un caso especial) | Una cadena de entrada se dice que es aceptada por un AFN si existe una secuencia de transiciones, correspondiente a la cadena de entrada, que lleva del estado inicial a algún estado final |
+| Se puede encontrar un AFD por cada AFN que acepte el mismo lenguaje | Acepta transiciones vacías: el autómata puede cambiar de estado sin tener que leer ningún símbolo de la entrada (arcos sin etiquetas entre pares de estados) |
 
 ## Ejemplos AFD
 
@@ -138,7 +139,7 @@
 ## AF completo
 
 * Un AF es completo si cada estado tiene exactamente una transición por cada símbolo del alfabeto
-* Un AF es completo cuando su tabla de transiciones no tiene "huecos";  si los tiene, el AF es incompleto
+* Un AF es completo cuando su tabla de transiciones no tiene "huecos"; si los tiene, el AF es incompleto
 * Completar un AF significa eliminar los "huecos" de su tabla de transiciones, agregando un nuevo estado, que se denomina ESTADO DE RECHAZO o ESTADO DE NO ACEPTACIÓN o ESTADO DE ERROR (qe)
 * Ejemplo:
 
@@ -196,21 +197,21 @@
 
 ## Operaciones con AF
 
-* Complemento
-* Intersección
+* Complemento AFD completo
 * Unión
 * Concatenación
 
-### Complemento
+### Complemento AFD completo
 
-* Se define el autómata complementario Mc como aquel que se obtiene a partir de M dando a los estados no aceptadores el carácter de aceptadores y viceversa  L(M^c) = ~L(M)
-  * M^c = (Q, Σ, q0, F = Q - F, δ)
-* El complemento de un AFD ya es un AFD que se obtiene invirtiendo los estados finales y no finales, es decir:
-  * Todo estado no final del AFD dato será un estado final del AFD complemento, y
-  * Todo estado final del AFD dato será un estado no final del AFD complemento. Por esta situación, es muy importante que el AFD dato esté completo, ya que su estado de rechazo se convierte en un estado final
-* Formalmente, sea un AFD M = \<Q, Σ, q0, F, δ\>. Entonces, el autómata complemento se define Mc = \<Q, Σ, q0, Q – F, δ\>
-* La única diferencia entre el AFD dato y el AFD resultado radica en el conjunto de estados finales: en el AFD resultado, el conjunto Q – F es el complemento, con respecto al conjunto total de estados, del conjunto de estados finales del AFD original
-* Ejemplo: Sea el lenguaje L: "Todas las palabras sobre el alfabeto {a, b} que comienzan con b y tienen longitud mayor o igual que tres"
+| L(M^c) =  ~L(M) |
+| -- |
+| Q |
+| Σ |
+| q0 |
+| F = Q - F (se invierten estados finales y no finales) |
+| δ |
+
+Ejemplo: Sea el lenguaje L: "Todas las palabras sobre el alfabeto {a, b} que comienzan con b y tienen longitud mayor o igual que tres"
 
   | Q | a | b |
   | -- | -- | -- |
@@ -228,28 +229,25 @@
   | q8 | q8 | q8 |
   | *q9 | q9 | q9 |
 
-### Intersección
-
-* M1 ∩ M2
-* M = (Q = Q1 x Q2, Σ, q0 = q1,q2,  F = F1 x F2
-* ∀p ∈ Q1, ∀q ∈ Q2, ∀w ∈ Σ*
-* δ((p, q), w) = (δ1(p, w), δ2(q, w))
-* (p, q)w = (pw, qw)
-
 ### Unión
 
-* M1 U M2
-* M = (Q = Q1 U Q2, Σ, q0 = q1 U q2, F = F1 U F2, δ = δ1 U δ2)
-* δ(q, w) = δ1(q, w) si q ∈ Q1
-* δ(q, w) = δ2(q, w) si q ∈ Q2
+| M = M1 U M2 |
+| -- |
+| Q = Q1 U Q2 |
+| Σ |
+| q0 = q1 U q2 |
+| F = F1 U F2 |
+| δ = δ1 U δ2 / δ(q, w) = δ1(q, w) si q ∈ Q1,  δ(q, w) = δ2(q, w) si q ∈ Q2 |
 
 ### Concatenación
 
-* M1.M2
-* M = (Q = Q1 U Q2, Σ, q0 = q1, F = F2
-* δ(q, a) = δ1(q, a) si q ∈ Q1 y a ∈ Σ
-* δ(q, a) = δ2(q, a) si q ∈ Q2 y a ∈ Σ
-* δ(q, λ) = q2  ∀q ∈ F1
+| M = M1.M2 |
+| -- |
+| Q = Q1 U Q2 |
+| Σ |
+| q0 = q1 |
+| F = F2 |
+| δ(q, a) = δ1(q, a) si q ∈ Q1 y a ∈ Σ, δ(q, a) = δ2(q, a) si q ∈ Q2 y a ∈ Σ, δ(q, λ) = q2 si ∀q ∈ F1 |
 
 ## Programa Prolog que implementa un AF
 
