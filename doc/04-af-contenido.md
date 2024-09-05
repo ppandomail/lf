@@ -31,7 +31,7 @@
 
 ## Representación gráfica
 
-* Un AF se representa por un grafo dirigido y etiquetado (etiquetas posibles: ó o λ), llamado diagrama de transición de estados
+* Un AF se representa por un grafo dirigido y etiquetado (etiquetas posibles: σ o λ), llamado diagrama de transición de estados
 
   | Elemento | Representa | Tipos |
   | -- | -- | -- |
@@ -64,7 +64,7 @@
 | -- | -- |
 | Para cualquier estado en que se encuentre el autómata en un momento dado, la lectura de un símbolo determina, SIN AMBIGÜEDADES, cuál será el estado de llegada en la próxima transición. (unívocamente determinado) | Permite cero, una o más transiciones a partir de un estado con un determinado símbolo de entrada |
 | Es un AFN (ya que es un caso especial) | Una cadena de entrada se dice que es aceptada por un AFN si existe una secuencia de transiciones, correspondiente a la cadena de entrada, que lleva del estado inicial a algún estado final |
-| Se puede encontrar un AFD por cada AFN que acepte el mismo lenguaje | Acepta transiciones vacías: el autómata puede cambiar de estado sin tener que leer ningún símbolo de la entrada (arcos sin etiquetas entre pares de estados) |
+| Se puede encontrar un AFD por cada AFN que acepte el mismo lenguaje | Acepta transiciones λ: el autómata puede cambiar de estado sin tener que leer ningún símbolo de la entrada (arcos sin etiquetas entre pares de estados) |
 
 ## Ejemplos AFD
 
@@ -77,8 +77,8 @@
 
     | Q | a | b |
     | -- | -- | -- |
-    | >q0 | q1 | - |
-    | *q1 | - | q1 |
+    | >q0 | q1 | -  |
+    | *q1 | -  | q1 |
 
 * L = {a^ncb^m / n > 0 ^ m ≥ 0} = {ac, acb, aaaac, acbbbb, aaaacbbbbb, ...}
   * Q = {q0, q1, q2}
@@ -89,9 +89,9 @@
 
     | Q | a | b | c |
     | -- | -- | -- | -- |
-    | >q0 | q1 | - | - |
-    | q1 | q1 | - | q2 |
-    | *q2 | - | q2 | - |
+    | >q0 | q1 | -  | -  |
+    | q1  | q1 | -  | q2 |
+    | *q2 | -  | q2 | -  |
 
 * L = {00w1 / w ∈ {0, 1}*} = {001, 00001101, 00110011, ...}
   * Q = {q0, q1, q2, q3}
@@ -102,9 +102,9 @@
 
     | Q | 0 | 1 |
     | -- | -- | -- |
-    | >q0 | q1 | - |
-    | q1 | q2 | - |
-    | q2 | q2 | q3 |
+    | >q0 | q1 | -  |
+    | q1  | q2 | -  |
+    | q2  | q2 | q3 |
     | *q3 | q2 | q3 |
 
 * L = {wc^3m / w ∈ {a, b}* y la cantidad de b´s es par ^ m ≥ 0} = {λ, a, bb, ccc, accc, abbcccccc, babaccc, ...}
@@ -117,10 +117,10 @@
     | Q | a | b | c |
     | -- | -- | -- | -- |
     | >*q0 | q0 | q1 | q2 |
-    | q1 | q1 | q0 | - |
-    | q2 | - | - | q3 |
-    | q3 | - | - | q4 |
-    | *q4 | - | - | q2 |
+    | q1   | q1 | q0 | -  |
+    | q2   | -  | -  | q3 |
+    | q3   | -  | -  | q4 |
+    | *q4  | -  | -  | q2 |
 
 * ER = a (a | ba*)  L = {aa, ab, aba, abaa, abaaa, ...}
   * Q = {q0, q1, q2, q3}
@@ -131,10 +131,10 @@
 
     | Q | a | b |
     | -- | -- | -- |
-    | >q0 | q1 | - |
-    | q1 | q2 | q3 |
-    | *q2 | - | - |
-    | *q3 | q3 | - |
+    | >q0 | q1 | -  |
+    | q1  | q2 | q3 |
+    | *q2 | -  | -  |
+    | *q3 | q3 | -  |
 
 ## AF completo
 
@@ -146,10 +146,10 @@
   | Q | a | b |
   | -- | -- | -- |
   | >q0 | q1 | qe |
-  | q1 | q2 | q3 |
+  | q1  | q2 | q3 |
   | *q2 | qe | qe |
   | *q3 | q3 | qe |
-  | qe | qe | qe |
+  | qe  | qe | qe |
 
 ## AF equivalentes
 
@@ -159,13 +159,13 @@
   | Q | a | b |
   | -- | -- | -- |
   | >*q0 | q0 | q1 |
-  | q1 | q0 | q1 |
+  | q1   | q0 | q1 |
 
   | Q | a | b |
   | -- | -- | -- |
   | >*q0 | q1 | q2 |
-  | *q1 | q1 | q2 |
-  | q2 | q0 | q2 |
+  | *q1  | q1 | q2 |
+  | q2   | q0 | q2 |
 
 ## Ejemplos AFN
 
@@ -174,16 +174,16 @@
   | Q | a | b |
   | -- | -- | -- |
   | >q0 | {q0, q1} | - |
-  | *q1 | - | q1 |
+  | *q1 | -        | q1 |
 
 * L = {w / w ∈ {0, 1}* y w contiene la subpalabra 00 o w contiene la subpalabra 11} = {00, 11, 000101010, 101011010, 10100, ...}
 
   | Q | 0 | 1 |
   | -- | -- | -- |
   | >q0 | {q0, q3} | {q0, q1} |
-  | q1 | - | q2 |
+  | q1  | -  | q2 |
   | *q2 | q2 | q2 |
-  | q3 | q4 | - |
+  | q3  | q4 | -  |
   | *q4 | q4 | q4 |
 
 * ER = (a | b)* abb
@@ -191,9 +191,9 @@
   | Q | a | b |
   | -- | -- | -- |
   | >q0 | {q0, q1} | q0 |
-  | q1 | - | q2 |
-  | q2 | - | q3 |
-  | *q3 | - | - |
+  | q1  | -        | q2 |
+  | q2  | -        | q3 |
+  | *q3 | -        | - |
 
 ## Operaciones con AF
 
@@ -216,18 +216,18 @@ Ejemplo: Sea el lenguaje L: "Todas las palabras sobre el alfabeto {a, b} que com
   | Q | a | b |
   | -- | -- | -- |
   | >q5 | q9 | q6 |
-  | q6 | q7 | q7 |
-  | q7 | q8 | q8 |
+  | q6  | q7 | q7 |
+  | q7  | q8 | q8 |
   | *q8 | q8 | q8 |
-  | q9 | q9 | q9 |
+  | q9  | q9 | q9 |
 
   | Q | a | b |
   | -- | -- | -- |
   | >*q5 | q9 | q6 |
-  | *q6 | q7 | q7 |
-  | *q7 | q8 | q8 |
-  | q8 | q8 | q8 |
-  | *q9 | q9 | q9 |
+  | *q6  | q7 | q7 |
+  | *q7  | q8 | q8 |
+  | q8   | q8 | q8 |
+  | *q9  | q9 | q9 |
 
 ### Unión
 

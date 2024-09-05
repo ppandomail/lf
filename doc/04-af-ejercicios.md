@@ -215,7 +215,7 @@
 1. {w / w es cualquier palabra excepto 11 y 1111} sobre Σ = {0, 1}
 1. {w / cada posición impar de w es un 1} sobre Σ = {0, 1}
 1. {w / w contiene por lo menos dos 0s y a lo sumo un 1} sobre Σ = {0, 1}
-1. (λ, 0} sobre Σ = {0, 1}
+1. {λ, 0} sobre Σ = {0, 1}
 1. {w / w contiene un número par de 0s y exactamente dos 1s} sobre Σ = {0, 1}
 1. {} sobre Σ = {0, 1}
 1. {w / w tiene por los menos dos 0s y por lo menos tres 1s} sobre Σ = {0, 1}
