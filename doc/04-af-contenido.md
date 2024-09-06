@@ -36,7 +36,7 @@
   | Elemento | Representa | Tipos |
   | -- | -- | -- |
   | **nodo o vértice** | estado     | {inicial, intermedios, finales (doble círculo)} |
-  | **fecha o arista** | transición | {con símbolo, con lambda} |
+  | **flecha o arista** | transición | {con símbolo, con lambda} |
 
   ![AF a*b](img/af1.png)
 
