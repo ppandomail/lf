@@ -1,32 +1,36 @@
 # Algoritmos con Autómata Finito
 
-* Algoritmo de Thompson: ER -> AFNλ
-* Algoritmo de Clausura-λ: {AFN, AFNλ} -> AFD
-* Algoritmo reducido del Clausura-λ: AFN -> AFD
-* Algoritmo AF -> ER
-* Algoritmo de Clases: AFD -> AFDmin
+| Algoritmos | Transformación | |
+| -- | -- | -- |
+| **Algoritmo de Thompson**             | ER -> AFNλ         | [Ir](#algoritmo-de-thompson-er---afnλ)             |
+| **Algoritmo "Arden"**                 | AFD -> ER          | [Ir](#algoritmo-arden-afd---er)                    |
+| **Algoritmo de Clausura-λ**           | {AFN, AFNλ} -> AFD | [Ir](#algoritmo-de-clausura-λ-afn-afnλ---afd)      |
+| **Algoritmo reducido del Clausura-λ** | AFN -> AFD         | [Ir](#algoritmo-reducido-del-clausura-λ-afn---afd) |
+| **Algoritmo de Clases**               | AFD -> AFDmin      | [Ir](#algoritmo-de-clases-afd---afdmin)            |
+| **Algoritmo**                         | AFD -> GR          | [Ir](#algoritmo-afd---gr)                          |
+| **Algoritmo**                         | GR -> AF           | [Ir](#algoritmo-gr---af)                           |
 
 ## Algoritmo de Thompson: ER -> AFNλ
 
-* Ejemplo: a(a|b)*
+1. Desmembrar la ER en sus componentes básicos: símbolos, operadores (precedencia: *, ., |) y λ (si forma parte de la ER)
+1. Generar un AF básico por cada σ o λ de la ER
 
-1. Desmembrar la ER de partida en sus componentes básicos, es decir; símbolos, operadores (precedencia: *, ., |) y λ, si este símbolo forma parte de la ER
-1. Generar un AF básico por cada símbolo o λ de la ER
+    * Ejemplo: a(a|b)*
 
-  | Q | a |
-  | -- | -- |
-  | >q0 | q1 |
-  | *q1 | - |
+      | Q | a |
+      | -- | -- |
+      | >q0 | q1 |
+      | *q1 | -  |
 
-  | Q | a |
-  | -- | -- |
-  | >q2 | q3 |
-  | *q3 | - |
+      | Q | a |
+      | -- | -- |
+      | >q2 | q3 |
+      | *q3 | -  |
 
-  | Q | b |
-  | -- | -- |
-  | >q4 | q5 |
-  | *q5 | - |
+      | Q | b |
+      | -- | -- |
+      | >q4 | q5 |
+      | *q5 | -  |
 
 1. Componer estos AF básicos según los operadores existentes en la ER, hasta lograr el AF que reconoce a la ER dada. El AF que se obtiene es un AFNλ
 
@@ -35,16 +39,16 @@
       1. Se agrega un nuevo estado inicial
       1. Se agregan dos transiciones-λ que relacionan al nuevo estado inicial con los dos ex estados iniciales
       1. Se agrega un nuevo estado final
-      1. Se agregan dos transiciones-λ para unir a los dos ex estados finales con este nuevo estado final, y el AF está construido
+      1. Se agregan dos transiciones-λ para unir a los dos ex estados finales con este nuevo estado final
 
           | Q | a | b | λ |
           | -- | -- | -- | -- |
-          | >q6 | - | - | {q2, q4} |
-          | q2 | q3 | - | - |
-          | q4 | - | q5 | - |
-          | q3 | - | - | q7 |
-          | q5 | - | - | q7 |
-          | *q7 | _ | _ | _ |
+          | >q6 | -  | -  | {q2, q4} |
+          | q2  | q3 | -  | -        |
+          | q4  | -  | q5 | -        |
+          | q3  | -  | -  | q7       |
+          | q5  | -  | -  | q7       |
+          | *q7 | -  | -  | -        |
 
     * **Autómata para la clausura de Kleene**:
       1. El estado inicial deja de ser inicial y el estado final deja de ser final
@@ -56,14 +60,14 @@
 
           | Q | a | b | λ |
           | -- | -- | -- | -- |
-          | >q8 | - | - | {q6, q9} |
-          | q6 | - | - | {q2, q4} |
-          | q2 | q3 | - | - |
-          | q4 | - | q5 | - |
-          | q3 | - | - | q7 |
-          | q5 | - | - | q7 |
-          | q7 | _ | _ | {q9, q6} |
-          | *q9 | - | - | - |
+          | >q8 | -  | -  | {q6, q9} |
+          | q6  | -  | -  | {q2, q4} |
+          | q2  | q3 | -  | -        |
+          | q4  | -  | q5 | -        |
+          | q3  | -  | -  | q7       |
+          | q5  | -  | -  | q7       |
+          | q7  | -  | -  | {q9, q6} |
+          | *q9 | -  | -  | -        |
 
     * **Autómata para la concatenación**:
       1. Se construyen los AF básicos (izquierdo y derecho)
@@ -73,78 +77,18 @@
 
           | Q | a | b | λ |
           | -- | -- | -- | -- |
-          | >q0 | q1 | - | - |
-          | q1 | - | - | q8 |
-          | q8 | - | - | {q6, q9} |
-          | q6 | - | - | {q2, q4} |
-          | q2 | q3 | - | - |
-          | q4 | - | q5 | - |
-          | q3 | - | - | q7 |
-          | q5 | - | - | q7 |
-          | q7 | _ | _ | {q9, q6} |
-          | *q9 | - | - | - |
+          | >q0 | q1 | -  | -        |
+          | q1  | -  | -  | q8       |
+          | q8  | -  | -  | {q6, q9} |
+          | q6  | -  | -  | {q2, q4} |
+          | q2  | q3 | -  | -        |
+          | q4  | -  | q5 | -        |
+          | q3  | -  | -  | q7       |
+          | q5  | -  | -  | q7       |
+          | q7  | -  | -  | {q9, q6} |
+          | *q9 | -  | -  | -        |
 
-## Algoritmo de Clausura-λ: {AFN, AFNλ} -> AFD
-
-* Ejemplo: a*b
-
-  | Q | a | b | λ |
-  | -- | -- | -- | -- |
-  | >q0 | - | - | {q1, q3} |
-  | q1 | q2 | - | - |
-  | q2 | - | - | {q1, q3} |
-  | q3 | - | - | q4 |
-  | q4 | - | q5 | - |
-  | *q5 | - | - | - |
-
-* Clausura-λ de un estado: c-λ(q) = {q} U {estados a los cuales se llega desde q usando λ}
-  * c-λ(q0) = {q0, q1, q3, q4}
-  * c-λ(q2) = {q2, q1, q3, q4}
-* Clausura-λ de un conjunto de estados: c-λ({q1, q2}) = c-λ(q1) U c-λ(q2)
-* Conjunto "HACIA": h(c-λ(q), ó) = {estados de llegada}
-  * h(c-λ(q0), a) = {q2}
-  * h(c-λ(q0), b) = {q5}
-
-1. Se obtiene el estado inicial del AFD, que es la clausura-λ del estado inicial del AFN
-1. Se agrega este estado a la primera columna de la Tabla
-1. Para cada símbolo del alfabeto, se calcula el conjunto hacia del estado que se acaba de agregar a la primera columna de la tabla
-1. Se determinan nuevos estados del AFD por medio de la clausura- λ de cada conjunto hacia recién obtenido. Estos estados (conjuntos) se incorporan a la tabla, en las columnas que les corresponden
-1. Si un nuevo estado obtenido en el punto anterior no existe todavía en la primera columna de la Tabla de Transiciones se lo agrega
-1. Se repiten los pasos (3) al (5) hasta que no surjan nuevos estados
-
-* Los estados finales del AFD son todos aquellos conjuntos de estados del AFN que contienen por lo menos, un estado final
-
-  | Q | a | b |
-  | -- | -- | -- |
-  | >q0 | h(c-λ(q0), a) = {q2} | h(c-λ(q0), b) = {q5} |
-  | q2 | h(c-λ(q2), a) = {q2} | h(c-λ(q2), b) = {q5} |
-  | *q5 | h(c-λ(q5), a) = {} | h(c-λ(q5), b) = {} |
-
-## Algoritmo AFN -> AFD
-
-1. Completar la Tabla de Transiciones con todos los Q del AFN
-1. Nuevos estados pasan a ser filas de la Tabla de Transiciones
-1. [q0q1] para cada símbolo del Alfabeto
-    * [q0] U [q1]
-    * Ejemplo a: [q0q1] U [-] = [q0q1]
-    * Ejemplo b: [q0] U [q2] = [q0q2]
-1. Si los estados se repiten en la unión se deja uno
-1. Si en el nuevo estado luego de la unión se encuentra el estado final, entonces también es final
-1. Se eliminan estados no accesibles desde q0
-
-* Ejemplo:
-
-  | Q | a | b |
-  | -- | -- | -- |
-  | >[q0] | [q0q1] | [q0] |
-  | [q1] | - | [q2] |
-  | [q2] | - | [q3] |
-  | *[q3] | - | - |
-  | [q0q1] | [q0q1] | [q0q2] |
-  | [q0q2] | [q0q1] | [q0q3] |
-  | *[q0q3]| [q0q1] | [q0] |
-
-## Algoritmo AF -> ER
+## Algoritmo "Arden": AFD -> ER
 
 1. Depurar el AF: detectar y eliminar todos los estados erróneos y todas las referencias que haya a estos estados
     * Estados a los que no se puede llegar desde el estado inicial (estados inalcanzables)
@@ -153,18 +97,18 @@
     | Q | a | b |
     | -- | -- | -- |
     | >q0 | q1 | q2 |
-    | q1 | q1 | q4 |
-    | q2 | q4 | q5 |
-    | q3 | q4 | q4 |
+    | q1  | q1 | q4 |
+    | q2  | q4 | q5 |
+    | q3  | q4 | q4 |
     | *q4 | q5 | q4 |
-    | q5| q5 | q5 |
+    | q5  | q5 | q5 |
 
     | Q | a | b |
     | -- | -- | -- |
     | >q0 | q1 | q2 |
-    | q1 | q1 | q4 |
-    | q2 | q4 |  |
-    | *q4 | - | q4 |
+    | q1  | q1 | q4 |
+    | q2  | q4 |    |
+    | *q4 | -  | q4 |
 
 1. Establecer un Sistema de Ecuaciones:
     * Tendrá tantas ecuaciones como estados tenga el AF
@@ -184,84 +128,76 @@
 1. Resolver el Sistema de Ecuaciones (sustituir):
     * Puede realizarse en cualquier orden, con una sola excepción: la ecuación que corresponde al estado inicial debe ser la última en resolverse porque en su lado derecho quedará la ER buscada
 
-* Ejemplo 1:
-  1. OK
-  1. q0 = aq1   q1 = λ
-  1. OK
-  1. q0 = aq1 = aλ = a
+| Ejemplo | Paso 1 | Paso 2 | Paso 3 | Paso 4 | ER |
+| -- | -- | -- | -- | -- | -- |
+| **EJ 1**  | N/A | q0 = aq1, q1 = λ                       | N/A                    | q0 = aq1 = aλ = a                         | a |
+| **EJ 2**  | N/A | q0 = aq1 + λq2, q1 = λ, q2 = λ         | N/A                    | q0 = aq1 + λq2 = aλ + λλ = a + λ          | a \| λ |
+| **EJ 3**  | N/A | q0 = aq0 + bq1 + λ, q1 = λ             | q0 = a*(bq1 + λ)       | q0 = a*(bq1 + λ) = a*(bλ + λ) = a*(b + λ) | a*(b \| λ) |
+| **EJ 4**  | N/A | q0 = aq2 + bq5, q2 = aq2 + bq5, q5 = λ | q2 = aq2 + bq5 = a*bq5 | q2 = a\*bq5 = a\*b, q0 = aq2 + bq5 = aa\*b + bλ = aa\*b + b | aa*b \| b |
+| **EJ 5**  | N/A | q0 = (a + b)q0 + aq1, q1 = λ           | q0 = (a + b)*aq1       | q0 = (a + b)\*aq1 = (a + b)\*aλ = (a + b)\*a | (a \| b)*a |
+| **EJ 6**  | N/A | q0 = (a + b)q0 + λ                     | q0 = (a + b)*          | | (a \| b)* |
+| **EJ 7**  | N/A | q0 = aq1, q1 = bq2 + λ, q2 = (a + b)q2 + aq1 | q2 = (a + b)*aq1 | q1 = bq2 + λ = b(a + b)\*aq1 + λ = (b(a + b)\*a)\*, q0 = aq1 = a(b(a + b)\*a)\* | a(b(a \| b)\*a)\* |
+| **EJ 8**  | N/A | q0 = 0q0 + 1q1, q1 = 0q1 + 1q2 + λ, q2 = 0q2 + 1q1 | q0 = 0q0 + 1q1 = 0\*1q1, q1 = 0q1 + 1q2 + λ = 0\*(1q2 + λ), q2 = 0q2 + 1q1 = 0\*1q1 | q1 = 0\* (10\*1q1 + λ) = 0\* 10\*1q1 + 0\* = (0\* 10\*1)\*0\*, q0 = 0\*1(0\* 10\*1)\*0\* | 0\*1(0\* 10\*1)\*0\* |
+| **EJ 9**  | N/A | s = Ss + Ut, t = Tt +Vs + λ | s = S\*Ut, t = T\*(Vs + λ) = T\*Vs + T\* | s = S\*U(T\*Vs + T\*) = S\*UT\*Vs + S\*UT\* = (S\*UT\*V)\*S\*UT\* | (S\*UT\*V)\*S\*UT\* |
+| **EJ 10** | N/A | p = 0q + 1r, q = 0s + 1r, r = 0q + 1s, s = 0s + 1s + λ | s = (0 + 1)s + λ = (0 + 1)\* λ = (0 + 1)\* | r = 0q + 1s = 0q + (0 + 1)\*, q = 0(0 + 1)\* + 1r = 0(0 + 1)\* + 1(0q + (0 + 1)\*) = 0(0 + 1)\* + 10q + 1(0 + 1)\* = (10)\*(0(0 + 1)\* + 1(0 + 1)\*) = (10)\*(0 + 1)(0 + 1)\*, r = 0(10)\*(0 + 1)(0 + 1)\* + (0 + 1)\*, p = 0(10)\*(0 + 1)(0 + 1)\*  + 1(0(10)\*(0 + 1)(0 + 1)\* + (0 + 1)\*) | 0(10)\*(0 \| 1)(0 \| 1)\*  \| 1(0(10)\*(0 \| 1)(0 \| 1)\* \| (0 \| 1)\*) |
 
-* Ejemplo 2:
-  1. OK
-  1. q0 = aq1 + λq2    q1 = λ      q2 = λ
-  1. OK
-  1. q0 = aq1 + λq2 = aλ + λλ = a + λ
+## Algoritmo de Clausura-λ: {AFN, AFNλ} -> AFD
 
-* Ejemplo 3:
-  1. OK
-  1. q0 = aq0 + bq1 + λ   q1 = λ
-  1. q0 = a*(bq1 + λ)
-  1. q0 = a*(bq1 + λ) = a*(bλ + λ) = a*(b + λ)
+* Ejemplo: a*b
 
-* Ejemplo 4:
-  1. OK
-  1. q0 = aq2 + bq5     q2 = aq2 + bq5    q5 = λ
-  1. q2 = aq2 + bq5 = a*bq5
-  1. Sustituir:
-      * q2 = a\*bq5 = a\*b
-      * q0 = aq2 + bq5 = aa\*b + bλ = aa\*b + b
+  | Q | a | b | λ |
+  | -- | -- | -- | -- |
+  | >q0 | -  | -  | {q1, q3} |
+  | q1  | q2 | -  | -        |
+  | q2  | -  | -  | {q1, q3} |
+  | q3  | -  | -  | q4       |
+  | q4  | -  | q5 | -        |
+  | *q5 | -  | -  | -        |
 
-* Ejemplo 5:
-  1. OK
-  1. q0 = aq0 + bq0 + aq1 = (a + b)q0 + aq1     q1 = λ
-  1. q0 = (a + b)q0 + aq1 = (a + b)*aq1
-  1. q0 = (a + b)\*aq1 = (a + b)\*aλ = (a + b)\*a
+| Conceptos | | Ejemplo 1 | Ejemplo 2 |
+| -- | -- | -- | -- |
+| **Clausura-λ de un estado**              | c-λ(q) = {q} U {estados a los cuales se llega desde q usando λ} | c-λ(q0) = {q0, q1, q3, q4} | c-λ(q2) = {q2, q1, q3, q4} |
+| **Clausura-λ de un conjunto de estados** | c-λ({q1, q2}) = c-λ(q1) U c-λ(q2)                               | | |
+| **Conjunto "HACIA"**                     | h(c-λ(q), σ) = {estados de llegada}                             | h(c-λ(q0), a) = {q2}       | h(c-λ(q0), b) = {q5} |
 
-* Ejemplo 6:
-  1. OK
-  1. q0 = aq0 + bq0 + λ = (a + b)q0 + λ
-  1. q0 = (a + b)*
-  
-* Ejemplo 7:
-  1. OK
-  1. q0 = aq1    q1 = bq2 + λ    q2 = aq2 + bq2 + aq1 = (a + b)q2 + aq1
-  1. q2 = (a + b)*aq1
-  1. Sustituir:
-      * q1 = bq2 + λ = b(a + b)\*aq1 + λ = (b(a + b)\*a)\*
-      * q0 = aq1 = a(b(a + b)\*a)\*
+1. Se obtiene el estado inicial del AFD, que es la clausura-λ del estado inicial del AFN
+1. Se agrega este estado a la primera columna de la TT
+1. Para cada σ ∈ Σ, se calcula el conjunto hacia del estado que se acaba de agregar a la primera columna de la TT
+1. Se determinan nuevos estados del AFD por medio de la clausura-λ de cada conjunto hacia recién obtenido. Estos estados (conjuntos) se incorporan a la TT, en las columnas que les corresponden
+1. Si un nuevo estado obtenido en el punto anterior no existe todavía en la primera columna de la TT se lo agrega
+1. Se repiten los pasos (3) al (5) hasta que no surjan nuevos estados
 
-* Ejemplo 8:
-  1. OK
-  1. q0 = 0q0 + 1q1            q1 = 0q1 + 1q2 + λ                    q2 = 0q2 + 1q1
-  1. q0 = 0q0 + 1q1 = 0\*1q1   q1 = 0q1 + 1q2 + λ = 0\*(1q2 + λ)     q2 = 0q2 + 1q1 = 0\*1q1
-  1. Sustituir:
-      * q1 = 0\* (10\*1q1 + λ) = 0\* 10\*1q1 + 0\* = (0\* 10\*1)\*0\*
-      * q0 = 0\*1(0\* 10\*1)\*0\*
+* Los estados finales del AFD son todos aquellos conjuntos de estados del AFN que contienen por lo menos, un estado final
 
-* Ejemplo 9:
-  1. OK
-  1. s = Ss + Ut                t = Tt +Vs + λ
-  1. s = S\*Ut                  t = T\*(Vs + λ) = T\*Vs + T\*
-  1. s = S\*U(T\*Vs + T\*) = S\*UT\*Vs + S\*UT\* = (S\*UT\*V)\*S\*UT\*
+  | Q | a | b |
+  | -- | -- | -- |
+  | >q0 | h(c-λ(q0), a) = {q2} | h(c-λ(q0), b) = {q5} |
+  | q2  | h(c-λ(q2), a) = {q2} | h(c-λ(q2), b) = {q5} |
+  | *q5 | h(c-λ(q5), a) = {}   | h(c-λ(q5), b) = {}   |
 
-* Ejemplo 10:
-  1. OK
-  1. p = 0q + 1r    q = 0s + 1r       r = 0q + 1s     s = 0s + 1s + λ
-  1. s = (0 + 1)s + λ = (0 + 1)\* λ = (0 + 1)\*
-  1. Sustituir:
-      * r = 0q + 1s = 0q + (0 + 1)\*
-      * q = 0(0 + 1)\* + 1r = 0(0 + 1)\* + 1(0q + (0 + 1)\*) = 0(0 + 1)\* + 10q + 1(0 + 1)\* = (10)\*(0(0 + 1)\* + 1(0 + 1)\*) = (10)\*(0 + 1)(0 + 1)\*
-      * r = 0(10)\*(0 + 1)(0 + 1)\* + (0 + 1)\*
-      * p = 0(10)\*(0 + 1)(0 + 1)\*  + 1(0(10)\*(0 + 1)(0 + 1)\* + (0 + 1)\*)
+## Algoritmo reducido del Clausura-λ: AFN -> AFD
 
-* Ejemplo 11:
-  1. OK
-  1. p = ap + bq + cr    q = aq + bp     r = cs     s = ct     t = cr + λ
-  1. p = ap + bq + cr = a*(bq + cr)      q = aq + bp = a*bp
-  1. Sustituir:
-      * s = ct = c(cr + λ) = ccr + cλ = ccr + c
-      * r = cs = c(ccr + c) = cccr + cc = (ccc)*cc
-      * q = a\*bp = a\*ba\*(bq + cr) = a\*ba\*bq + a\*ba\*c(ccc)\*cc = (a\*ba\*b)\*a\*ba\*c(ccc)\*cc
-      * p = a\*(bq + cr) = a\*bq + a\*cr = a\*b(a\*ba\*b)\*a\*ba\*c(ccc)\*cc + a\*c(ccc)\*cc(λ | (a | ba\*b)\*) ccc (ccc)\*
+1. Completar la TT con todos los Q del AFN
+1. Nuevos estados pasan a ser filas de la TT
+1. [q0q1] para cada σ ∈ Σ
+    * [q0] U [q1]
+    * Ejemplo a: [q0q1] U [-] = [q0q1]
+    * Ejemplo b: [q0] U [q2] = [q0q2]
+1. Si los estados se repiten en la unión se deja uno
+1. Si en el nuevo estado luego de la unión se encuentra el estado final, entonces también es final
+1. Se eliminan estados no accesibles desde q0
+
+* Ejemplo:
+
+  | Q | a | b |
+  | -- | -- | -- |
+  | >[q0]   | [q0q1] | [q0]   |
+  | [q1]    | -      | [q2]   |
+  | [q2]    | -      | [q3]   |
+  | *[q3]   | -      | -      |
+  | [q0q1]  | [q0q1] | [q0q2] |
+  | [q0q2]  | [q0q1] | [q0q3] |
+  | *[q0q3] | [q0q1] | [q0]   |
 
 ## Algoritmo de Clases: AFD -> AFDmin
 
@@ -273,29 +209,29 @@
   | Q | a | b |
   | -- | -- | -- |
   | >q0 | q1 | q2 |
-  | q1 | q3 | q4 |
-  | q2 | q7 | q8 |
-  | q3 | q3 | q2 |
+  | q1  | q3 | q4 |
+  | q2  | q7 | q8 |
+  | q3  | q3 | q2 |
   | *q4 | q5 | q8 |
   | *q5 | q6 | q8 |
   | *q6 | q6 | q8 |
   | *q7 | q8 | q8 |
-  | q8 | q8 | q8 |
+  | q8  | q8 | q8 |
 
 1. Particionar el conjunto de estados del AFD completo en dos clases: la clase de los estados no finales (C0) y la clase de los estados finales (C1)
 
-  | Q | a | b |
-  | -- | -- | -- |
-  | >q0 | q1 | q2 |
-  | q1 | q3 | q4 |
-  | q2 | q7 | q8 |
-  | q3 | q3 | q2 |
-  | q8 | q8 | q8 |
-  | -- | -- | -- |
-  | *q4 | q5 | q8 |
-  | *q5 | q6 | q8 |
-  | *q6 | q6 | q8 |
-  | *q7 | q8 | q8 |
+    | Q | a | b |
+    | -- | -- | -- |
+    | >q0 | q1 | q2 |
+    | q1  | q3 | q4 |
+    | q2  | q7 | q8 |
+    | q3  | q3 | q2 |
+    | q8  | q8 | q8 |
+    | --  | -- | -- |
+    | *q4 | q5 | q8 |
+    | *q5 | q6 | q8 |
+    | *q6 | q6 | q8 |
+    | *q7 | q8 | q8 |
 
 1. Detectar estados equivalentes y reducir el AFD:
     * Dos estados son equivalentes si:
@@ -305,246 +241,234 @@
     * Si dos o más estados son equivalentes, significa que sólo uno de ellos es necesario porque tienen el mismo comportamiento
     * Reducir el AFD, el cual quedará con uno solo de los estados equivalentes como representante del conjunto de estados equivalentes. Reemplazar referencias por el nombre del estado que permanecerá
 
-  | Q | a | b |
-  | -- | -- | -- |
-  | >q0 | q1 | q2 |
-  | q1 | q3 | q4 |
-  | q2 | q7 | q8 |
-  | q3 | q3 | q2 |
-  | q8 | q8 | q8 |
-  | -- | -- | -- |
-  | *q4 | q5 | q8 |
-  | *q5 | q5 | q8 |
-  | *q7 | q8 | q8 |
+      | Q | a | b |
+      | -- | -- | -- |
+      | >q0 | q1 | q2 |
+      | q1  | q3 | q4 |
+      | q2  | q7 | q8 |
+      | q3  | q3 | q2 |
+      | q8  | q8 | q8 |
+      | --  | -- | -- |
+      | *q4 | q5 | q8 |
+      | *q5 | q5 | q8 |
+      | *q7 | q8 | q8 |
 
     * Continuar reduciendo, ya que ahora q4 y q5 son estados equivalentes
 
-  | Q | a | b |
-  | -- | -- | -- |
-  | >q0 | q1 | q2 |
-  | q1 | q3 | q4 |
-  | q2 | q7 | q8 |
-  | q3 | q3 | q2 |
-  | q8 | q8 | q8 |
-  | -- | -- | -- |
-  | *q4 | q4 | q8 |
-  | *q7 | q8 | q8 |
+      | Q | a | b |
+      | -- | -- | -- |
+      | >q0 | q1 | q2 |
+      | q1  | q3 | q4 |
+      | q2  | q7 | q8 |
+      | q3  | q3 | q2 |
+      | q8  | q8 | q8 |
+      | --  | -- | -- |
+      | *q4 | q4 | q8 |
+      | *q7 | q8 | q8 |
 
 1. Construir la "Tabla de Transiciones por Clases (TTC)"
 
-  | Q | a | b |
-  | -- | -- | -- |
-  | >q0 | C0 | C0 |
-  | q1 | C0 | C1 |
-  | q2 | C1 | C0 |
-  | q3 | C0 | C0 |
-  | q8 | C0 | C0 |
-  | -- | -- | -- |
-  | *q4 | C1 | C0 |
-  | *q7 | C0 | C0 |
+    | Q | a | b |
+    | -- | -- | -- |
+    | >q0 | C0 | C0 |
+    | q1  | C0 | C1 |
+    | q2  | C1 | C0 |
+    | q3  | C0 | C0 |
+    | q8  | C0 | C0 |
+    | --  | -- | -- |
+    | *q4 | C1 | C0 |
+    | *q7 | C0 | C0 |
 
 1. Buscar estados equivalentes por clase y realizar la partición de la clase en subclases
     * Buscar estados equivalentes por clase, que son aquellos estados que están en la misma clase y tienen el mismo comportamiento por clases
     * Realizar la partición de la clase en subclases que se caracterizan por contener estados que son equivalentes por clase. Y este proceso continúa hasta que se llega a la situación en que cada clase está formada por un solo estado, con lo que se deduce que el AFD no se puede minimizar más. En este último caso, se elige un representante de la clase como se ha hecho anteriormente
 
-  | Q | a | b | C |
-  | -- | -- | -- | -- |
-  | >q0 | C0 | C0 | C0 |
-  | q3 | C0 | C0 | |
-  | q8 | C0 | C0 | |
-  | -- | -- | -- | -- |
-  | q1 | C0 | C1 | C2 |
-  | -- | -- | -- | -- |
-  | q2 | C1 | C0 | C3 |
-  | -- | -- | -- | -- |
-  | *q4 | C1 | C0 | C1 |
-  | -- | -- | -- | --  |
-  | *q7 | C0 | C0 | C4 |
+      | Q | a | b | C |
+      | -- | -- | -- | -- |
+      | >q0 | C0 | C0 | C0 |
+      | q3  | C0 | C0 |    |
+      | q8  | C0 | C0 |    |
+      | --  | -- | -- | -- |
+      | q1  | C0 | C1 | C2 |
+      | --  | -- | -- | -- |
+      | q2  | C1 | C0 | C3 |
+      | --  | -- | -- | -- |
+      | *q4 | C1 | C0 | C1 |
+      | --  | -- | -- | -- |
+      | *q7 | C0 | C0 | C4 |
 
 1. Mientras surjan nuevas clases, actualizar la TTC a partir de la TT original
     * Actualizar la TTC porque al haber particionado las clases originales, la TTC ha cambiado. Por ejemplo, leyendo la TT original, vemos que el estado q0 tiene comportamiento (q1, q2); y se observa que, con esta última partición, el estado q1 pertenece a la clase C2, mientras que el estado q2 pertenece a la clase C3, y así...
     * Las clases C2, C3, C1 y C4 ya son mínimas porque cada una está constituida por un solo estado. En cuanto a la clase C0, se distingue que está formada por 3 estados que ahora tienen diferentes comportamientos por clases, por lo que se debe separar, colocando a cada uno en una nueva subclase. Finalmente, todas las clases quedan con un único estado y el AFD no se puede minimizar más
     * En definitiva, y volviendo a la TT original, el AFD mínimo sin completar (es decir, sin estado de rechazo q8) está representado por la siguiente tabla:
 
-  | Q | a | b |
+      | Q | a | b |
+      | -- | -- | -- |
+      | >q0 | q1 | q2 |
+      | q1  | q3 | q4 |
+      | q2  | q7 | -  |
+      | q3  | q3 | q2 |
+      | *q4 | q4 | -  |
+      | *q7 | -  | -  |
+
+      ![AFmin](img/afmin.png)
+
+* Ejemplo 1: a*b
+
+  | AFD | a | b |
   | -- | -- | -- |
   | >q0 | q1 | q2 |
-  | q1 | q3 | q4 |
-  | q2 | q7 | - |
-  | q3 | q3 | q2 |
-  | *q4 | q4 | - |
-  | *q7 | - | - |
+  | q1  | q1 | q2 |
+  | *q2 | qe | qe |
+  | qe  | qe | qe |
 
-![AFmin](img/afmin.png)
+  | AFDmin | a | b |
+  | -- | -- | -- |
+  | >q0 | q0 | q2 |
+  | *q2 | -  | - |
 
-* Ejemplo 1:
+* Ejemplo 2: (a|b)*
 
-  * AFD de a*b
+  | AFD | a | b |
+  | -- | -- | -- |
+  | >*q0 | q1 | q1 |
+  | *q1  | q1 | q1 |
 
-    | Q | a | b |
-    | -- | -- | -- |
-    | >q0 | q1 | q2 |
-    | q1 | q1 | q2 |
-    | *q2 | qe | qe |
-    | qe | qe | qe |
+  | AFDmin | a | b |
+  | -- | -- | -- |
+  | >*q0 | q0 | q0 |
 
-  * AFDmin
+* Ejemplo 3: b\*a(b\*ab\*a)\*b\*
 
-    | Q | a | b |
-    | -- | -- | -- |
-    | >q0 | q0 | q2 |
-    | *q2 | - | - |
+  | AFD | a | b |
+  | -- | -- | -- |
+  | >q0 | q1 | q0 |
+  | *q1 | q2 | q1 |
+  | q2  | q1 | q2 |
 
-* Ejemplo 2:
+  | AFDmin | a | b |
+  | -- | -- | -- |
+  | >q0 | q1 | q0 |
+  | *q1 | q0 | q1 |
 
-  * AFD de (a|b)*
+* Ejemplo 4: (a|b)((a|b)(a|b))*
 
-    | Q | a | b |
-    | -- | -- | -- |
-    | >*q0 | q1 | q1 |
-    | *q1 | q1 | q1 |
+  | AFD | a | b |
+  | -- | -- | -- |
+  | >q0 | q1 | q1 |
+  | *q1 | q2 | q2 |
+  | q2  | q3 | q3 |
+  | *q3 | q2 | q2 |
 
-  * AFDmin
+  | AFDmin | a | b |
+  | -- | -- | -- |
+  | >q0 | q1 | q1 |
+  | *q1 | q0 | q0 |
 
-    | Q | a | b |
-    | -- | -- | -- |
-    | >*q0 | q0 | q0 |
+## Algoritmo: AFD -> GR
 
-* Ejemplo 3:
+* **Entrada**: AFD = \<Q, Σ, q0, F, δ\>
+* **Salida**:  GR = \<ΣT, ΣN, S, P\>. Donde P:
 
-  * AFD de b\*a(b\*ab\*a)\*b\*
-
-    | Q | a | b |
-    | -- | -- | -- |
-    | >q0 | q1 | q0 |
-    | *q1 | q2 | q1 |
-    | q2 | q1 | q2 |
-
-  * AFDmin
-
-    | Q | a | b |
-    | -- | -- | -- |
-    | >q0 | q1 | q0 |
-    | *q1 | q0 | q1 |
-
-* Ejemplo 4:
-
-  * AFD de (a|b)((a|b)(a|b))*
-
-    | Q | a | b |
-    | -- | -- | -- |
-    | >q0 | q1 | q1 |
-    | *q1 | q2 | q2 |
-    | q2 | q3 | q3 |
-    | *q3 | q2 | q2 |
-
-* AFDmin
-
-    | Q | a | b |
-    | -- | -- | -- |
-    | >q0 | q1 | q1 |
-    | *q1 | q0 | q0 |
-
-### AFD -> GR
-
-* AFD = \<Q, Σ, q0, F, δ\>
-* Se construye la gramática equivalente lineal por la derecha GR = \<ΣT, ΣN, S, P\> en la que P:
-  * Si δ(q, a) = p entonces q -> ap, (a ∈ Σ, q ∈ Q, p ∈ Q)
-  * Si δ(q, a) = p y p ∈ F, entonces q -> a, (a ∈ Σ, q ∈ Q, p ∈ Q)
-  * Si q0 ∈ F, entonces q -> λ.
+  | Si ... | Entonces ... |
+  | -- | -- |
+  | δ(q, a) = p         | q -> ap, (a ∈ Σ, q ∈ Q, p ∈ Q) |
+  | δ(q, a) = p y p ∈ F | q -> a,  (a ∈ Σ, q ∈ Q, p ∈ Q) |
+  | q0 ∈ F              | q -> λ                         |
 
 * Ejemplo 1: a*b
 
   | Q | a | b |
   | -- | -- | -- |
   | >q0 | q0 | q1 |
-  | *q1 | - | - |
+  | *q1 | -  | - |
 
-      ```plain
-      q0 -> aq0 | b
-      ```
+  ```plain
+  q0 -> aq0 | b
+  ```
 
 * Ejemplo 2:
 
   | Q | 0 | 1 |
   | -- | -- | -- |
   | >q0 | q1 | q2 |
-  | q1 | q1 | q3 |
+  | q1  | q1 | q3 |
   | *q2 | q0 | q4 |
-  | q3 | q3 | q3 |
+  | q3  | q3 | q3 |
   | *q4 | q0 | q4 |
 
-      ```plain
-      q0 -> 0q1 | 1q2 | 1
-      q1 -> 0q1 | 1q3
-      q2 -> 0q0 | 1q4 | 1
-      q3 -> 0q3 | 1q3 
-      q4 -> 0q0 | 1q4 | 1
-      ```
+  ```plain
+  q0 -> 0q1 | 1q2 | 1
+  q1 -> 0q1 | 1q3
+  q2 -> 0q0 | 1q4 | 1
+  q3 -> 0q3 | 1q3 
+  q4 -> 0q0 | 1q4 | 1
+  ```
 
 * Ejemplo 3:
 
   | Q | 0 | 1 |
   | -- | -- | -- |
   | >S | A | B |
-  | A | C | B |
-  | B | A | C |
+  | A  | C | B |
+  | B  | A | C |
   | *C | C | C |
 
-      ```plain
-      S -> 0A | 1B 
-      A -> 0C | 1B | 0
-      B -> 0A | 1C | 1
-      C -> 0C | 1C | 0 | 1
-      ```
+  ```plain
+  S -> 0A | 1B 
+  A -> 0C | 1B | 0
+  B -> 0A | 1C | 1
+  C -> 0C | 1C | 0 | 1
+  ```
 
 * Ejemplo 4: λ | a\* | (a\*ba\*b)\*ccc(ccc)\*
 
   | Q | a | b | c |
   | -- | -- | -- | -- |
   | >*A | A | B | C |
-  | B | B | A | - |
-  | C | - | - | D |
-  | D | - | - | E |
-  | *E | - | - | C |
+  | B   | B | A | - |
+  | C   | - | - | D |
+  | D   | - | - | E |
+  | *E  | - | - | C |
 
-      ```plain
-      A -> aA | bB | cC | λ | a
-      B -> aB | bA | b
-      C -> cD 
-      D -> cE | c
-      E -> cC 
-      ```
+  ```plain
+  A -> aA | bB | cC | λ | a
+  B -> aB | bA | b
+  C -> cD 
+  D -> cE | c
+  E -> cC 
+  ```
 
-### GR -> AF
+## Algoritmo: GR -> AF
 
-* GR = \<ΣT, ΣN, S, P\>
-* Se construye el autómata equivalente AF = \<Q, Σ, q0, F, δ\>. Donde:
+* **Entrada**: GR = \<ΣT, ΣN, S, P\>
+* **Salida**:  AF = \<Q, Σ, q0, F, δ\>. Donde:
   * Q = ΣN U {F}
   * Σ = ΣT
   * q0 = S
   * F = {F}, donde F ∉ ΣN  es un nuevo símbolo no terminal
   * δ:
-    * Si A -> vB entonces δ(A, v) = B
-    * Si A -> v entonces δ(A, v) = F
-    * Si S -> λ entonces δ(S, λ) = F
+
+    | Si ... | Entonces ... |
+    | -- | -- |
+    | A -> vB | δ(A, v) = B |
+    | A -> v  | δ(A, v) = F |
+    | S -> λ  | δ(S, λ) = F |
 
 * Ejemplo: (ab)*
 
-          ```plain
-          A -> aB | λ
-          B -> bC | b
-          C -> aB
-          ```
+  ```plain
+  A -> aB | λ
+  B -> bC | b
+  C -> aB
+  ```
 
-          | Q | a | b | λ |
-          | -- | -- | -- | -- |
-          | >A | B | - | F |
-          | B | - | {C, F} | - |
-          | C | B | - | - |
-          | *F | - | - | - |
-
-  * AF <{A, B, C, F}, {a, b}, A, {F}, {δ(A, a) = B, δ(A, λ) = F, δ(B, b) = {C, F}, δ(C, a) = B}>
+  | Q | a | b | λ |
+  | -- | -- | -- | -- |
+  | >A | B | -      | F |
+  | B  | - | {C, F} | - |
+  | C  | B | -      | - |
+  | *F | - | -      | - |
 
 ## Lema del bombeo para LR
 
@@ -579,9 +503,9 @@
 
 ## Aplicaciones
 
-* Los AF se usan frecuentemente en los problemas que implican el análisis de cadenas de caracteres. Ejemplos:
-  * Búsqueda de la existencia de una cadena en un archivo
-  * Reconocimiento de cadenas de entrada que satisfaga ciertos criterios (por ejemplo, si se espera un entero sin signo como dato de entrada y el usuario confunde uno de los dígitos con un carácter no numérico, se puede dar todo tipo de resultados impropios, desde una terminación anormal hasta el cálculo de resultados incorrectos)
-  * Solución: especificar la información correcta por medio de ER: Ejemplo: L(L|D|_)*(L|D)
+* Los AF se usan en problemas que implican el análisis de cadenas de caracteres
+* Ejemplos:
+  * Búsqueda de cadenas en archivos
+  * Reconocimiento de cadenas que satisfaga ciertos criterios (por ejemplo, si se espera un entero sin signo como dato de entrada y el usuario confunde uno de los dígitos con un carácter no numérico, se puede dar todo tipo de resultados impropios, desde una terminación anormal hasta el cálculo de resultados incorrectos). Solución: especificar la información correcta por medio de ER = L(L|D|_)*(L|D)
   * Compiladores de Lenguajes de Programación
-  * Procesamiento de lenguaje natural
+  * Procesamiento de Lenguaje Natural
