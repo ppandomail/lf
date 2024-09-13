@@ -107,7 +107,7 @@
     | -- | -- | -- |
     | >q0 | q1 | q2 |
     | q1  | q1 | q4 |
-    | q2  | q4 |    |
+    | q2  | q4 | -  |
     | *q4 | -  | q4 |
 
 1. Establecer un Sistema de Ecuaciones:
