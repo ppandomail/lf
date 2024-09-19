@@ -479,16 +479,15 @@
   * Si L es infinito se deben obtener algunas propiedades que comparten todos los LR infinitos y que no estén presentes en los lenguajes no regulares
 * Cómo conseguir un LR infinito si se tiene un número finito de estados en un AF
 * Sea L un LR infinito
-* Existe una constante n tal que para toda palabra w perteneciente a L con |w| ≥ n, se puede descomponer w en tres palabras, w = xyz, de modo que:
+* ∃ una constante n / ∀ w ∈ L con |w| ≥ n, se puede descomponer w en tres segmentos, w = xyz, de modo que:
   * |y| ≥  1 ; es decir, y ≠ λ
   * |xy| ≤ n
-  * Para todo k ≥ 0, la palabra xy^kz también pertenece a L
+  * ∀ k ≥ 0, la palabra xy^kz ∈ L
 * Con otras palabras...
   * Si un AFD es capaz de aceptar un número infinito de palabras, entonces debe aceptar una palabra que consista en la concatenación de tres segmentos (xyz) tales que cualquier repetición del segmento central (y, que no es vacío) dé como resultado otra palabra aceptable
-  * Es decir, pueden generarse otras palabras aceptables "bombeando" o "ampliando" una palabra aceptable.
-* El lema de bombeo sólo resulta útil cuando el lenguaje al que se aplica es infinito, pues todos los lenguajes finitos son LR (todos ellos pueden expresarse mediante una expresión regular que se limita a enumerar sus elementos, separándolos con el meta símbolo |)
+  * Es decir, pueden generarse otras palabras aceptables "bombeando" o "ampliando" una palabra aceptable
 * El lema de bombeo afirma que, si un LR contiene una palabra suficientemente larga, esta palabra tiene una subpalabra (y) que se puede bombear, es decir, repetirse tantas veces como se quiera, sin que el resultado deje de ser una palabra del LR
-* Este lema define una condición necesaria, pero no suficiente para que un lenguaje sea regular
+* Este lema define una condición necesaria, pero no suficiente para que un L = LR
 * Existen versiones del lema de bombeo que proporcionan condiciones necesarias y suficientes para que un lenguaje sea regular. Uno de ellos es el primer teorema de Myhill-Nerode
 
   ![Lema del Bombeo](img/bombeo.jpg)
@@ -505,7 +504,7 @@
 
 * Los AF se usan en problemas que implican el análisis de cadenas de caracteres
 * Ejemplos:
-  * Búsqueda de cadenas en archivos
   * Reconocimiento de cadenas que satisfaga ciertos criterios (por ejemplo, si se espera un entero sin signo como dato de entrada y el usuario confunde uno de los dígitos con un carácter no numérico, se puede dar todo tipo de resultados impropios, desde una terminación anormal hasta el cálculo de resultados incorrectos). Solución: especificar la información correcta por medio de ER = L(L|D|_)*(L|D)
-  * Compiladores de Lenguajes de Programación
+  * Búsqueda de cadenas en archivos
+  * Desarrollo de Compiladores de Lenguajes de Programación
   * Procesamiento de Lenguaje Natural

@@ -76,6 +76,11 @@
 * [Autómatas y Lenguajes (Brena)](biblio/)
 * [Computabilidad, complejidad computacional y verificación de programas (Rosenfeld)](biblio/)
 
+## Herramientas
+
+* [JFlap](https://www.jflap.org/)
+* [Turing Machine Simulator](https://turingmachinesimulator.com)
+
 ## Cronograma UNO
 
 | **Clase** | **Fecha** | **Tema** |
