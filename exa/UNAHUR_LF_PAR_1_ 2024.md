@@ -29,12 +29,52 @@
 
 1. [2 puntos] Dada GR <{0, 1}, {A, B, C, X, D, E, F}, X, {B -> 1, D -> 0E, A -> 0B, F -> 0, X -> 0A, B -> 1C, C -> 0D, D -> 0, B -> 1B, F -> 0F, C -> 0, A -> 0A, E -> 0F}>, defínase por comprensión simbólica el lenguaje generado. Expresarlo como concatenación de lenguajes
 
+	```plain
+	L = {0^n 1^m / n >= 2, m >= 1} . {0^n / n >= 0, n != 3}
+	```
+
 1. [2 puntos] Dado L = {0^n 1 / n >= 0} U {1^m 0 / m >= 1}, diséñese el AFDmin (grafo) que reconoce las palabras del lenguaje con Σ = {0, 1}
+
+	| Q | a | b |
+	| -- | -- | -- |
+	| >q0 | q1 | q2 |
+	| q1  | q1 | q4 |
+	| *q2 | q4 | q3 |
+	| q3  | q4 | q3 |
+	| *q4 | -  | -  |
 
 1. [2 puntos] Dado L = {w / #0(w) y #1(w) son ambas pares} con Σ = {0, 1}, diséñese usando operadores básicos la ER que lo representa
 
+	```plain
+	(00)* | (11)* | (0011)* | (0101)* | (0110)* | (1001)* | (1010)* | (1100)*
+	```
+
 1. [2 puntos] Dado L = {palabras con no más de tres ceros}, diseñese la GR que genera las palabras del lenguaje con Σ = {0, 1}. Sólo producciones. (Para facilitar el diseño/corrección usar los nombres de los símbolos no terminales en este orden: S, A, B, C ...)
 
+	```plain
+	1* | 1* 0 1* | 1* 0 1* 0 1* | 1* 0 1* 0 1* 0 1*
+
+	S -> λ | 1S | 0 | 0A
+	A -> 1A | 1 | 0 | 0B
+	B -> 1B | 1 | 0 | 0C
+	C -> 1C | 1
+	```
+
 1. [2 puntos] Dado L = {0^n 1^m / n+m es par}, diseñese la GR que genera las palabras del lenguaje con Σ = {0, 1}. Sólo producciones. (Para facilitar el diseño/corrección usar los nombres de los símbolos no terminales en este orden: S, A, B, C ...)
+
+	```plain
+	n m
+	p p p
+	i i p
+
+	S -> λ | 0A | 1B | 0D
+	A -> 0S
+	B -> 1 | 1C
+	C -> 1B
+	D -> 0E | 1 | 1F
+	E -> 0D
+	F -> 1G
+	G -> 1 | 1F 
+	```
 
 ---
