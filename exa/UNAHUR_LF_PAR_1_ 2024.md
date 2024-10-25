@@ -46,7 +46,7 @@
 1. [2 puntos] Dado L = {w / #0(w) y #1(w) son ambas pares} con Σ = {0, 1}, diséñese usando operadores básicos la ER que lo representa
 
 	```plain
-	(00)* | (11)* | (0011)* | (0101)* | (0110)* | (1001)* | (1010)* | (1100)*
+	(00 | 11 | (01 | 10)(01 | 10))*
 	```
 
 1. [2 puntos] Dado L = {palabras con no más de tres ceros}, diseñese la GR que genera las palabras del lenguaje con Σ = {0, 1}. Sólo producciones. (Para facilitar el diseño/corrección usar los nombres de los símbolos no terminales en este orden: S, A, B, C ...)
@@ -74,7 +74,13 @@
 	D -> 0E | 1 | 1F
 	E -> 0D
 	F -> 1G
-	G -> 1 | 1F 
+	G -> 1 | 1F
+
+	S -> 0A | 0B | 1B |  λ 
+	A -> 0S | 1 | 0
+	B -> 1C | 1
+	C -> 1B
+
 	```
 
 ---
