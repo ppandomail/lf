@@ -17,12 +17,12 @@
 1. Dada la GIC P = {S -> aSb | ab}, determine, aplicando una derivación horizontal, si la cadena aaabbbb es una palabra del LIC generado por esta GIC. Dibuje la misma derivación, pero en forma de árbol
 
 1. Supongamos un Lenguaje de Programación en el que sus expresiones aritméticas están formadas por los números enteros 2 y 6, el operador de suma y siempre termina con un “punto y coma”. Algunas expresiones aritméticas de este Lenguaje de Programación son: {6; 2+2+6;} Vamos a construir una GIC que genere la totalidad de estas expresiones aritméticas. Para ello, debemos definir el vocabulario de no terminales, el vocabulario de terminales, el axioma y el conjunto de producciones. Supongamos que el vocabulario de no terminales esta formado por: S (el axioma), E (de expresión) y T (de término). Los terminales son 2, 6, + y ; (punto y coma). Las producciones de la GIC que genera el lenguaje de estas expresiones aritméticas son: {S -> E;  E -> T | E + T   T -> 2 | 6}. Determine, aplicando derivación a:
-      1. izquierda, si 6; es una expresión correcta.
-      1. izquierda, si 6+6+6+; es una expresión correcta.
-      1. derecha, si 6+6+6+; es una expresión correcta.
-      1. izquierda, si 6+6+6+2; es una expresión correcta.
+      1. izquierda, si 6; es una expresión correcta
+      1. izquierda, si 6+6+6+; es una expresión correcta
+      1. derecha, si 6+6+6+; es una expresión correcta
+      1. izquierda, si 6+6+6+2; es una expresión correcta
 
-1. Dada la siguiente gramática ambigua,  G=({S,B}, {0,1}, S, P), donde P son las producciones, P = {(S -> 0BB), (B -> 1S), (B -> 0S), (B -> 0)}. Mostrar los diferentes árboles de derivación para la cadena 010000000
+1. Dada la siguiente gramática ambigua, G=({S,B}, {0,1}, S, P), donde P son las producciones, P = {(S -> 0BB), (B -> 1S), (B -> 0S), (B -> 0)}. Mostrar los diferentes árboles de derivación para la cadena 010000000
 
 1. Dada la siguiente gramática ambigua, G=({E}, {+, \*, cte}, E, P), donde P son las producciones, P = {(E -> E + E), (E -> E \* E), (E -> cte)}. Derivar la cadena: cte + cte \* cte, mostrando los diferentes árboles de derivación
 
@@ -76,18 +76,18 @@
 1. Describa, por comprensión, el LIC generado por la GIC <{S -> aSb | a}>
 1. Determine el lenguaje generado por cada una de las siguientes gramáticas:
 
-    ```plain
-    S -> λ | AB | A | B
-    A -> aAb | ab
-    B -> bB | b
-    ```
+      ```plain
+      S -> λ | AB | A | B
+      A -> aAb | ab
+      B -> bB | b
+      ```
 
-    ```plain
-    S -> xAyC | xByyC | xyC | xyyC
-    A -> xAy | xy
-    B -> xByy | xyy
-    C -> zC | z
-    ```
+      ```plain
+      S -> xAyC | xByyC | xyC | xyyC
+      A -> xAy | xy
+      B -> xByy | xyy
+      C -> zC | z
+      ```
 
 ## Ejercicios diseño GIC que genera el LIC definido simbólicamente
 
@@ -110,8 +110,7 @@
 1. {(ab)^nc(ba)^(2m+1) / n ≥ 1; m ≥ 0}
 1. {x / x ∈ {a, b, c}* y x contiene al menos dos b y x contiene la subcadena bc}
 1. {x / x ∈ {a, b, c}* y x empieza y termina  con distinta letra}
-1. {x / x ∈ {a, e, i, f, t, h, n, l, s, w, d}* y x es alguna de las siguientes palabras reservadas de Pascal: {if, then, else, while, end}}
-
+1. {x / x ∈ {a, e, i, f, t, h, n, l, s, w, d}* y x es alguna de las siguientes palabras reservadas de Pascal: {if, then, else, while, end} }
 1. {a^(2i)b^(i+j)(cc)^ka^(n+1) / i, n, k ≥ 0; j > k}
 1. {a^(2i)d^nd^(i+j)b^(n+1) / i, n, j ≥ 0} U {a^(j+1)d^nd^(j+k)b^(n+1) / k, n, j ≥ 0}
 1. {d^nc^j(ab)^(2s)e^(t+2n) / s, t, n ≥ 0 y j > t} U {d^(2k)(ab)^(2h+1)e^(k+i) / h, k ≥ 0; i > k}
@@ -120,12 +119,11 @@
 1. {a^(2i)d^nd^(i+j)b^(n+1) / i, n, j ≥ 0} U {a^(j+1)d^nd^(j+k)b^(n+1) / k, n, j ≥ 0}
 1. L está dado por la ER: (a|bc)\*(dd|c)\*
 1. {a^nb^j(hf)^he^ke^(t+2h) / t, n ≥ 0; h ≥ 1; k > n; j > t}
-1. {e^(2n)d^t(bd)^sf^(2k+n) / t, n ≥ 0, s > 0 y k > t } U {(ee)^(k+1)h^)i+1)d^(2t) / k, i ≥ 0 ; t > k}
+1. {e^(2n)d^t(bd)^sf^(2k+n) / t, n ≥ 0, s > 0 y k > t } U {(ee)^(k+1)h^(i+1)d^(2t) / k, i ≥ 0 ; t > k}
 1. {e^(2n)d^t(bd)^sf^(2k+n) / t, n ≥ 0, s > n y k > t}
 1. {w / w ∈ {a, b, c}* donde el símbolo "a" aparece de a pares (aa), el símbolo c puede venir luego de una b u otra c}
 1. {w / w ∈ {a, b}*}
-1. {w / w ∈ {a, b, c}* , la cantidad de a es impar en w, y no se puede dar la subpalabra bc}
-
+1. {w / w ∈ {a, b, c}*, la cantidad de a es impar en w, y no se puede dar la subpalabra bc}
 1. {ww^(-1) / w,w^(-1) ∈ Σ*}  Σ = {a,b}
 1. {a^(2k)b^(2n)c^kd^j / k, n, j ≥ 0 } Ʃ = {a, b, c, d}
 
@@ -151,17 +149,20 @@
 
 1. G = <ΣT, ΣN, S, P>, donde ΣT = {0, 1}, ΣN = {S, A, B, C, D, E, F}, S es el axioma y P es:
 
-    ```grammar
-    S -> AB | A | CS1 | 0E
-    A -> 0AS | λ | A0 | C
-    B -> B1 | 1
-    D -> B1 | λ | 1F
-    E -> E1
-    F -> 0D
-    ```
+      ```grammar
+      S -> AB | A | CS1 | 0E
+      A -> 0AS | λ | A0 | C
+      B -> B1 | 1
+      D -> B1 | λ | 1F
+      E -> E1
+      F -> 0D
+      ```
 
 1. Dada la siguiente gramática, realizar factorización a izquierda y eliminación de recursividad por la izquierda. G = <{or, and, not, =, (, ), id}, {C}, C, P>, donde P:
-C -> C and C | C or C | not C | (C = C) | id
+
+      ```plain
+      C -> C and C | C or C | not C | (C = C) | id
+      ```
 
 1. Dada la siguiente gramática, que utiliza la notación polaca inversa (todos los operandos de las operaciones se colocan antes de los operadores), factorizar a izquierdas y eliminar la recursividad por la izquierda. G = <{id, num, func, +, *, /, -, (, ), ., ;, <, >, =}, {S, N, M, O, R}, S, P>, donde P:
 
@@ -173,7 +174,7 @@ C -> C and C | C or C | not C | (C = C) | id
       R  -> < | > | == 
       ```
 
-1. Dada la gramática G = <ΣT, ΣN, E, P>, donde ΣT = {a, +, *, ), (}, ΣN = {E, T, F}, E es el axioma y P es:
+1. Dada la gramática G = <ΣT, ΣN, E, P>, donde ΣT = {a, +, *, ')', '('}, ΣN = {E, T, F}, E es el axioma y P es:
 
       ```plain
       E -> E + T | (E) | a
@@ -196,10 +197,10 @@ C -> C and C | C or C | not C | (C = C) | id
 
 1. Dado el siguiente BNF para expresiones lógicas:
 
-    ```plain
-    <exp_lógica> ::= <exp_lógica> or <exp_lógica> | <exp_lógica> and <exp_lógica> | (<exp_lógica>) | not <exp_lógica> | true | false | <var_lógica>
-    <var_lógica> ::= A | B | C | ... | Z
-    ```
+      ```plain
+      <exp_lógica> ::= <exp_lógica> or <exp_lógica> | <exp_lógica> and <exp_lógica> | (<exp_lógica>) | not <exp_lógica> | true | false | <var_lógica>
+      <var_lógica> ::= A | B | C | ... | Z
+      ```
 
       1. Determine usando árboles de derivación, si las siguientes son expresiones lógicas
           1. A or ((B and not (B or A)) and true
