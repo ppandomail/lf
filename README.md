@@ -1,4 +1,4 @@
-# Lenguajes Formales (UNO) / Lenguajes Formales y Autómatas (UNAHUR) / Teoría de la Computación (UNAHUR)
+# Lenguajes Formales (UNO) / Lenguajes Formales y Autómatas (UNAHUR)
 
 ## Docentes
 
@@ -44,7 +44,7 @@
 * Buscadores textuales
 * Compiladores
 
-## Programa Lenguajes Formales
+## Programa
 
 | Unidad | | Universidad | Contenido | Ejercicios |
 | -- | -- | -- | -- | -- |
@@ -60,21 +60,10 @@
 | 03 | LIC   | UNO   | [LR](doc/10-asa-contenido.md)             | [Ejercicios](doc/10-asa-ejercicios.md)     |
 | 04 | MT    | TODOS | [MT](doc/11-mt-contenido.md)              | [Ejercicios](doc/11-mt-ejercicios.md)      |
 
-## Programa Teoría de la Computación
-
-| Unidad | | Universidad | Contenido | Ejercicios |
-| -- | -- | -- | -- | -- |
-| 01 | TC   | UNAHUR | [Teoría de la Computabilidad](doc/12-comput-contenido.md)            | [Ejercicios](doc/12-comput-ejercicios.md) |
-| 02 | TCC  | UNAHUR | [Teoría de la Complejidad Computacional](doc/13-comple-contenido.md) | [Ejercicios](doc/13-comple-ejercicios.md) |
-| 03 | MAQ  | UNAHUR | [Maquinaria computacional e Inteligencia](doc/14-maquinaria-computacional.pdf) ||
-| 04 | PROY | UNAHUR | [Proyectos](proy/) ||
-| 05 | FIN  | UNAHUR | [Conclusiones](doc/15-conclusiones.md) ||
-
 ## Bibliografía
 
-* [Teoría de autómatas, lenguajes y computación (Hopcroft, Motwani y Ullman)](biblio/)
-* [Autómatas y Lenguajes (Brena)](biblio/)
-* [Computabilidad, complejidad computacional y verificación de programas (Rosenfeld)](biblio/)
+* [Teoría de autómatas, lenguajes y computación (Hopcroft, Motwani y Ullman)](biblio/Teoria%20de%20automatas,%20lenguajes%20y%20computacion%20(Hopcroft).pdf)
+* [Autómatas y Lenguajes (Brena)](biblio/Automatas%20y%20Lenguajes%20(Brena).pdf)
 
 ## Herramientas
 
