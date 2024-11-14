@@ -2,7 +2,7 @@
 
 ## Ejercicios conceptuales
 
-1. Investigue e informe porqué el lenguaje L = {anbn / n ≥ 1} no es un LR. Demuestre que las producciones de la siguiente gramática generan al lenguaje L: S -> aSb | ab
+1. Investigue y justifique L = {a^nb^n / n ≥ 1} no es un LR. Demuestre que las producciones de la siguiente gramática generan al lenguaje L: S -> aSb | ab
 1. Sea la transición T(4, λ, Z) = {(5, RP)}. Describa qué significa
 
 ## Ejercicios diseño de AP por pila vacia
@@ -19,12 +19,11 @@
 1. {a^nb^mc^pa^qb^n / q = p + m, n, m ≥ 1, p ≥ 0}
 1. {a^nb^mc^pa^qb^rc^s/ q = p + m, 2n = r + s, n, m ≥ 1, p ≥ 0}
 1. {wa^rb^rw^(-1) / w ∈ {a, b}*, r ≥ 1}.
-1. {(ab)^(2s+1) c^j (d)^n e^(t+2n) / s, t, n ≥ 0 y j > t} U {(ab)^(h+1) d^(2k) e^(k+i) /
-h, i ≥ 0; k ≥ 1}
+1. {(ab)^(2s+1) c^j (d)^n e^(t+2n) / s, t, n ≥ 0 y j > t} U {(ab)^(h+1) d^(2k) e^(k+i) / h, i ≥ 0; k ≥ 1}
 1. {a^(2k)b^(2n)c^kd^j / k, n, j ≥ 0}
 1. {x^ry^sz^t / t = r+s y r, s ≥ 1}
 1. {x^ry^sz^t / s = r+t y r, s ≥ 1}
-1. {x / x = a Y e donde Y = b^(3n)cd^(3n) , n ≥ 1}
+1. {x / x = a Y e donde Y = b^(3n)cd^(3n), n ≥ 1}
 1. {1^n0^k / n ≥ 0 y k = 3n}
 
 ## Ejercicios diseño de AP que reconoce el LIC definido coloquialmente
