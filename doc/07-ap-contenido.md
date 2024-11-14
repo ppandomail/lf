@@ -56,7 +56,7 @@
 * Cuando lee un 1 en la entrada y está en el estado q0, pone el 1 en la pila, para memorizar cuantos ha leído
 * Cuando lee un 0, transita al estado q1 que se dedica a eliminar un 1 de la pila por cada 0 que lee
 * Así, si la pila se queda vacía es porque ha leído el mismo número de 1s que de 0s
-* Ejemplo de análisis (parsing)
+* Ejemplo de análisis (parsing) por cadena aceptada
 
   | Pila | Cadena | Transición |
   | -- | -- | -- |
@@ -67,14 +67,23 @@
   | $   | λ    | (q1,λ,$)=(q1,λ)    |
   | λ   | λ    | accept             |
 
+* Ejemplo de análisis (parsing) por cadena rechazada
+
+  | Pila | Cadena | Transición |
+  | -- | -- | -- |
+  | $   | 110 | δ(q0,1,\$)=(q0,1$) |
+  | $1  | 10  | δ(q0,1,1)=(q0,11)  |
+  | $11 | 0   | δ(q0,0,1)=(q1,λ)   |
+  | $1  | λ   | fail               |
+
 ## Tipos de transiciones
 
-| Transición | Deescripción |
+| Transición | Descripción |
 | -- | -- |
-| δ(p,a,Z)=(q,z) | Transita avanzando en la cinta de entrada, extrayendo y poniendo en la pila |
-| δ(p,x,λ)=(q,z) | Transita sin extraer nada de la pila |
-| δ(p,λ,s)=(q,λ) | Transita sin avanzar en la cinta de entrada |
-| δ(p,λ,λ)=(q,λ) | Transita sin avanzar en la cinta de entrada y sin extraer nada de la pila |
+| δ(p,a,Z)=(q,z) | Transita avanzando en la cadena de entrada, sacando y poniendo en la pila |
+| δ(p,x,λ)=(q,z) | Transita sin sacar nada de la pila |
+| δ(p,λ,s)=(q,λ) | Transita sin avanzar en la cadena de entrada |
+| δ(p,λ,λ)=(q,λ) | Transita sin avanzar en la cadena de entrada y sin sacar nada de la pila |
 | δ(p,x,λ)=(q,λ) | AF |
 
 ## Descripción instantánea
@@ -105,7 +114,7 @@
 
   | Movimientos |
   | -- |
-  | (q0, 1100, $) ├ (q0, 100, 1$) |
+  | (q0, 1100, \$) ├ (q0, 100, 1$) |
   | (q0, 100, 1$) ├ (q0, 00, 11$) |
   | (q0, 00, 11$) ├ (q1, 0, 1$) |
   | (q1, 0, 1$) ├ (q1, λ, $) |
@@ -123,7 +132,7 @@
 ## Tipos de AP
 
 * **Autómatas de Pila Deterministas (APD)**:
-  * Un AP es APD cuando si hay alguna transición λ dados un estado q y un símbolo de la pila \$, entonces no puede haber transición con ningún símbolo de entrada, y, además, no puede haber más de una transición dados el mismo estado q y símbolo de la pila en el tope de la pila $, incluyendo las transiciones λ
+  * Un AP es APD cuando si hay alguna transición λ dados un estado q y un símbolo de la pila \$, entonces no puede haber transición con ningún símbolo de entrada, y, además, no puede haber más de una transición dados el mismo estado q y símbolo de la pila en el tope de la pila \$, incluyendo las transiciones λ
 
 * **Autómatas de Pila No Deterministas (APN)**:
   * Ejemplo:

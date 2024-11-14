@@ -104,7 +104,6 @@
 1. {x^ry^sz^t / t = r + s y r, s ≥ 1}
 1. {a^(2n)b^id^ke^(s+k) / n, i, k ≥ 0 y s > n} U {a^(2k)h^jd^(k+1) / k, j ≥ 0}
 1. {w / w ∈ {0, 1}* y w contiene al menos tres ceros} (lineal a la derecha)
-1. {a^(2n)b^(ij)(cc)^ka^(n+1) / i, n, k ≥ 0; j > k}
 1. {w / w ∈ {a, b, c}*, la cantidad de a es impar en w, y no se puede dar la subcadena bc}
 1. {w / w ∈ {a, b, c, d}* y w no contiene addc, d debe ser par, b impar}
 1. {(ab)^nc(ba)^(2m+1) / n ≥ 1; m ≥ 0}
