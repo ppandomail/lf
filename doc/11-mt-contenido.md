@@ -2,31 +2,20 @@
 
 ## Extendiendo el poder de cómputo
 
-* Lenguajes:
-  * Lenguajes Regulares => AF
-  * Lenguajes Incontextuales => AP
-  * Lenguajes Contextuales => ALA
-
-* ALA: Autómata Linealmente Acotado, no nos detendremos a estudiar este autómata (pues puede verse como restricción de otro formalismo que es más potente aún...)
-* Dado que hemos incrementado nuestro poder de cómputo lentamente, y entendemos mejor el concepto de autómata, ahora seremos más ambiciosos..
-* **¿Existe un autómata que reconozca cualquier lenguaje de los que vimos anteriormente?**
-* Hasta el momento, cada autómata que estudiábamos no era capaz de reconocer algún lenguaje
-  * Los **AF** se veían limitados ante L = {a^n b^n / n>0}
-  * Los **AP** se veían limitados ante L = {a^n b^n c^n / n>0}
-* Vale la pena preguntarse si se repetirá esta situación una vez más...
-* **¿Existe algún lenguaje que este nuevo autómata no pueda reconocer?** De ser así, **¿puede ser reemplazado por otro más poderoso?**
-
-* **¿Qué significaría definir una clase de autómatas que reconozca los lenguajes anteriores...**
-  * ... y que **exista** un lenguaje **L** que no pueda reconocer...
-  * ... y que **no** pueda construirse otro autómata más potente?...
-
 * **Pregunta central en computación: ¿qué máquinas puedo construir? ¿qué límites tendrán?**
+
+| Lenguajes | Máquina | Límite |
+| -- | -- | -- |
+| Regulares                 | AF  | L = {a^n b^n / n>0} |
+| Incontextuales            | AP  | L = {a^n b^n c^n / n>0} |
+| Contextuales              | ALA | Autómata Linealmente Acotado, no se estudiará este autómata (pues puede verse como restricción de otro formalismo que es más potente aún...) |
+| Recursivamente Enumerable | MT  | Máquina de Turing |
 
 ## Alan Mathison Turing
 
-* (Inglés, 23/06/1912-1954)
+* (Matemático inglés, 23/06/1912 - 07/06/1954)
 * Hitos de su carrera científica:
-  * Diseño de una **máquina hipotética**, la máquina de Turing, creando los conceptos teóricos que permitieron la construcción de las primeras computadoras
+  * Diseño de una **máquina hipotética**, la Máquina de Turing, creando los conceptos teóricos que permitieron la construcción de las primeras computadoras
   * Como **criptógrafo** se destacó por conseguir desvelar los códigos Enigma, con los que los alemanes cifraban sus mensajes durante la Segunda Guerra Mundial
   * Realizó investigaciones pioneras con las que sentó las bases de la **inteligencia artificial** y la **biología matemática**
 
@@ -39,14 +28,97 @@
 
   ![Pelicula Enigma](img/pelicula.jpg)
 
-## Máquina de Turing
+## Arquitectura
 
-* Es un dispositivo (máquina) abstracto, sin existencia real, que representa la configuración más sencilla de una computadora
+* Es una máquina abstracta, sin existencia real, que representa la configuración más sencilla de una computadora
 * Turing empezó tratando de modelar a una computadora humana, es decir, a un humano tratando de resolver algorítmicamente un problema utilizando papel y lápiz:
-  * Examinar un símbolo individual en el papel
-  * Borrar un símbolo o reemplazarlo por otro
-  * Trasladar la atención de una parte del papel a otra
-* Al igual que los AF y AP, es capaz de reconocer palabras que pertenecen a cualquier lenguaje formal
+
+  | Abstracción | Modelo básico ||
+  | -- | -- | -- |
+  | **papel** | una **cinta** | lineal teóricamente infinita que se divide en celdas. Cada celda de la cinta puede contener un solo **símbolo del alfabeto** de la cinta |
+  | **lápiz** | una **cabeza de lectura/escritura** | que lee un sólo símbolo de la cinta por vez controlado un **conjunto finito de estados** que representan los distintos "estados mentales", y borra un símbolo o lo reemplaza por otro |
+
+  ![Arquitectura MT](img/MT-arquitectura.png)
+
+  ![MT con Turing](img/MT-con-turing.png)
+
+## Definición formal
+
+* Formalmente una MT se define como una 7-upla: M = <Г, Σ, b, Q, q0, F, δ>
+
+  |||
+  | -- | -- |
+  | **Г**  | alfabeto de la cinta, Г = Σ U {b} U símbolos_aux |
+  | **Σ**  | alfabeto de entrada, Σ ⊂ Г, Σ ∩ símbolos_aux = Ø |
+  | **b**  | símbolo blanco, b ∈ Г, b ∉ Σ |
+  | **Q**  | conjunto finito de estados |
+  | **q0** | estado inicial, q0 ∈ Q |
+  | **F**  | conjunto de estados finales, F ⊆ Q |
+  | **δ**  | función de transición de estados, δ: Q x Г -> Q x Г x {L (Left), R (Right), S (Stay)} |
+
+* Ejemplo de transición: δ(q0, X) = (q1, Y, R)
+
+  ![Transicion MT](img/MT-transicion.png)
+
+## Características
+
+* La cinta es infinita, por lo que a los dos lados de la información que aparezca en la entrada, habrá espacios en blanco representado por b. (otros autores consideran que la cinta tiene una celda de inicio a la izquierda, pero es infinita a derecha)
+* Inicialmente contiene un número finito de símbolos de Σ (las n posiciones más a la izquierda de la cinta de entrada contiene la palabra de entrada w, donde |w|= n) precedidos y seguidos de infinitos blancos (símbolo especial b, del alfabeto de la cinta)
+* Al igual que el resto de los autómatas, se representa por la tabla de transición en la que en las filas están los estados, en las columnas los símbolos de Г, y en la posición (q, a) aparece δ(q, a)
+
+## Ejemplo: MT que duplica cantidad de unos
+
+![MT duplica 1](img/MT-duplica1.png)
+
+* MT = < Г = {0, 1, □}, Σ = {1}, b = □, Q = {p, q, r, s}, q0 = p, F = {s}, δ>
+
+  | δ | 1 | 0 | □ |
+  | -- | -- | -- | -- |
+  | >p | q0R | p0L | r□R |
+  | q | q1R | q0R | p0L |
+  | r | - | r1R | s□S |
+  | *s | -  | - | - |
+
+  ![MT movimientos](img/MT-movimientos.png)
+
+## Descripción instantánea
+
+* Permite describir la configuración de la MT en cada momento
+* Notación: w1qσw2
+
+  ||||
+  | -- | -- | -- |
+  | **w1** | w1 ∈ Г+ | palabra de la cinta que precede a la celda sobre la que se encuentra la cabeza de entrada/salida |
+  | **q**  | q ∈ Q   | estado actual |
+  | **σ**  | σ ∈ Г   | símbolo de la cinta sobre el que se encuentra la cabeza de entrada/salida |
+  | **w2** | w1 ∈ Г+ | palabra que hay a continuación de la cabeza de entrada/salida |
+
+* Ejemplo: 11q00
+
+## Movimientos
+
+* Se denota el paso de una configuración a otra por medio del símbolo: ├
+* Ejemplo: p11 ├ 0q1 ...
+
+## Computación
+
+* Es la secuencia de todos los movimientos que conducen a una configuración de parada
+* Ejemplo: p11 ├* 1111s□
+
+### MT que nunca parará
+
+* La MT se moverá por tiempo indefinido con la cabeza de lectura/escritura desplazándose de derecha a izquierda alternativamente. Se dice que la MT se encuentra en un "bucle infinito"
+* Computación: aabq0abb ├* ∞
+
+  ![MT infinita](img/MT-infinita.png)
+
+### Lenguaje aceptado por una MT: L(M)
+
+* Una MT se puede comportar como un aceptador de un lenguaje, de la misma forma que lo hace un AF o AP
+* Una palabra es reconocida por una MT, si dispuesta inicialmente en la cinta de entrada, con la cabeza de lectura en el primer símbolo de la palabra y la MT en el estado inicial, la máquina es capaz de transitar a un estado final y pararse
+* Un lenguaje L es Turing-aceptable si ∃ MT que da halt ∀w ∈ L, es decir, la palabra w es aceptada por la MT
+* L(M) = {w ∈ Σ\* / w1qσw2 ├* w1pσw2 ^ p ∈ F ^ wi ∈ Γ}
+
 * Es el autómata más general, capaz de reconocer las palabras de los lenguajes generados por las gramáticas menos restrictivas
 * Ejemplo: L = {w / |w|a = |w|b = |w|c}
 
@@ -77,99 +149,15 @@
     bB → bb
     ```
 
-  ![MT con Turing](img/MT-con-turing.png)
-
-### Arquitectura
-
-* El modelo básico de una MT tiene:
-  * una **cinta** lineal teóricamente infinita que se divide en celdas y
-  * una **cabeza de lectura/escritura** que lee un sólo símbolo de la cinta por vez controlado un **conjunto finito de estados** que representan los distintos "estados mentales"
-  * Cada celda de la cinta puede contener un solo **símbolo del alfabeto** de la cinta
-
-  ![Arquitectura MT](img/MT-arquitectura.png)
-
-### Definición formal
-
-* MT = < Г, Σ, b, Q, q0, F, δ>. Donde:
-  * Г: es el alfabeto de símbolos de cinta. Г = Σ U {b} U símbolos_aux
-  * Σ ⊂ Г: es el alfabeto de símbolos de entrada. Como la MT puede escribir en la cinta, es diferente el alfabeto de los símbolos que, inicialmente pueden aparecer en la cinta (Σ) del alfabeto de los símbolos que, en algún momento, pueden aparecer en la cinta (Г). Σ ∩ símbolos_aux = Ø
-  * b ∈ Г, b ∉ Σ: es un símbolo de la cinta de entrada especial que representa el espacio en blanco
-  * Q: es el conjunto finito de estados
-  * q0 ∈ Q: es el estado inicial
-  * F incluido o igual Q: es el conjunto de los estados finales
-  * δ: Q x Г -> Q x Г x {L, R, S}: es la función de transición, donde L (left) es izquierda, R (right) es derecha y S (stay) es parada (o no hay movimiento)
-    * Sin embargo, δ puede estar indefinida para algunos argumentos, por ejemplo, no se permiten movimientos a izquierda de la celda de inicio de la cinta
-    * Ejemplo: δ(q0, X) = (q1, Y, R) se puede representar gráficamente de la siguiente manera:
-
-  ![Transicion MT](img/MT-transicion.png)
-
-### Características
-
-* La cinta es infinita, por lo que a los dos lados de la información que aparezca en la entrada, habrá espacios en blanco representado por b. (otros autores consideran: que la cinta tiene una celda de inicio a la izquierda, pero es infinita a derecha)
-* Inicialmente contiene un número finito de símbolos de Σ (las n posiciones más a la izquierda de la cinta de entrada contiene la palabra de entrada w, donde |w|= n) precedidos y seguidos de infinitos blancos (símbolo especial b, del alfabeto de la cinta)
-* Al igual que el resto de los autómatas, se representa por la tabla de transición en la que en las filas están los estados, en las columnas los símbolos de Г, y en la posición (q, a) aparece δ(q, a)
-
-### Ejemplo: MT que duplica cantidad de unos
-
-  ![MT duplica 1](img/MT-duplica1.png)
-
-* MT = < Г = {0, 1, □}, Σ = {1}, b = □, Q = {p, q, r, s}, q0 = p, F = {s}, δ>
-
-| δ | 1 | 0 | □ |
-| -- | -- | -- | -- |
-| >p | q0R | p0L | r□R |
-| q | q1R | q0R | p0L |
-| r | - | r1R | s□S |
-| *s | -  | - | - |
-
-  ![MT movimientos](img/MT-movimientos.png)
-
-### Descripciones instantáneas
-
-* Son las configuraciones de una MT
-* Viene determinada por:
-  * estado actual
-  * contenido de la cinta
-  * posicion de la cabeza lectura/escritura sobre la cinta
-* Notación: w1qσw2
-  * w1: palabra de la cinta que precede a la celda sobre la que se encuentra la cabeza de entrada/salida.
-  * q: estado actual
-  * σ: es el símbolo de la cinta sobre el que se encuentra la cabeza de entrada/salida
-  * w2: palabra que hay a continuación de la cabeza de entrada/salida
-
-### Movimiento
-
-* Se denota el paso de una configuración a otra por medio del símbolo: ├
-* Ejemplo: p11 ├ 0q1 ...
-
-### Computación
-
-* Es la secuencia de todos los movimientos que conducen a una configuración de parada
-* Ejemplo: p11 ├* 1111s□
-
-### MT que nunca parará
-
-* La MT se moverá por tiempo indefinido con la cabeza de lectura/escritura desplazándose de derecha a izquierda alternativamente. Se dice que la MT se encuentra en un "bucle infinito"
-* Computación: aabq0abb ├* ∞
-
-  ![MT infinita](img/MT-infinita.png)
-
-### Lenguaje reconocido por una Máquina de Turing
-
-* Una MT se puede comportar como un aceptador de un lenguaje, de la misma forma que lo hace un AF o un AP
-* Una palabra es reconocida por una MT, si dispuesta inicialmente en la cinta de entrada, con la cabeza de lectura en el primer símbolo de la palabra y la MT en el estado inicial, la máquina es capaz de transitar a un estado final y pararse
-* Un lenguaje L es Turing-aceptable si existe una MT que da halt para toda entrada w ∈ L, es decir, la palabra w es aceptada por la MT
-* L(M) = {w ∈ ∑\* / w1qσw2 ├* w1pσw2 ^ p ∈ F ^ wi ∈ Γ}
-
 ### Aceptación de palabras por MT
 
-* Una palabra x ∈ Σ* es aceptada por una MT T si empezando con la configuración inicial correspondiente a la palabra x, eventualmente se llega al estado de aceptación ha
+* Una palabra w ∈ Σ* es aceptada por una MT T si empezando con la configuración inicial correspondiente a la palabra x, eventualmente se llega al estado de aceptación ha
 * No es necesario procesar toda la palabra para aceptarla
 * El lenguaje aceptado por T es el conjunto de palabras aceptadas por T
 
 ### Rechazo de palabras por MT
 
-* Una palabra x ∈ Σ* es rechazada por una MT T si empezando con la configuración inicial correspondiente a la palabra x, eventualmente se llega al estado de rechazo hr
+* Una palabra w ∈ Σ* es rechazada por una MT T si empezando con la configuración inicial correspondiente a la palabra w, eventualmente se llega al estado de rechazo hr
 * No es necesario procesar toda la palabra para rechazarla
 * Es costumbre omitir el estado de rechazo y rechazar una palabra cuando no existe una transición, es decir, cuando la máquina se queda "colgada"
 
@@ -177,45 +165,45 @@
 
 * MT = <{a, b, □}, {a, b}, □, {q, a, r}, q, {a}, δ>
 
-| δ | a | b | □ |
-| -- | -- | -- | -- |
-| >q | aaS | rbS | r□S |
-| *a | - | - | - |
-| r | - | - | - |
+  | δ | a | b | □ |
+  | -- | -- | -- | -- |
+  | >q | aaS | rbS | r□S |
+  | *a | - | - | - |
+  | r | - | - | - |
 
 ### Ejemplo: MT que acepta L = {wa / w ∈ {a, b}*}
 
 * MT = <{a, b, □}, {a, b}, □, {p, q, a, r}, p, {a}, δ>
 
-| δ | a | b | □ |
-| -- | -- | -- | -- |
-| >p | paR | pbR | q□L |
-| q | aaS | rbS | r□S |
-| *a | - | - | - |
-| r | - | - | - |
+  | δ | a | b | □ |
+  | -- | -- | -- | -- |
+  | >p | paR | pbR | q□L |
+  | q | aaS | rbS | r□S |
+  | *a | - | - | - |
+  | r | - | - | - |
 
 ### Ejemplo: MT que acepta L = {0^n1 / n ≥ 0}
 
 * MT = <{0, 1, □}, {0, 1}, □, {p, q, r, a}, p, {a}, δ>
 
-| δ | 1 | 0 | □ |
-| -- | -- | -- | -- |
-| >p | q1R | p0R | r□R |
-| q | r1S | r0S | a□S |
-| r | - | - | - |
-| *a | -  | - | - |
+  | δ | 1 | 0 | □ |
+  | -- | -- | -- | -- |
+  | >p | q1R | p0R | r□R |
+  | q | r1S | r0S | a□S |
+  | r | - | - | - |
+  | *a | -  | - | - |
 
 ### Ejemplo: MT que acepta L = {0^n1^n / n ≥ 1}
 
 * MT = <{0, 1, x, y, □}, {0, 1}, □, {q0, q1, q2, q4, q5}, q0, {q4, q5}, δ>
 
-| δ | 1 | 0 | x | y | □ |
-| -- | -- | -- | -- | -- | -- |
-| >q0 | - | (q1,x,R) | - | (q5,y,R) | - |
-| q1 | (q2,y,L) | (q1,0,R) | - | (q1,y,R) | - |
-| q2 | - | (q2,0,L) | (q0,x,R) | (q2,y,L) | - |
-| *q5 | -  | - | - | (q5,y,R) | (q4,□,S) |
-| *q4 | -  | - | - | - | - |
+  | δ | 1 | 0 | x | y | □ |
+  | -- | -- | -- | -- | -- | -- |
+  | >q0 | - | (q1,x,R) | - | (q5,y,R) | - |
+  | q1 | (q2,y,L) | (q1,0,R) | - | (q1,y,R) | - |
+  | q2 | - | (q2,0,L) | (q0,x,R) | (q2,y,L) | - |
+  | *q5 | -  | - | - | (q5,y,R) | (q4,□,S) |
+  | *q4 | -  | - | - | - | - |
 
 ## Modificaciones de las MT
 
@@ -223,10 +211,13 @@
 * Algunos de esos modelos alternativos son mucho más complicados aunque todos tienen la misma potencia computacional (o de cálculo)
 * Muchas de ellas dotan de mayor flexibilidad al diseño de una MT que resuelva un problema particular
 * Variaciones:
-  * MT multipistas (cada celda de la cinta se divide en subceldas)
-  * MT multidimensionales (permite que la cinta tenga muchas dimensiones, δ: Q x Γ -> Q x Γ x {L, R, U (up), D (down), S})
-  * MT multicinta
-  * MTND
+
+  |||
+  | -- | -- |
+  | **MT multipistas**        | cada celda de la cinta se divide en subceldas |
+  | **MT multidimensionales** | permite que la cinta tenga muchas dimensiones, δ: Q x Γ -> Q x Γ x {L, R, U (up), D (down), S} |
+  | **MT multicinta**         | |
+  | **MTND**                  | |
 
 ### MT multicinta
 
@@ -246,13 +237,13 @@
 
 * MT = <{a, b, □}, {a, b}, □, {q0, q1, q2, q3}, q0, {q3}, δ>
 
-| δ | C1 | C2 | C1:new | C1:mov | C2:new | C2:mov | Qdest |
-| -- | -- | -- | -- | -- | -- | -- | -- |
-| q0 | a | □ | a | R | a | R | q1 |
-| q1 | a | □ | a | R | a | R | q1 |
-| q1 | b | □ | b | S | □ | L | q2 |
-| q2 | b | a | b | R | a | L | q2 |
-| q2 | □ | □ | □ | R | □ | L | q3 |
+  | δ | C1 | C2 | C1:new | C1:mov | C2:new | C2:mov | Qdest |
+  | -- | -- | -- | -- | -- | -- | -- | -- |
+  | q0 | a | □ | a | R | a | R | q1 |
+  | q1 | a | □ | a | R | a | R | q1 |
+  | q1 | b | □ | b | S | □ | L | q2 |
+  | q2 | b | a | b | R | a | L | q2 |
+  | q2 | □ | □ | □ | R | □ | L | q3 |
 
 ### Ejemplo: MT multicinta (bicinta) que acepta L = {a^nb^nc^n / n ≥ 1}
 
@@ -260,14 +251,14 @@
 
 * MT = <{a, b, □}, {a, b}, □, {q0, q1, q2, q3}, q0, {q3}, δ>
 
-| δ | C1 | C2 | C1:new | C1:mov | C2:new | C2:mov | Qdest |
-| -- | -- | -- | -- | -- | -- | -- | -- |
-| q0 | a | □ | a | R | a | R | q0 |
-| q0 | b | □ | b | S | □ | L | q1 |
-| q1 | b | a | b | R | a | L | q1 |
-| q1 | c | □ | c | S | □ | R | q2 |
-| q2 | c | a | c | R | a | R | q2 |
-| q2 | □ | □ | □ | S | □ | S | q3 |
+  | δ | C1 | C2 | C1:new | C1:mov | C2:new | C2:mov | Qdest |
+  | -- | -- | -- | -- | -- | -- | -- | -- |
+  | q0 | a | □ | a | R | a | R | q0 |
+  | q0 | b | □ | b | S | □ | L | q1 |
+  | q1 | b | a | b | R | a | L | q1 |
+  | q1 | c | □ | c | S | □ | R | q2 |
+  | q2 | c | a | c | R | a | R | q2 |
+  | q2 | □ | □ | □ | S | □ | S | q3 |
 
 ## MTND
 
