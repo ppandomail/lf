@@ -6,10 +6,10 @@
 
 | Lenguajes | Máquina | Límite |
 | -- | -- | -- |
-| Regulares                 | AF  | L = {a^n b^n / n>0} |
-| Incontextuales            | AP  | L = {a^n b^n c^n / n>0} |
-| Contextuales              | ALA | Autómata Linealmente Acotado, no se estudiará este autómata (pues puede verse como restricción de otro formalismo que es más potente aún...) |
-| Recursivamente Enumerable | MT  | Máquina de Turing |
+| Regulares                  | AF  | L = {a^n b^n / n>0} |
+| Incontextuales             | AP  | L = {a^n b^n c^n / n>0} |
+| Contextuales               | ALA | Autómata Linealmente Acotado, no se estudiará este autómata (pues puede verse como restricción de otro formalismo que es más potente aún...) |
+| Recursivamente Enumerables | MT  | Máquina de Turing |
 
 ## Alan Mathison Turing
 
