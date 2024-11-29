@@ -9,6 +9,9 @@
 1. Palabras que contengan 1’s y/o 0’s pero no contengan 3 ceros seguidos
 1. Palabras con un número par de x. Ejemplo xx, xxxx, ...
 1. Palabras de 1’s cuya longitud es una potencia de 2
+
+    ![MT potencia de 2](img/MT-uni-pot2.png)
+
 1. Palabras con cantidad de aes igual a cantidad de bes
 1. Palabras con cantidad de aes igual a cantidad de bes e igual a cantidad de ces
 
