@@ -30,12 +30,55 @@
 
 1. [2 puntos] Diséñese una GIC para L = {be, bne, bse, bn_se, bn_ne, bn_n_s_ne, ...}
 
+    ```grammar
+    S -> bAe | be
+    A -> n_A | s_A | n | s
+    ```
+
 1. [2 puntos] Diséñese una GIC FNC para L = {0^a 1^b 0^c / a, b, c > 0 and a + c = b}
 
+    ```grammar
+    L = {0^a 1^a 1^c 0^c / a, c > 0}
+
+    S -> AB
+    A -> 0A1 | 01
+    B -> 1B0 | 10
+
+    FNC: 
+    S  -> AB
+    A  -> CA' | CU
+    A' -> AU
+    B  -> UB' | UC
+    B' -> BC
+    C  -> 0
+    U  -> 1 
+    ```
+
 1. [2 puntos] Diséñese AP (por vaciado) que reconozca aba, mostrando movimientos. GIC: S -> XbY  X -> aX | a   Y -> bY | a
+
+    ```grammar
+    FNG:
+    S -> aXBY | aBY
+    X -> aX | a
+    Y -> bY | a
+    B -> b
+
+    AP:
+    δ(q0, a, S) = (q0, XBY)
+    δ(q0, a, S) = (q0, BY)
+    δ(q0, a, X) = (q0, X)
+    δ(q0, a, X) = (q0, λ)
+    δ(q0, b, Y) = (q0, Y)
+    δ(q0, a, Y) = (q0, λ)
+    δ(q0, b, B) = (q0, λ)
+    ```
 
 1. [2 puntos] Diséñese una MT unicinta que reconozca L del punto 1
 
 1. [2 puntos] Defínase por comprensión simbólica el L generado por \<prog> ::= \<head>\<body>   \<head> ::= a\<head>b | ab   \<body> ::= a\<body> | a
+
+    ```plain
+    L = {a^n b^n a^m / n, m > 0}
+    ```
 
 ---
