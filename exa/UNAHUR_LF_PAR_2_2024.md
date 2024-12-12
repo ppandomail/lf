@@ -75,6 +75,15 @@
 
 1. [2 puntos] Diséñese una MT unicinta que reconozca L del punto 1
 
+    | Q   |  b   |  n   |  s   |  -   |  e   |  B   |
+    | --  |  --  |  --  |  --  |  --  |  --  |  --  |
+    | >q0 | q1bR |      |      |      |      |      |
+    | q1  |      | q3nR | q3sR |      | q2eR |      |
+    | q2  |      |      |      |      |      | q4BS |
+    | q3  |      |      |      | q5_R | q2eR |      |
+    | *q4 |      |      |      |      |      |      |
+    | q5  |      | q3nR | q3sR |      |      |      |
+
 1. [2 puntos] Defínase por comprensión simbólica el L generado por \<prog> ::= \<head>\<body>   \<head> ::= a\<head>b | ab   \<body> ::= a\<body> | a
 
     ```plain
