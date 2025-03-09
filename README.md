@@ -74,22 +74,22 @@
 
 | **Clase** | **Fecha** | **Tema** |
 | -- | -- | -- |
-| 01 | 12/03 | Presentación. Lenguajes Formales. Clasificación de Chomsky. P1 |
-| 02 | 19/03 | Lenguajes Regulares. GR (P2). ER (P3) |
-| 03 | 26/03 | AF (P4) |
-| 04 | 02/04 | **Feriado** |
-| 05 | 09/04 | Algoritmos. L Pumping LR (P5) |
-| 06 | 16/04 | Repaso P1 a P5. Ej. Tipo Parcial |
-| 07 | 23/04 | **1er. Parcial** |
-| 08 | 30/04 | Lenguajes Incontextuales: GIC, FNC, FNG, FNB (P6) |
-| 09 | 07/05 | AP. L Pumping LIC (P7) |
-| 10 | 14/05 | Parser LL y LR con retroceso (P8). **Enunciado del TP** |
-| 11 | 21/05 | Práctica GIC, AP, LL, LR |
-| 12 | 28/05 | MT (P9) |
-| 13 | 04/06 | Práctica MT. **Entrega TP** |
-| 14 | 11/06 | Repaso P6 a P9. Ej. Tipo Parcial |
-| 15 | 18/06 | **2do. Parcial** |
-| 16 | 25/06 | **Recuperatorios. Entrega TP**. Cierre de Notas |
+| 01 | 18/03 | Presentación. Lenguajes Formales. Clasificación de Chomsky. P1 |
+| 02 | 25/03 | Lenguajes Regulares. GR (P2). ER (P3) |
+| 03 | 01/04 | AF (P4) |
+| 04 | 08/04 | Algoritmos. L Pumping LR (P5) |
+| 05 | 15/04 | Repaso P1 a P5. Ej. Tipo Parcial |
+| 06 | 22/04 | **1er. Parcial** |
+| 07 | 29/04 | Lenguajes Incontextuales: GIC, FNC, FNG, FNB (P6) |
+| 08 | 06/05 | AP. L Pumping LIC (P7) |
+| 09 | 13/05 | Parser LL y LR con retroceso (P8). **Enunciado del TP** |
+| 10 | 20/05 | Práctica GIC, AP, LL, LR |
+| 11 | 27/05 | MT (P9) |
+| 12 | 03/06 | Práctica MT |
+| 13 | 10/06 | Repaso P6 a P9. Ej. Tipo Parcial. **Entrega TP** |
+| 14 | 17/06 | **2do. Parcial** |
+| 15 | 24/06 | Repaso para recuperatorio |
+| 16 | 01/07 | **Recuperatorios. Entrega TP**. Cierre de Notas |
 
 ## Criterios de evaluación UNO
 
