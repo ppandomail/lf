@@ -36,8 +36,10 @@
 
 ## Campos de aplicación en distintas áreas
 
-* Teoría de la comunicación y de control
-* Diseño de computadoras (lógica de circuitos)
+* Teoría de la comunicación
+* Teoría de control
+* Lógica de circuitos secuenciales
+* Diseño de computadoras
 * Reconocimiento de patrones
 * Buscadores textuales
 * Compiladores
@@ -46,17 +48,17 @@
 
 | Unidad | | Universidad | Contenido | Ejercicios |
 | -- | -- | -- | -- | -- |
-| 01 | Intro | TODOS | [Introducción](doc/01-intro.ipynb)        | [Ejercicios](tps/01-intro.md)   |
-| 02 | LR    | TODOS | [GR](doc/02-gr.ipynb)                     | [Ejercicios](tps/02-gr.md)      |
-| 02 | LR    | TODOS | [ER](doc/03-er.ipynb)                     | [Ejercicios](tps/03-er.md)      |
-| 02 | LR    | TODOS | [AF](doc/04-af.ipynb)                     | [Ejercicios](tps/04-af.md)      |
-| 02 | LR    | TODOS | [Alg AF](doc/05-algaf-contenido.md)       | [Ejercicios](tps/05-algaf.md)   |
-| 03 | LIC   | TODOS | [GIC](doc/06-gic-contenido.md)            | [Ejercicios](tps/06-gic.md)     |
-| 03 | LIC   | TODOS | [AP](doc/07-ap-contenido.md)              | [Ejercicios](tps/07-ap.md)      |
-| 03 | LIC   | UNO   | [Parsers](doc/08-parsers-contenido.md)    | [Ejercicios](tps/08-parsers.md) |
-| 03 | LIC   | UNO   | [LL](doc/09-asd-contenido.md)             | [Ejercicios](tps/09-asd.md)     |
-| 03 | LIC   | UNO   | [LR](doc/10-asa-contenido.md)             | [Ejercicios](tps/10-asa.md)     |
-| 04 | MT    | TODOS | [MT](doc/11-mt-contenido.md)              | [Ejercicios](tps/11-mt.md)      |
+| 01 | Intro | TODOS | [Introducción](doc/01-intro.ipynb)        | [Ejercicios](doc/01-intro-ejercicios.md)   |
+| 02 | LR    | TODOS | [GR](doc/02-gr.ipynb)                     | [Ejercicios](doc/02-gr-ejercicios.md)      |
+| 02 | LR    | TODOS | [ER](doc/03-er-contenido.md)              | [Ejercicios](doc/03-er-ejercicios.md)      |
+| 02 | LR    | TODOS | [AF](doc/04-af-contenido.md)              | [Ejercicios](doc/04-af-ejercicios.md)      |
+| 02 | LR    | TODOS | [Alg AF](doc/05-algaf-contenido.md)       | [Ejercicios](doc/05-algaf-ejercicios.md)   |
+| 03 | LIC   | TODOS | [GIC](doc/06-gic-contenido.md)            | [Ejercicios](doc/06-gic-ejercicios.md)     |
+| 03 | LIC   | TODOS | [AP](doc/07-ap-contenido.md)              | [Ejercicios](doc/07-ap-ejercicios.md)      |
+| 03 | LIC   | UNO   | [Parsers](doc/08-parsers-contenido.md)    | [Ejercicios](doc/08-parsers-ejercicios.md) |
+| 03 | LIC   | UNO   | [LL](doc/09-asd-contenido.md)             | [Ejercicios](doc/09-asd-ejercicios.md)     |
+| 03 | LIC   | UNO   | [LR](doc/10-asa-contenido.md)             | [Ejercicios](doc/10-asa-ejercicios.md)     |
+| 04 | MT    | TODOS | [MT](doc/11-mt-contenido.md)              | [Ejercicios](doc/11-mt-ejercicios.md)      |
 
 ## Bibliografía
 
