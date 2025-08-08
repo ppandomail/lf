@@ -42,6 +42,8 @@
 * Buscadores textuales
 * Compiladores
 
+![Alan Turing](doc/img/turing2.png)
+
 ## Programa
 
 | Unidad | | Universidad | Contenido | Ejercicios |
