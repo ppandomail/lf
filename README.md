@@ -46,19 +46,19 @@
 
 ## Programa
 
-| Unidad | | Universidad | Contenido | Ejercicios |
-| -- | -- | -- | -- | -- |
-| 01 | Intro | TODOS | [Introducción](doc/01-intro.ipynb)        | [Ejercicios](tps/01-intro.md)   |
-| 02 | LR    | TODOS | [GR](doc/02-gr.ipynb)                     | [Ejercicios](tps/02-gr.md)      |
-| 02 | LR    | TODOS | [ER](doc/03-er.ipynb)                     | [Ejercicios](tps/03-er.md)      |
-| 02 | LR    | TODOS | [AF](doc/04-af.ipynb)                     | [Ejercicios](tps/04-af.md)      |
-| 02 | LR    | TODOS | [Alg AF](doc/05-algaf-contenido.md)       | [Ejercicios](tps/05-algaf.md)   |
-| 03 | LIC   | TODOS | [GIC](doc/06-gic-contenido.md)            | [Ejercicios](tps/06-gic.md)     |
-| 03 | LIC   | TODOS | [AP](doc/07-ap-contenido.md)              | [Ejercicios](tps/07-ap.md)      |
-| 03 | LIC   | UNO   | [Parsers](doc/08-parsers-contenido.md)    | [Ejercicios](tps/08-parsers.md) |
-| 03 | LIC   | UNO   | [LL](doc/09-asd-contenido.md)             | [Ejercicios](tps/09-asd.md)     |
-| 03 | LIC   | UNO   | [LR](doc/10-asa-contenido.md)             | [Ejercicios](tps/10-asa.md)     |
-| 04 | MT    | TODOS | [MT](doc/11-mt-contenido.md)              | [Ejercicios](tps/11-mt.md)      |
+| Unidad |       | Univ  | Contenido                                 | TPs                       |
+| --     | --    | --    | --                                        | --                        |
+| 01     | Intro | TODOS | [Introducción](doc/01-intro.ipynb)        | [TP1](tps/01-intro.ipynb) |
+| 02     | LR    | TODOS | [GR](doc/02-gr.ipynb)                     | [TP2](tps/02-gr.md)       |
+| 02     | LR    | TODOS | [ER](doc/03-er.ipynb)                     | [TP3](tps/03-er.md)       |
+| 02     | LR    | TODOS | [AF](doc/04-af.ipynb)                     | [TP4](tps/04-af.md)       |
+| 02     | LR    | TODOS | [Alg AF](doc/05-algaf-contenido.md)       | [TP5](tps/05-algaf.md)    |
+| 03     | LIC   | TODOS | [GIC](doc/06-gic-contenido.md)            | [TP6](tps/06-gic.md)      |
+| 03     | LIC   | TODOS | [AP](doc/07-ap-contenido.md)              | [TP7](tps/07-ap.md)       |
+| 03     | LIC   | UNO   | [Parsers](doc/08-parsers-contenido.md)    | [TP8](tps/08-parsers.md)  |
+| 03     | LIC   | UNO   | [LL](doc/09-asd-contenido.md)             | [TP9](tps/09-asd.md)      |
+| 03     | LIC   | UNO   | [LR](doc/10-asa-contenido.md)             | [TP10](tps/10-asa.md)     |
+| 04     | MT    | TODOS | [MT](doc/11-mt-contenido.md)              | [TP11](tps/11-mt.md)      |
 
 ## Bibliografía
 
@@ -72,24 +72,24 @@
 
 ## Cronograma UNO
 
-| **Clase** | **Fecha** | **Tema** |
-| -- | -- | -- |
-| 01 | 18/03 | Presentación. Lenguajes Formales. Clasificación de Chomsky. P1 |
-| 02 | 25/03 | Lenguajes Regulares. GR (P2). ER (P3) |
-| 03 | 01/04 | AF (P4) |
-| 04 | 08/04 | Algoritmos. L Pumping LR (P5) |
-| 05 | 15/04 | Repaso P1 a P5. Ej. Tipo Parcial |
-| 06 | 22/04 | **1er. Parcial** |
-| 07 | 29/04 | Lenguajes Incontextuales: GIC, FNC, FNG, FNB (P6) |
-| 08 | 06/05 | AP. L Pumping LIC (P7) |
-| 09 | 13/05 | Parser LL y LR con retroceso (P8). **Enunciado del TP** |
-| 10 | 20/05 | Práctica GIC, AP, LL, LR |
-| 11 | 27/05 | MT (P9) |
-| 12 | 03/06 | Práctica MT |
-| 13 | 10/06 | Repaso P6 a P9. Ej. Tipo Parcial. **Entrega TP** |
-| 14 | 17/06 | **2do. Parcial** |
-| 15 | 24/06 | Repaso para recuperatorio |
-| 16 | 01/07 | **Recuperatorios. Entrega TP**. Cierre de Notas |
+| **Clase** | **Fecha** | **Tema**                                                   | **TP**         |
+| --        | --        | --                                                         | --             |
+| 01        | 18/03     | Presentación. Lenguajes Formales. Clasificación de Chomsky | TP1            |
+| 02        | 25/03     | Lenguajes Regulares. GR. ER                                | TP2, TP3       |
+| 03        | 01/04     | AF                                                         | TP4            |
+| 04        | 08/04     | Algoritmos. L Pumping LR                                   | TP5            |
+| 05        | 15/04     | Repaso. Modelo Tipo Parcial                                | TP1 a TP5      |
+| 06        | 22/04     | **1er. Parcial**                                           |                |
+| 07        | 29/04     | Lenguajes Incontextuales: GIC, FNC, FNG, FNB               | TP6            |
+| 08        | 06/05     | AP. L Pumping LIC                                          | TP7            |
+| 09        | 13/05     | Parser LL y LR con retroceso. **Enunciado del TP**         | TP8, TP9, TP10 |
+| 10        | 20/05     | Práctica GIC, AP, LL, LR                                   | TP6 a TP10     |
+| 11        | 27/05     | MT                                                         | TP11           |
+| 12        | 03/06     | Práctica MT                                                | TP11           |
+| 13        | 10/06     | Repaso. Modelo Tipo Parcial. **Entrega TP**                | TP6 a TP11     |
+| 14        | 17/06     | **2do. Parcial**                                           |                |
+| 15        | 24/06     | Repaso para recuperatorio                                  |                |
+| 16        | 01/07     | **Recuperatorios. Entrega TP**. Cierre de Notas            |                |
 
 ## Criterios de evaluación UNO
 
