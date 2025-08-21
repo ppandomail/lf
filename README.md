@@ -49,7 +49,7 @@
 | Unidad |       | Univ  | Contenido                                 | TPs                       |
 | --     | --    | --    | --                                        | --                        |
 | 01     | Intro | TODOS | [Introducción](doc/01-intro.ipynb)        | [TP1](tps/01-intro.ipynb) |
-| 02     | LR    | TODOS | [GR](doc/02-gr.ipynb)                     | [TP2](tps/02-gr.md)       |
+| 02     | LR    | TODOS | [GR](doc/02-gr.ipynb)                     | [TP2](tps/02-gr.ipynb)    |
 | 02     | LR    | TODOS | [ER](doc/03-er.ipynb)                     | [TP3](tps/03-er.md)       |
 | 02     | LR    | TODOS | [AF](doc/04-af.ipynb)                     | [TP4](tps/04-af.md)       |
 | 02     | LR    | TODOS | [Alg AF](doc/05-algaf-contenido.md)       | [TP5](tps/05-algaf.md)    |
