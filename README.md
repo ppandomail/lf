@@ -52,7 +52,7 @@
 | 02     | LR    | TODOS | [GR](doc/02-gr.ipynb)                     | [TP2](tps/02-gr.ipynb)    |
 | 02     | LR    | TODOS | [ER](doc/03-er.ipynb)                     | [TP3](tps/03-er.ipynb)    |
 | 02     | LR    | TODOS | [AF](doc/04-af.ipynb)                     | [TP4](tps/04-af.ipynb)    |
-| 02     | LR    | TODOS | [Alg AF](doc/05-algaf-contenido.md)       | [TP5](tps/05-algaf.md)    |
+| 02     | LR    | TODOS | [Alg AF](doc/05-algaf.ipynb)              | [TP5](tps/05-algaf.ipynb) |
 | 03     | LIC   | TODOS | [GIC](doc/06-gic-contenido.md)            | [TP6](tps/06-gic.md)      |
 | 03     | LIC   | TODOS | [AP](doc/07-ap-contenido.md)              | [TP7](tps/07-ap.md)       |
 | 03     | LIC   | UNO   | [Parsers](doc/08-parsers-contenido.md)    | [TP8](tps/08-parsers.md)  |
