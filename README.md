@@ -54,7 +54,7 @@
 | 02     | LR    | TODOS | [AF](doc/04-af.ipynb)                     | [TP4](tps/04-af.ipynb)    |
 | 02     | LR    | TODOS | [Alg AF](doc/05-algaf.ipynb)              | [TP5](tps/05-algaf.ipynb) |
 | 03     | LIC   | TODOS | [GIC](doc/06-gic.ipynb)                   | [TP6](tps/06-gic.ipynb)   |
-| 03     | LIC   | TODOS | [AP](doc/07-ap-contenido.md)              | [TP7](tps/07-ap.md)       |
+| 03     | LIC   | TODOS | [AP](doc/07-ap.ipynb)                     | [TP7](tps/07-ap.ipynb)    |
 | 03     | LIC   | UNO   | [Parsers](doc/08-parsers-contenido.md)    | [TP8](tps/08-parsers.md)  |
 | 03     | LIC   | UNO   | [LL](doc/09-asd-contenido.md)             | [TP9](tps/09-asd.md)      |
 | 03     | LIC   | UNO   | [LR](doc/10-asa-contenido.md)             | [TP10](tps/10-asa.md)     |
