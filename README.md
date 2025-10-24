@@ -58,7 +58,7 @@
 | 03     | LIC   | UNO   | [Parsers](doc/08-parsers-contenido.md)    | [TP8](tps/08-parsers.md)  |
 | 03     | LIC   | UNO   | [LL](doc/09-asd-contenido.md)             | [TP9](tps/09-asd.md)      |
 | 03     | LIC   | UNO   | [LR](doc/10-asa-contenido.md)             | [TP10](tps/10-asa.md)     |
-| 04     | MT    | TODOS | [MT](doc/11-mt-contenido.md)              | [TP11](tps/11-mt.md)      |
+| 04     | MT    | TODOS | [MT](doc/11-mt.ipynb)                     | [TP11](tps/11-mt.ipynb)   |
 
 ## Bibliografía
 
