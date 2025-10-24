@@ -10,7 +10,7 @@
 
 ## Objetivos
 
-* Conocer los fundamentos teóricos: conceptos matemáticos formales fundamentales de la computación y el uso de modelos para solucionar problemas que subyacen los procesos de computación
+* Conocer los conceptos matemáticos formales fundamentales de la computación y diseñar modelos para solucionar problemas que subyacen los procesos de computación
 
 ## Distintos nombres
 
@@ -41,8 +41,6 @@
 * Reconocimiento de patrones
 * Buscadores textuales
 * Compiladores
-
-![Alan Turing](doc/img/turing2.png)
 
 ## Programa
 
