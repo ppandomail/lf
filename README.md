@@ -44,27 +44,27 @@
 
 ## Programa
 
-| Unidad |       | Univ   | Contenido                                 | TPs                            |
-| --     | --    | --     | --                                        | --                             |
-| 01     | Intro | TODOS  | [Introducción](doc/01-intro.ipynb)        | [TP01](tps/01-intro.ipynb)     |
-| 01     | Trad  | UNAHUR | [Traducción](doc/02-app.ipynb)            | [TP02](tps/02-app.ipynb)       |
-| 02     | LR    | TODOS  | [GR](doc/03-gr.ipynb)                     | [TP03](tps/03-gr.ipynb)        |
-| 02     | LR    | TODOS  | [ER](doc/04-er.ipynb)                     | [TP04](tps/04-er.ipynb)        |
-| 02     | LR    | TODOS  | [AF](doc/05-af.ipynb)                     | [TP05](tps/05-af.ipynb)        |
-| 02     | LR    | TODOS  | [Alg AF](doc/06-algaf.ipynb)              | [TP06](tps/06-algaf.ipynb)     |
-| 02     | LR    | UNAHUR | [Scanner](doc/07-scanner.ipynb)           | [TP07](tps/07-scanner.ipynb)   |
-| 03     | LIC   | TODOS  | [GIC](doc/08-gic.ipynb)                   | [TP08](tps/08-gic.ipynb)       |
-| 03     | LIC   | TODOS  | [AP](doc/09-ap.ipynb)                     | [TP09](tps/09-ap.ipynb)        |
-| 03     | LIC   | TODOS  | [Parsers](doc/10-parsers.ipynb)           | [TP10](tps/10-parsers.ipynb)   |
-| 03     | LIC   | UNAHUR | [Tools](doc/11-tools.ipynb)               | [TP11](tps/11-tools.ipynb)     |
-| 03     | LIC   | TODOS  | [ASDB](doc/12-asdb.ipynb)                 | [TP12](tps/12-asdb.ipynb)      |
-| 03     | LIC   | UNAHUR | [ASDP](doc/13-asdp.ipynb)                 | [TP13](tps/13-asdp.ipynb)      |
-| 03     | LIC   | TODOS  | [ASAB](doc/14-asab.ipynb)                 | [TP14](tps/14-asab.ipynb)      |
-| 03     | LIC   | UNAHUR | [ASAP](doc/15-asap.ipynb)                 | [TP15](tps/15-asap.ipynb)      |
-| 04     | SEM   | UNAHUR | [TT/TS](doc/16-tablas.ipynb)              | [TP16](tps/16-tablas.ipynb)    |
-| 04     | SEM   | UNAHUR | [SEM](doc/17-sem.ipynb)                   | [TP17](tps/17-sem.ipynb)       |
-| 05     | GEN   | UNAHUR | [GEN](doc/18-gen.ipynb)                   |                                |
-| 06     | MT    | TODOS  | [MT](doc/19-mt.ipynb)                     | [TP19](tps/19-mt.ipynb)        |
+| Unidad |       | Univ   | Contenido                                 | TPs                                |
+| --     | --    | --     | --                                        | --                                 |
+| 01     | Intro | TODOS  | [Introducción](doc/01-intro.ipynb)        | [TP Intro](tps/01-intro.ipynb)     |
+| 01     | Trad  | UNAHUR | [Traducción](doc/02-app.ipynb)            | [TP Trad](tps/02-app.ipynb)        |
+| 02     | LR    | TODOS  | [GR](doc/03-gr.ipynb)                     | [TP GR](tps/03-gr.ipynb)           |
+| 02     | LR    | TODOS  | [ER](doc/04-er.ipynb)                     | [TP ER](tps/04-er.ipynb)           |
+| 02     | LR    | TODOS  | [AF](doc/05-af.ipynb)                     | [TP AF](tps/05-af.ipynb)           |
+| 02     | LR    | TODOS  | [Alg AF](doc/06-algaf.ipynb)              | [TP Alg AF](tps/06-algaf.ipynb)    |
+| 02     | LR    | UNAHUR | [Scanner](doc/07-scanner.ipynb)           | [TP Scanner](tps/07-scanner.ipynb) |
+| 03     | LIC   | TODOS  | [GIC](doc/08-gic.ipynb)                   | [TP GIC](tps/08-gic.ipynb)         |
+| 03     | LIC   | TODOS  | [AP](doc/09-ap.ipynb)                     | [TP AP](tps/09-ap.ipynb)           |
+| 03     | LIC   | TODOS  | [Parsers](doc/10-parsers.ipynb)           | [TP Parser](tps/10-parsers.ipynb)  |
+| 03     | LIC   | UNAHUR | [Tools](doc/11-tools.ipynb)               | [TP Tools](tps/11-tools.ipynb)     |
+| 03     | LIC   | TODOS  | [ASDB](doc/12-asdb.ipynb)                 | [TP ASDB](tps/12-asdb.ipynb)       |
+| 03     | LIC   | UNAHUR | [ASDP](doc/13-asdp.ipynb)                 | [TP ASDP](tps/13-asdp.ipynb)       |
+| 03     | LIC   | TODOS  | [ASAB](doc/14-asab.ipynb)                 | [TP ASAB](tps/14-asab.ipynb)       |
+| 03     | LIC   | UNAHUR | [ASAP](doc/15-asap.ipynb)                 | [TP ASAP](tps/15-asap.ipynb)       |
+| 04     | SEM   | UNAHUR | [TT/TS](doc/16-tablas.ipynb)              | [TP TT/TS](tps/16-tablas.ipynb)    |
+| 04     | SEM   | UNAHUR | [SEM](doc/17-sem.ipynb)                   | [TP SEM](tps/17-sem.ipynb)         |
+| 05     | GEN   | UNAHUR | [GEN](doc/18-gen.ipynb)                   |                                    |
+| 06     | MT    | TODOS  | [MT](doc/19-mt.ipynb)                     | [TP MT](tps/19-mt.ipynb)           |
 
 ## Bibliografía
 
@@ -78,24 +78,24 @@
 
 ## Cronograma UNO
 
-| **Clase** | **Fecha** | **Tema**                                                   |
-| --        | --        | --                                                         |
-| 01        | 18/03     | Presentación. Lenguajes Formales. Clasificación de Chomsky |
-| 02        | 25/03     | Lenguajes Regulares. GR. ER                                |
-| 03        | 01/04     | AF                                                         |
-| 04        | 08/04     | Algoritmos. L Pumping LR                                   |
-| 05        | 15/04     | Repaso. Modelo Tipo Parcial                                |
-| 06        | 22/04     | **1er. Parcial**                                           |
-| 07        | 29/04     | Lenguajes Incontextuales: GIC, FNC, FNG, FNB               |
-| 08        | 06/05     | AP. L Pumping LIC                                          |
-| 09        | 13/05     | Parser LL y LR con retroceso. **Enunciado del TP**         |
-| 10        | 20/05     | Práctica GIC, AP, LL, LR                                   |
-| 11        | 27/05     | MT                                                         |
-| 12        | 03/06     | Práctica MT                                                |
-| 13        | 10/06     | Repaso. Modelo Tipo Parcial. **Entrega TP**                |
-| 14        | 17/06     | **2do. Parcial**                                           |
-| 15        | 24/06     | Repaso para recuperatorio                                  |
-| 16        | 01/07     | **Recuperatorios. Entrega TP**. Cierre de Notas            |
+| **Clase** | **Fecha** | **Tema**                                         |
+| --        | --        | --                                               |
+| 01        | 18/03     | Presentación. LF. Chomsky                        |
+| 02        | 25/03     | LR: GR. ER                                       |
+| 03        | 01/04     | AF                                               |
+| 04        | 08/04     | Alg AF. L Pumping LR                             |
+| 05        | 15/04     | Repaso. Modelo Tipo Parcial                      |
+| 06        | 22/04     | **1er. Parcial**                                 |
+| 07        | 29/04     | LIC: GIC, FNC, FNG, FNB                          |
+| 08        | 06/05     | AP. L Pumping LIC                                |
+| 09        | 13/05     | Parsers: ASDB y ASAB. **Enunciado del TP**       |
+| 10        | 20/05     | Práctica GIC, AP, ASDB y ASAB                    |
+| 11        | 27/05     | MT                                               |
+| 12        | 03/06     | Práctica MT                                      |
+| 13        | 10/06     | Repaso. Modelo Tipo Parcial. **Entrega TP**      |
+| 14        | 17/06     | **2do. Parcial**                                 |
+| 15        | 24/06     | Repaso para recuperatorio                        |
+| 16        | 01/07     | **Recuperatorios. Entrega TP**. Cierre de Notas  |
 
 ## Criterios de evaluación UNO
 
