@@ -47,7 +47,7 @@
 | Unidad |       | Univ   | Contenido                                 | TPs                            |
 | --     | --    | --     | --                                        | --                             |
 | 01     | Intro | TODOS  | [Introducción](doc/01-intro.ipynb)        | [TP01](tps/01-intro.ipynb)     |
-| 01     | Trad  | UNAHUR | [Traducción](doc/02-trad.ipynb)           | [TP02](tps/02-trad.ipynb)      |
+| 01     | Trad  | UNAHUR | [Traducción](doc/02-app.ipynb)            | [TP02](tps/02-app.ipynb)       |
 | 02     | LR    | TODOS  | [GR](doc/03-gr.ipynb)                     | [TP03](tps/03-gr.ipynb)        |
 | 02     | LR    | TODOS  | [ER](doc/04-er.ipynb)                     | [TP04](tps/04-er.ipynb)        |
 | 02     | LR    | TODOS  | [AF](doc/05-af.ipynb)                     | [TP05](tps/05-af.ipynb)        |
