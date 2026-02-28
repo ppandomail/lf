@@ -2,9 +2,9 @@
 
 ## Docentes
 
-* Titular: Mg. Ing. Pablo Pandolfo
-* Adjunta: Lic. Silvia Cuagliarelli
-* Ayudante: Lic. Pablo Rechimon
+* **Titular**: Mg. Ing. Pablo Pandolfo
+* **Adjunta**: Lic. Silvia Cuagliarelli
+* **Ayudante**: Lic. Pablo Rechimon
 
 ## Objetivos
 
