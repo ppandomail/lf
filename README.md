@@ -1,12 +1,10 @@
-# Lenguajes Formales (UNO) / Lenguajes Formales y Autómatas (UNAHUR)
+# Lenguajes Formales
 
 ## Docentes
 
 * Titular: Mg. Ing. Pablo Pandolfo
-
-* UNO:
-  * Adjunta: Lic. Silvia Cuagliarelli
-  * Ayudante: Lic. Pablo Rechimon
+* Adjunta: Lic. Silvia Cuagliarelli
+* Ayudante: Lic. Pablo Rechimon
 
 ## Objetivos
 
@@ -44,39 +42,30 @@
 
 ## Programa
 
-| Unidad |       | Univ   | Contenido                                 | TPs                                |
-| --     | --    | --     | --                                        | --                                 |
-| 01     | Intro | TODOS  | [Introducción](doc/01-intro.ipynb)        | [TP Intro](tps/01-intro.ipynb)     |
-| 01     | Trad  | UNAHUR | [Traducción](doc/02-app.ipynb)            | [TP Trad](tps/02-app.ipynb)        |
-| 02     | LR    | TODOS  | [GR](doc/03-gr.ipynb)                     | [TP GR](tps/03-gr.ipynb)           |
-| 02     | LR    | TODOS  | [ER](doc/04-er.ipynb)                     | [TP ER](tps/04-er.ipynb)           |
-| 02     | LR    | TODOS  | [AF](doc/05-af.ipynb)                     | [TP AF](tps/05-af.ipynb)           |
-| 02     | LR    | TODOS  | [Alg AF](doc/06-algaf.ipynb)              | [TP Alg AF](tps/06-algaf.ipynb)    |
-| 02     | LR    | UNAHUR | [Scanner](doc/07-scanner.ipynb)           | [TP Scanner](tps/07-scanner.ipynb) |
-| 03     | LIC   | TODOS  | [GIC](doc/08-gic.ipynb)                   | [TP GIC](tps/08-gic.ipynb)         |
-| 03     | LIC   | TODOS  | [AP](doc/09-ap.ipynb)                     | [TP AP](tps/09-ap.ipynb)           |
-| 03     | LIC   | TODOS  | [Parsers](doc/10-parsers.ipynb)           | [TP Parser](tps/10-parsers.ipynb)  |
-| 03     | LIC   | UNAHUR | [Tools](doc/11-tools.ipynb)               | [TP Tools](tps/11-tools.ipynb)     |
-| 03     | LIC   | TODOS  | [ASDB](doc/12-asdb.ipynb)                 | [TP ASDB](tps/12-asdb.ipynb)       |
-| 03     | LIC   | UNAHUR | [ASDP](doc/13-asdp.ipynb)                 | [TP ASDP](tps/13-asdp.ipynb)       |
-| 03     | LIC   | TODOS  | [ASAB](doc/14-asab.ipynb)                 | [TP ASAB](tps/14-asab.ipynb)       |
-| 03     | LIC   | UNAHUR | [ASAP](doc/15-asap.ipynb)                 | [TP ASAP](tps/15-asap.ipynb)       |
-| 04     | SEM   | UNAHUR | [TT/TS](doc/16-tablas.ipynb)              | [TP TT/TS](tps/16-tablas.ipynb)    |
-| 04     | SEM   | UNAHUR | [SEM](doc/17-sem.ipynb)                   | [TP SEM](tps/17-sem.ipynb)         |
-| 05     | GEN   | UNAHUR | [GEN](doc/18-gen.ipynb)                   |                                    |
-| 06     | MT    | TODOS  | [MT](doc/19-mt.ipynb)                     | [TP MT](tps/19-mt.ipynb)           |
+| Unidad |       | Contenido                              | TPs                             |
+| --     | --    | --                                     | --                              |
+| 01     | Intro | [Intro](doc/intro.ipynb)               | [TP Intro](tps/intro.ipynb)     |
+| 02     | LR    | [GR](doc/gr.ipynb)                     | [TP GR](tps/gr.ipynb)           |
+| 02     | LR    | [ER](doc/er.ipynb)                     | [TP ER](tps/er.ipynb)           |
+| 02     | LR    | [AF](doc/af.ipynb)                     | [TP AF](tps/af.ipynb)           |
+| 02     | LR    | [Alg AF](doc/algaf.ipynb)              | [TP Alg AF](tps/algaf.ipynb)    |
+| 03     | LIC   | [GIC](doc/gic.ipynb)                   | [TP GIC](tps/gic.ipynb)         |
+| 03     | LIC   | [AP](doc/ap.ipynb)                     | [TP AP](tps/ap.ipynb)           |
+| 03     | LIC   | [Parsers](doc/parsers.ipynb)           | [TP Parser](tps/parsers.ipynb)  |
+| 03     | LIC   | [ASDB](doc/asdb.ipynb)                 | [TP ASDB](tps/asdb.ipynb)       |
+| 03     | LIC   | [ASAB](doc/asab.ipynb)                 | [TP ASAB](tps/asab.ipynb)       |
+| 04     | MT    | [MT](doc/mt.ipynb)                     | [TP MT](tps/mt.ipynb)           |
 
 ## Bibliografía
 
 * [Teoría de autómatas, lenguajes y computación (Hopcroft, Motwani y Ullman)](biblio/Teoria%20de%20automatas,%20lenguajes%20y%20computacion%20(Hopcroft).pdf)
-* [Autómatas y Lenguajes (Brena)](biblio/Automatas%20y%20Lenguajes%20(Brena).pdf)
 
 ## Herramientas
 
 * [JFlap](https://www.jflap.org/)
 * [Turing Machine Simulator](https://turingmachinesimulator.com)
 
-## Cronograma UNO
+## Cronograma
 
 | **Clase** | **Fecha** | **Tema**                                         |
 | --        | --        | --                                               |
@@ -97,7 +86,7 @@
 | 15        | 24/06     | Repaso para recuperatorio                        |
 | 16        | 01/07     | **Recuperatorios. Entrega TP**. Cierre de Notas  |
 
-## Criterios de evaluación UNO
+## Criterios de evaluación
 
 * **Regularidad**
   * Dos parciales, con nota >= 4 y nota <= 6
