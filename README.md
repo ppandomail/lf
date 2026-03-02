@@ -69,22 +69,22 @@
 
 | **Clase** | **Fecha** | **Tema**                                         |
 | --        | --        | --                                               |
-| 01        | 18/03     | Presentación. LF. Chomsky                        |
-| 02        | 25/03     | LR: GR. ER                                       |
-| 03        | 01/04     | AF                                               |
-| 04        | 08/04     | Alg AF. L Pumping LR                             |
-| 05        | 15/04     | Repaso. Modelo Tipo Parcial                      |
-| 06        | 22/04     | **1er. Parcial**                                 |
-| 07        | 29/04     | LIC: GIC, FNC, FNG, FNB                          |
-| 08        | 06/05     | AP. L Pumping LIC                                |
-| 09        | 13/05     | Parsers: ASDB y ASAB. **Enunciado del TP**       |
-| 10        | 20/05     | Práctica GIC, AP, ASDB y ASAB                    |
-| 11        | 27/05     | MT                                               |
-| 12        | 03/06     | Práctica MT                                      |
-| 13        | 10/06     | Repaso. Modelo Tipo Parcial. **Entrega TP**      |
-| 14        | 17/06     | **2do. Parcial**                                 |
-| 15        | 24/06     | Repaso para recuperatorio                        |
-| 16        | 01/07     | **Recuperatorios. Entrega TP**. Cierre de Notas  |
+| 01        | 17/03     | Presentación. LF. Chomsky                        |
+| 02        | 24/03     | Feriado                                          |
+| 03        | 31/03     | LR: GR. ER                                       |
+| 04        | 07/04     | AF                                               |
+| 05        | 14/04     | Alg AF. L Pumping LR                             |
+| 06        | 21/04     | Repaso. Modelo Tipo Parcial                      |
+| 07        | 28/04     | **1er. Parcial**                                 |
+| 08        | 05/05     | LIC: GIC, FNC, FNG, FNB                          |
+| 09        | 12/05     | AP. L Pumping LIC                                |
+| 10        | 19/05     | Parsers: ASDB y ASAB. **Enunciado del TP**       |
+| 11        | 26/05     | Práctica GIC, AP, ASDB y ASAB                    |
+| 12        | 02/06     | MT                                               |
+| 13        | 09/06     | Práctica MT                                      |
+| 14        | 16/06     | Repaso. Modelo Tipo Parcial. **Entrega TP**      |
+| 15        | 23/06     | **2do. Parcial**                                 |
+| 16        | 30/06     | **Recuperatorios. Entrega TP**. Cierre de Notas  |
 
 ## Criterios de evaluación
 
